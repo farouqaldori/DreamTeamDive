@@ -54,18 +54,18 @@ int functionName()
     ```csharp
 int functionName()
 {
-	if (condition1) 
-	{
-		if (condition2) 
+		if (condition1) 
 		{
-			if (condition3) 
+			if (condition2) 
 			{
-			// Do something..
-			} else
-			{
-				// Do something else..
+				if (condition3) 
+				{
+					// Do something..
+				} else
+				{
+					// Do something else..
+				}
 			}
 		}
-	}
 }
     ```
