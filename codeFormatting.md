@@ -59,7 +59,6 @@ Since DreamTeam Dive is a open source team project, code formatting is a vital p
         
         functionName3.run();
      }
-     ```
     * Use a single tab when separating code levels to make the code easy to read following the example below:
       ```csharp
       int functionName() 
@@ -78,4 +77,3 @@ Since DreamTeam Dive is a open source team project, code formatting is a vital p
             }
         }
       }
-      ```
