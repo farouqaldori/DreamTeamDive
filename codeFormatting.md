@@ -50,23 +50,23 @@ int functionName()
 		functionName3.run();
 }
     ```
-  * Use a single tab when separating code levels to make the code easy to read following the example below:
+   * Use a single tab when separating code levels to make the code easy to read following the example below:
     ```csharp
-		int functionName()
-		{
-				if (condition1) 
-			{
-				if (condition2) 
-				{
-					if (condition3) 
-					{
-						// Do something..
-					} else 
-					{
-						// Do something else..
-					}
-				}
-			}
-		}
-	}
+int functionName()
+{
+if (condition1) 
+{
+if (condition2) 
+{
+if (condition3) 
+{
+// Do something..
+} else 
+{
+// Do something else..
+}
+}
+}
+}
+}
     ```
