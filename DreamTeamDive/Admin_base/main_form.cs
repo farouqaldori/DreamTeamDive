@@ -15,11 +15,6 @@ namespace Admin_base
         public main_mdi()
         {
             InitializeComponent();
-
-            // Load home_form window
-            home_form home_form = new home_form();
-            home_form.MdiParent = this;
-            home_form.Show();
         }
 
 
