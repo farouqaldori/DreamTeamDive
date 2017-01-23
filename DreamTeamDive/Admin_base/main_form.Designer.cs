@@ -55,7 +55,7 @@
             this.hjälpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(505, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(686, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -128,20 +128,20 @@
             // menu_newWindow_button
             // 
             this.menu_newWindow_button.Name = "menu_newWindow_button";
-            this.menu_newWindow_button.Size = new System.Drawing.Size(152, 22);
+            this.menu_newWindow_button.Size = new System.Drawing.Size(143, 22);
             this.menu_newWindow_button.Text = "New window";
             this.menu_newWindow_button.Click += new System.EventHandler(this.nyttFönsterToolStripMenuItem_Click);
             // 
             // ordnaAllaToolStripMenuItem
             // 
             this.ordnaAllaToolStripMenuItem.Name = "ordnaAllaToolStripMenuItem";
-            this.ordnaAllaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ordnaAllaToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ordnaAllaToolStripMenuItem.Text = "Order all";
             // 
             // ordnaIkonerToolStripMenuItem
             // 
             this.ordnaIkonerToolStripMenuItem.Name = "ordnaIkonerToolStripMenuItem";
-            this.ordnaIkonerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ordnaIkonerToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.ordnaIkonerToolStripMenuItem.Text = "Order icons";
             // 
             // hjälpToolStripMenuItem
@@ -169,7 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 261);
+            this.ClientSize = new System.Drawing.Size(686, 418);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
