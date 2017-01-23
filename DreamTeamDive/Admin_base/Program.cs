@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Base
+namespace Admin_base
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Base
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new main_auth_form());
+            Application.Run(new main_mdi());
         }
     }
 }
