@@ -19,26 +19,19 @@ namespace Base
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Show authentication form
-            if (true)
-            {
-                // Authentication successful
-                judge_form judge_form = new Base.judge_form();
-                this.Hide();
-                judge_form.Show();
-            }
+            // Authentication successful for Judge
+            auth_form authform = new Base.auth_form('J');
+                
+            authform.Show();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Show authentication form
-            if (true)
-            {
-                // Authentication successful
-                diver_form diver_form = new Base.diver_form();
-                this.Hide();
-                diver_form.Show();
-            }
+          // Authentication successful for Diver
+            auth_form authform = new Base.auth_form('D');
+
+            authform.Show();
         }
     }
 }

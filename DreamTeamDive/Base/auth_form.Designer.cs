@@ -41,6 +41,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(171, 20);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -59,6 +60,7 @@
             this.auth_button.TabIndex = 2;
             this.auth_button.Text = "Login";
             this.auth_button.UseVisualStyleBackColor = true;
+            this.auth_button.Click += new System.EventHandler(this.auth_button_Click);
             // 
             // help_button
             // 
@@ -81,6 +83,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "auth_form";
             this.Text = "Authenticate";
+            this.Load += new System.EventHandler(this.auth_form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

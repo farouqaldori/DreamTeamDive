@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.JudgeButton = new System.Windows.Forms.Button();
+            this.DiverButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // JudgeButton
             // 
-            this.button1.Location = new System.Drawing.Point(12, 39);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 83);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Judge";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.JudgeButton.Location = new System.Drawing.Point(12, 39);
+            this.JudgeButton.Name = "JudgeButton";
+            this.JudgeButton.Size = new System.Drawing.Size(111, 83);
+            this.JudgeButton.TabIndex = 0;
+            this.JudgeButton.Text = "Judge";
+            this.JudgeButton.UseVisualStyleBackColor = true;
+            this.JudgeButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // DiverButton
             // 
-            this.button2.Location = new System.Drawing.Point(179, 39);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 83);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Diver";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.DiverButton.Location = new System.Drawing.Point(179, 39);
+            this.DiverButton.Name = "DiverButton";
+            this.DiverButton.Size = new System.Drawing.Size(111, 83);
+            this.DiverButton.TabIndex = 1;
+            this.DiverButton.Text = "Diver";
+            this.DiverButton.UseVisualStyleBackColor = true;
+            this.DiverButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -80,8 +80,8 @@
             this.ClientSize = new System.Drawing.Size(302, 134);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.DiverButton);
+            this.Controls.Add(this.JudgeButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "main_auth_form";
@@ -93,8 +93,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button JudgeButton;
+        private System.Windows.Forms.Button DiverButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

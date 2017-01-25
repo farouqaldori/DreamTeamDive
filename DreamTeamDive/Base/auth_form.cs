@@ -12,9 +12,45 @@ namespace Base
 {
     public partial class auth_form : Form
     {
-        public auth_form()
+
+        char AuthWho;
+        public auth_form(char who)
         {
             InitializeComponent();
+            //Autentication av Dommare/Hoppare, tar en parameter J eller H
+            AuthWho = who;
+        }
+
+        private void auth_form_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void auth_button_Click(object sender, EventArgs e)
+        {
+            //Kollar om det är dommare eller hoppare
+            if (AuthWho == 'J')
+            {
+                judge_form judgeform = new Base.judge_form();
+                this.Hide();
+                judgeform.Show();
+            }
+            else if(AuthWho == 'D')
+            {
+                diver_form diverform = new Base.diver_form();
+                this.Hide();
+                diverform.Show();
+            }
+            else
+            {
+                MessageBox.Show("Wrong, Try again!");
+                return;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
