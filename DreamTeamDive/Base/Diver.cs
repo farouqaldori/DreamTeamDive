@@ -22,7 +22,7 @@ namespace Base
             authCode = 0;
             name = "";
             country = "";
-            competition = 0;
+            competition = -1;
         }
 
         public void Auth()
