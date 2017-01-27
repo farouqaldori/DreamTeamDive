@@ -55,7 +55,7 @@ namespace Admin_base
             if(open.ShowDialog()==DialogResult.OK)
             {
                 StreamReader reader = new StreamReader(File.OpenRead(open.FileName));
-                //To-do: ways to save a specific file
+                //To do: ways to save a specific file
             }
         }
     }
