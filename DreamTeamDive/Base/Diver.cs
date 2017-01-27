@@ -18,11 +18,11 @@ namespace Base
 
         public Diver()
         {
-            int id;
-            int authCode;
-            string name;
-            string country;
-            string competition;
+            id = -1;
+            authCode = 0;
+            name = "";
+            country = "";
+            competition = 0;
         }
 
         public void Auth()

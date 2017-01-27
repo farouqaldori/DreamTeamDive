@@ -16,10 +16,10 @@ namespace Base
 
         public Judge()
         {
-            int id;
-            int authCode;
-            string name;
-            string competition;
+            id = -1;
+            authCode = 0;
+            name = "";
+            competition = 0;
         }
 
         public void Auth()
