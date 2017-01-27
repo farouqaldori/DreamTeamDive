@@ -21,7 +21,7 @@ namespace Admin_base
             InitializeComponent();            
         }
 
-
+        
         private void nyttFönsterToolStripMenuItem_Click(object sender, EventArgs e)
         {
             participents_form participents = new participents_form(this);
