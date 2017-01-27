@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Competition.cs" />
+    <Compile Include="Database.cs" />
     <Compile Include="main_form.cs">
       <SubType>Form</SubType>
     </Compile>
