@@ -16,19 +16,15 @@ namespace Admin_base
         // Create a new form to be able to manipulate the parent form.
         private main_mdi _parent;
 
-        public participents_form(main_mdi parent)
+        public participents_form()
         {
-            this._parent = parent;
+            
             InitializeComponent();
         }
 
         private void participents_form_FormClosed(object sender, FormClosedEventArgs e)
         {
-            // Reset parent window counter 
-            _parent.windowCounter--;
-
-            // Reset parent window counter
-
+            
         }
     }
 }

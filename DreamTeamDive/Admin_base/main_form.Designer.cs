@@ -84,6 +84,7 @@
             this.öppnaToolStripMenuItem.Name = "öppnaToolStripMenuItem";
             this.öppnaToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.öppnaToolStripMenuItem.Text = "Open..";
+            this.öppnaToolStripMenuItem.Click += new System.EventHandler(this.öppnaToolStripMenuItem_Click);
             // 
             // sparaToolStripMenuItem
             // 
@@ -96,6 +97,7 @@
             this.sparaSomToolStripMenuItem.Name = "sparaSomToolStripMenuItem";
             this.sparaSomToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.sparaSomToolStripMenuItem.Text = "Save as..";
+            this.sparaSomToolStripMenuItem.Click += new System.EventHandler(this.sparaSomToolStripMenuItem_Click);
             // 
             // skrivUtToolStripMenuItem
             // 

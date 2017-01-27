@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,24 +14,49 @@ namespace Admin_base
 
     public partial class main_mdi : Form
     {
-        // Count how many windows are open.
-        public int windowCounter = 0;
+       
 
         public main_mdi()
         {
             InitializeComponent();            
         }
 
-
+        participents_form participents;
         private void nyttFönsterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            participents_form participents = new participents_form(this);
+            if (participents==null)
+            {
+                participents = new participents_form();
+                participents.MdiParent = this;
+                participents.Show();
+            }else
+            {
+                participents.Activate();  
+            }
+            
+        }
 
-            participents.MdiParent = this;
-            participents.Text = windowCounter.ToString();
-            participents.Show();
+        
+        private void öppnaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Predefined extention to standard "open Window"
+            OpenFileDialog open = new OpenFileDialog();
+            if(open.ShowDialog()==DialogResult.OK)
+            {
+                StreamReader reader = new StreamReader(File.OpenRead(open.FileName));
+                //To do: ways to open a specific file
+            }
+        }
 
-            windowCounter++;
+        private void sparaSomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Predefined extention to standard "open Window"
+            OpenFileDialog open = new OpenFileDialog();
+            if(open.ShowDialog()==DialogResult.OK)
+            {
+                StreamReader reader = new StreamReader(File.OpenRead(open.FileName));
+                //To do: ways to save a specific file
+            }
         }
     }
 }
