@@ -32,5 +32,10 @@ namespace Base
                 MessageBox.Show("Please select a grade.", "Error!", MessageBoxButtons.OK);
             }
         }
+
+        private void rating_combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
