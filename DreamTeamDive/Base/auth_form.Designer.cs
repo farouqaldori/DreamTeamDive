@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.authenticator = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.auth_button = new System.Windows.Forms.Button();
             this.help_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // authenticator
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 25);
-            this.textBox1.MaxLength = 6;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(171, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.authenticator.Location = new System.Drawing.Point(12, 25);
+            this.authenticator.MaxLength = 6;
+            this.authenticator.Name = "authenticator";
+            this.authenticator.Size = new System.Drawing.Size(171, 20);
+            this.authenticator.TabIndex = 0;
+            this.authenticator.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -79,7 +79,7 @@
             this.Controls.Add(this.help_button);
             this.Controls.Add(this.auth_button);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.authenticator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "auth_form";
             this.Text = "Authenticate";
@@ -91,7 +91,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox authenticator;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button auth_button;
         private System.Windows.Forms.Button help_button;

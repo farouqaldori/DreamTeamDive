@@ -292,6 +292,7 @@
             this.rating_combobox.Name = "rating_combobox";
             this.rating_combobox.Size = new System.Drawing.Size(141, 21);
             this.rating_combobox.TabIndex = 14;
+            this.rating_combobox.SelectedIndexChanged += new System.EventHandler(this.rating_combobox_SelectedIndexChanged);
             // 
             // judge_form
             // 

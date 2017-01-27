@@ -28,6 +28,7 @@ namespace Base
 
         private void auth_button_Click(object sender, EventArgs e)
         {
+
             //Kollar om det är dommare eller hoppare
             if (AuthWho == 'J')
             {
