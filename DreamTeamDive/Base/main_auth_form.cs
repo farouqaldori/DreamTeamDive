@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Base
+namespace Member_base
 {
     public partial class main_auth_form : Form
     {
@@ -20,7 +20,7 @@ namespace Base
         private void button1_Click(object sender, EventArgs e)
         {
             // Authentication successful for Judge
-            auth_form authform = new Base.auth_form('J');
+            auth_form authform = new Member_base.auth_form('J');
                 
             authform.Show();
             
@@ -29,7 +29,7 @@ namespace Base
         private void button2_Click(object sender, EventArgs e)
         {
           // Authentication successful for Diver
-            auth_form authform = new Base.auth_form('D');
+            auth_form authform = new Member_base.auth_form('D');
 
             authform.Show();
         }

@@ -1,4 +1,4 @@
-﻿namespace Base
+﻿namespace Member_base
 {
     partial class diver_form
     {

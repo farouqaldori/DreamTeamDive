@@ -6,18 +6,15 @@ using System.Threading.Tasks;
 
 namespace Admin_base
 {
-    class Competition
+    public class Competition
     {
         public int id { get; set; }
         public int type { get; set; }
-        public int date { get; set; }
-        public int[] number { get; set; }
-        
-       public Competition()
+        public string date { get; set; }
+        public List<int> members = new List<int>();
+
+        public Competition()
        {
-            id = -1;
-            type = 0;
-            date = 0;
        }
 
         public void generate()

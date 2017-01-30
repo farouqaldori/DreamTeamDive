@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Base
+namespace Member_base
 {
     public partial class diver_form : Form
     {

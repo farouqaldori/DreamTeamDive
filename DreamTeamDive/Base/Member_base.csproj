@@ -52,8 +52,8 @@
     <Compile Include="auth_form.Designer.cs">
       <DependentUpon>auth_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Diver.cs" />
-    <Compile Include="Judge.cs" />
+    <Compile Include="Classes\Diver.cs" />
+    <Compile Include="Classes\Judge.cs" />
     <Compile Include="main_auth_form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Admin_base\Admin_base.csproj">
+      <Project>{4e7b72b0-5cc4-4517-a485-4b7a3e4cefef}</Project>
+      <Name>Admin_base</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

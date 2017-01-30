@@ -3,36 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Admin_base;
 
-namespace Base
+namespace Member_base
 {
-    class Diver
+    public class Diver
     {
-
         public int id { get; set; }
-        int authCode { get; set; }
-        string name { get; set; }
-        string country { get; set; }
-        int competition { get; set; }
-
-
+        public int authCode { get; set; }
+        public string name { get; set; }
+        public string country { get; set; }
+        public int competition { get; set; }
+        
         public Diver()
         {
-            id = -1;
-            authCode = 0;
-            name = "";
-            country = "";
-            competition = -1;
         }
 
         public void Auth()
         {
-
         }
 
         public void jump()
         {
-
         }
     }
 }

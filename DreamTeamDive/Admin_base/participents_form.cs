@@ -12,13 +12,8 @@ namespace Admin_base
 {
     public partial class participents_form : Form
     {
-
-        // Create a new form to be able to manipulate the parent form.
-        private main_mdi _parent;
-
         public participents_form()
         {
-            
             InitializeComponent();
         }
 

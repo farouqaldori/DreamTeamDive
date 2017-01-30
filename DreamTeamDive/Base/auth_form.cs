@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Base
+namespace Member_base
 {
     public partial class auth_form : Form
     {
@@ -32,13 +32,13 @@ namespace Base
             //Kollar om det är dommare eller hoppare
             if (AuthWho == 'J')
             {
-                judge_form judgeform = new Base.judge_form();
+                judge_form judgeform = new Member_base.judge_form();
                 this.Hide();
                 judgeform.Show();
             }
             else if(AuthWho == 'D')
             {
-                diver_form diverform = new Base.diver_form();
+                diver_form diverform = new Member_base.diver_form();
                 this.Hide();
                 diverform.Show();
             }
