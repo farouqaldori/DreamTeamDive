@@ -9,6 +9,7 @@ namespace Member_base
 {
     public class Diver
     {
+
         public int id { get; set; }
         public int authCode { get; set; }
         public string name { get; set; }
