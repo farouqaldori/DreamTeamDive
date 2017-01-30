@@ -52,8 +52,6 @@
     <Compile Include="auth_form.Designer.cs">
       <DependentUpon>auth_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Diver.cs" />
-    <Compile Include="Classes\Judge.cs" />
     <Compile Include="main_auth_form.cs">
       <SubType>Form</SubType>
     </Compile>

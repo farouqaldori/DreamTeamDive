@@ -4,26 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Member_base
+namespace Admin_base
 {
-    public class Judge
+    public class Diver
     {
 
         public int id { get; set; }
         public int authCode { get; set; }
         public string name { get; set; }
+        public string country { get; set; }
         public int competition { get; set; }
 
-        public Judge()
+        public List<Jump> jumps = new List<Jump>();
+        
+        public Diver()
         {
+
         }
 
         public void Auth()
         {
         }
 
-        public void Rate(int jumpId)
+        public void jump()
         {
+            // Generate new jump and add to list.
+            Jump jump = new Jump();
+  
+            jumps.Add(jump);
         }
     }
 }

@@ -12,6 +12,8 @@ namespace Member_base
 {
     public partial class diver_form : Form
     {
+        public List<int> Jumps { get; set; }
+
         public diver_form()
         {
             InitializeComponent();
@@ -35,5 +37,7 @@ namespace Member_base
                 "5211A – back dive, half twist, straight position\n5337D – reverse one and a half somersaults with three and a half twists, in the Free position\n"+
                 "600A – armstand dive straight\n612B – armstand forward somersault pike\n624C – armstand back double somersault tuck", "Information");
         }
+
+      
     }
 }

@@ -36,11 +36,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.difficulity_numup = new System.Windows.Forms.NumericUpDown();
             this.jumpstyle_combobox = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.difficulity_numup)).BeginInit();
@@ -128,6 +128,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Perform Jump";
             // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.button2.Location = new System.Drawing.Point(88, 98);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(29, 25);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "?";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -175,17 +186,6 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Perform Jump!";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.button2.Location = new System.Drawing.Point(88, 98);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(29, 25);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "?";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // diver_form
             // 

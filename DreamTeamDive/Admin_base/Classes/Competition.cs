@@ -11,10 +11,12 @@ namespace Admin_base
         public int id { get; set; }
         public int type { get; set; }
         public string date { get; set; }
-        public List<int> members = new List<int>();
+
+        public List<Diver> members = new List<Diver>();
 
         public Competition()
        {
+            
        }
 
         public void generate()
@@ -24,7 +26,7 @@ namespace Admin_base
 
         public void addDiver()
         {
-
+            
         }
 
         public void addJudge()
@@ -36,9 +38,16 @@ namespace Admin_base
         {
 
         }
-    }
 
-    
 
-    
+        /// <summary>
+        /// Calculate the highest rated jumper and determine the winner.
+        /// </summary>
+        /// <returns>Return the diver object of the winner</returns>
+        public Diver end()
+        {
+
+            return members[0];
+        }
+    }  
 }

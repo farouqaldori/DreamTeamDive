@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Competition.cs" />
+    <Compile Include="Classes\Diver.cs" />
+    <Compile Include="Classes\Judge.cs" />
+    <Compile Include="Classes\Jump.cs" />
     <Compile Include="Classes\Mysql_db.cs" />
     <Compile Include="main_form.cs">
       <SubType>Form</SubType>
