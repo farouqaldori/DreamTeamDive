@@ -8,7 +8,6 @@ namespace Member_base
 {
     public class Judge
     {
-
         public int id { get; set; }
         public int authCode { get; set; }
         public string name { get; set; }
