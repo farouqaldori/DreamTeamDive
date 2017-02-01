@@ -44,9 +44,9 @@ namespace Test_Admin_base
             diver2.country = "Sweden";
             diver2.competition = competition1.id;
 
-            // Add divers to contest.
-            competition1.members.Add(diver1);
-            competition1.members.Add(diver2);
+            // Add divers to contest using addDiver.
+            competition1.addDiver(diver1);
+            competition1.addDiver(diver2);
 
             // Check diver1 information
             Assert.AreEqual(diver1.name, "Ahmed");
@@ -110,10 +110,16 @@ namespace Test_Admin_base
             Assert.AreEqual(diver2.jumps[1].grade[0].Item2, 1);
             Assert.AreEqual(diver2.jumps[1].grade[1].Item2, 10);
 
-            // End event
-            Assert.AreEqual(competition1.end(), diver1);
+            // Calculate sum of diver points
+            diver1.calcSum();
+            diver2.calcSum();
 
+            // Check if total grade is accurate.
+            Assert.AreEqual(diver1.sumGrades, 28);
+            Assert.AreEqual(diver2.sumGrades, 16);
+
+            // End event and check winner
+            Assert.AreEqual(competition1.end(), diver1.sumGrades);
         }
-
     }
 }

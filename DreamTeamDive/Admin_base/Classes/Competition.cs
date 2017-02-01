@@ -12,26 +12,29 @@ namespace Admin_base
         public int type { get; set; }
         public string date { get; set; }
 
-        public List<Diver> members = new List<Diver>();
+        public List<Diver> divers = new List<Diver>();
 
+        public List<Judge> judges = new List<Judge>();
         public Competition()
-       {
+        {
             
-       }
+        }
 
         public void generate()
         {
 
         }
 
-        public void addDiver()
+        public void addDiver(Diver diver)
         {
-            
+            //Add Diver
+            divers.Add(diver);
         }
 
-        public void addJudge()
+        public void addJudge(Judge judge)
         {
-
+            //Add Judge
+           judges.Add(judge);
         }
 
         public void start()
@@ -44,10 +47,17 @@ namespace Admin_base
         /// Calculate the highest rated jumper and determine the winner.
         /// </summary>
         /// <returns>Return the diver object of the winner</returns>
-        public Diver end()
+        public double end()
         {
-
-            return members[0];
+            double max = double.MinValue;
+            foreach(var _divers in divers)
+            {
+                if(_divers.sumGrades > max)
+                {
+                    max = _divers.sumGrades;
+                }
+            }
+            return max;
         }
     }  
 }

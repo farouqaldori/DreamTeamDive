@@ -16,7 +16,9 @@ namespace Admin_base
         public int competition { get; set; }
 
         public List<Jump> jumps = new List<Jump>();
-        
+        public double sumGrades { get; set; }
+
+
         public Diver()
         {
 
@@ -30,8 +32,19 @@ namespace Admin_base
         {
             // Generate new jump and add to list.
             Jump jump = new Jump();
-  
+          
             jumps.Add(jump);
+        }
+
+        public void calcSum()
+        {
+            foreach (var jump in jumps)
+            {
+                foreach(var grade in jump.grade)
+                {
+                    sumGrades += grade.Item2;
+                }
+            }
         }
     }
 }
