@@ -179,6 +179,7 @@
             this.MaximizeBox = false;
             this.Name = "main_mdi";
             this.Text = "DreamTeam Dive Admin";
+            this.Load += new System.EventHandler(this.main_mdi_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

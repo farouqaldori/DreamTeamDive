@@ -26,6 +26,7 @@ namespace Admin_base
 
         public void Auth()
         {
+
         }
 
         public void jump()

@@ -84,5 +84,10 @@ namespace Admin_base
             }
 
         }
+
+        private void main_mdi_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
