@@ -10,11 +10,16 @@ namespace Test_Admin_base
     public class UnitTestJudge
     {
         [TestMethod]
-        public void connectToServer()
+        public void databaseInit()
         {
-            Mysql_db.init();
-
+            // Test if connection can be established.
             Assert.AreEqual(Mysql_db.connect(), true);
+
+            // Test command
+            string command = "SELECT * FROM Divers";
+
+            // Execute command
+            Assert.AreEqual(Mysql_db.execute(command), true);
         }
 
         [TestMethod]
@@ -37,7 +42,7 @@ namespace Test_Admin_base
             diver1.name = "Ahmed";
             diver1.country = "Sweden";
             diver1.competition = competition1.id;
-            
+
             diver2.id = 2;
             diver2.name = "Peter";
             diver2.country = "Sweden";
@@ -85,7 +90,7 @@ namespace Test_Admin_base
             // Check if diver1 jump1 recieved grade.
             Assert.AreEqual(diver1.jumps[0].grade[0].Item2, 10);
             Assert.AreEqual(diver1.jumps[0].grade[1].Item2, 6.5);
-           
+
             // Check if diver2 jump recieved grade.
             Assert.AreEqual(diver2.jumps[0].grade[0].Item2, 5);
             Assert.AreEqual(diver2.jumps[0].grade[1].Item2, 0);

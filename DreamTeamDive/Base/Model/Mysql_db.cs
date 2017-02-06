@@ -3,36 +3,73 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+using System.Data.SqlClient;
 
 namespace Diver_Contest
 {
     public static class Mysql_db
     {
-        public static string host;
+        public static string server;
         public static string username;
         public static string password;
-        public static string table;
+        public static string database;
+        public static string port;
+        public static string connectionString;
 
-        public static void init()
-        {
-            host = "localhost";
-            username = "db_username";
-            password = "db_pass";
-            table = "db_table";
-        }
+        public static MySql.Data.MySqlClient.MySqlConnection connection;
 
+        /// <summary>
+        /// Connect to the MySql database.
+        /// </summary>
+        /// <returns>True if connection established.</returns>
         public static bool connect()
         {
-            // If connection is successful
-            return true;
+            // Authentication credentials for the database.
+            server = "gonimble.net";
+            port = "3306";
+            database = "gonimble_dreamteam";
+            username = "gonimble_dtuser";
+            password = "9cUJ-d.9?ZDp";
+
+            // Create connection string.
+            connectionString = "Server=" + server + ";Port=" + port + ";Database=" + database + ";Uid=" + username + ";Pwd=" + password + ";";
+
+            // Try connection
+            try
+            {
+                connection = new MySqlConnection(connectionString);
+                connection.Open();
+                return true;
+            }
+            catch (MySql.Data.MySqlClient.MySqlException e)
+            {
+                return false;
+            }
         }
 
-        public static void execute()
+        /// <summary>
+        /// Execute a command to the database.
+        /// </summary>
+        /// <param name="sqlCommand">The SQL command to execute.</param>
+        /// /// <returns>True if command executed.</returns>
+        public static bool execute(string sqlCommand)
         {
-        }
+            //Create command and assign the sqlCommand plus connection.
+            MySqlCommand cmd = new MySqlCommand(sqlCommand, connection);
 
-        public static void get()
-        {
+            try
+            {
+                //Execute command
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                // Command failed
+                return false;
+            }
         }
     }
 }
