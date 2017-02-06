@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MetroFramework">
+      <HintPath>..\Base\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\Base\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\Base\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,34 +60,16 @@
     <Compile Include="Classes\Judge.cs" />
     <Compile Include="Classes\Jump.cs" />
     <Compile Include="Classes\Mysql_db.cs" />
-    <Compile Include="main_form.cs">
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main_form.Designer.cs">
-      <DependentUpon>main_form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="open_form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="open_form.Designer.cs">
-      <DependentUpon>open_form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="participents_form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="participents_form.Designer.cs">
-      <DependentUpon>participents_form.cs</DependentUpon>
+    <Compile Include="Main.designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="main_form.resx">
-      <DependentUpon>main_form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="open_form.resx">
-      <DependentUpon>open_form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="participents_form.resx">
-      <DependentUpon>participents_form.cs</DependentUpon>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Member_base
+namespace Diver_Contest
 {
     static class Program
     {

@@ -54,13 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Admin_base\Admin_base.csproj">
-      <Project>{4e7b72b0-5cc4-4517-a485-4b7a3e4cefef}</Project>
-      <Name>Admin_base</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Base\Member_base.csproj">
+    <ProjectReference Include="..\Base\Diver_Contest.csproj">
       <Project>{65222455-f9a0-4728-b574-fa50200295c0}</Project>
-      <Name>Member_base</Name>
+      <Name>Diver_Contest</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

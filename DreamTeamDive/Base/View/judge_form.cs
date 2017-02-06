@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Admin_base
+namespace Diver_Contest
 {
-    public partial class open_form:Form
+    public partial class judge_form : MetroFramework.Forms.MetroForm
     {
-        public open_form()
+        public judge_form()
         {
             InitializeComponent();
+        }
+
+        private void judge_form_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

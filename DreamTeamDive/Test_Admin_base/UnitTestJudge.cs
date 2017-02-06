@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Admin_base;
-using Member_base;
+using Diver_Contest;
 
 
 namespace Test_Admin_base

@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Diver_Contest
+{
+    public partial class diver_form : MetroFramework.Forms.MetroForm
+    {
+        public diver_form()
+        {
+            InitializeComponent();
+        }
+
+        private void metroLabel8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroLabel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroProgressSpinner1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void diver_form_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroProgressSpinner4_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

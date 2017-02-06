@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MetroFramework">
+      <HintPath>.\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>.\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>.\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,42 +55,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="auth_form.cs">
+    <Compile Include="Presenter\ModelV.cs" />
+    <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="auth_form.Designer.cs">
+    <Compile Include="Main.designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Competition.cs" />
+    <Compile Include="Classes\Diver.cs" />
+    <Compile Include="Classes\Judge.cs" />
+    <Compile Include="Classes\Jump.cs" />
+    <Compile Include="Classes\Mysql_db.cs" />
+    <Compile Include="Presenter\PresenterForMain.cs" />
+    <Compile Include="Presenter\Register.cs" />
+    <Compile Include="View\auth_form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\auth_form.Designer.cs">
       <DependentUpon>auth_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="main_auth_form.cs">
+    <Compile Include="View\IFormMain.cs" />
+    <Compile Include="View\main_auth_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="main_auth_form.Designer.cs">
+    <Compile Include="View\main_auth_form.Designer.cs">
       <DependentUpon>main_auth_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="diver_form.cs">
+    <Compile Include="View\diver_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="diver_form.Designer.cs">
+    <Compile Include="View\diver_form.Designer.cs">
       <DependentUpon>diver_form.cs</DependentUpon>
     </Compile>
-    <Compile Include="judge_form.cs">
+    <Compile Include="View\judge_form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="judge_form.Designer.cs">
+    <Compile Include="View\judge_form.Designer.cs">
       <DependentUpon>judge_form.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="auth_form.resx">
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\auth_form.resx">
       <DependentUpon>auth_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="main_auth_form.resx">
+    <EmbeddedResource Include="View\main_auth_form.resx">
       <DependentUpon>main_auth_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="diver_form.resx">
+    <EmbeddedResource Include="View\diver_form.resx">
       <DependentUpon>diver_form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="judge_form.resx">
+    <EmbeddedResource Include="View\judge_form.resx">
       <DependentUpon>judge_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -106,12 +133,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Admin_base\Admin_base.csproj">
-      <Project>{4e7b72b0-5cc4-4517-a485-4b7a3e4cefef}</Project>
-      <Name>Admin_base</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
