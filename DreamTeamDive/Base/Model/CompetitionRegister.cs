@@ -13,16 +13,14 @@ namespace Diver_Contest
 {
     public class CompetitionRegister : ICompetition
     {
-        
+        main_auth_form mainForm = new main_auth_form();
         diver_form diver = new diver_form();
-        void ICompetition.Login()
+        void ICompetition.Login(string authCode)
         {
-            string authCode = authBOX.Text;
             string sqlAuthCheck;
-
-            if (mainForm.DiverRadioButton.Checked == true)
+            if (mainForm.DiverButton.Enabled == true)
             {
-               sqlAuthCheck = "SELECT * FROM Divers WHERE auth_code = " + authCode;
+                sqlAuthCheck = "SELECT * FROM Divers WHERE auth_code = " + authCode;
             }
             else
             {
@@ -31,16 +29,17 @@ namespace Diver_Contest
 
             try
             {
+                //Connect to Database
+                Mysql_db.connect();
+                // Check authentication code
                 MySqlCommand command = Mysql_db.execute(sqlAuthCheck);
                 
-                if(Convert.ToInt32(command.ExecuteScalar()) == 0)
-                {
-                    // Error validating auth code
-                }
-                else
+                //While not 0
+                if(Convert.ToInt32(command.ExecuteScalar()) != 0)
                 {
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
+                        //While reading in DB
                         while (reader.Read())
                         {
                             //Fetch data from database and create new diver
@@ -48,14 +47,19 @@ namespace Diver_Contest
 
                             diver.id = Convert.ToInt32(reader["id"]);
                             diver.name = reader["name"].ToString();
-                            diver.country = reader["coutry"].ToString();
+                            diver.country = reader["country"].ToString();
                             diver.competition = Convert.ToInt32(reader["in_competition"]);
                         }
                     }
-
+                    //If validation open driver form
                     diver.Show();
-                    mainForm.Hide();
+                    
                 }
+                else
+                {
+                    // Error validating auth code
+                }
+               
             }
             catch
             {
@@ -66,8 +70,9 @@ namespace Diver_Contest
 
         void ICompetition.Exit()
         {
-            if (mainForm.ExitButn.Enabled)
+            if (mainForm.ExitButn.Enabled == true)
             {
+                //Exit application
                 Application.Exit();
             }
         }
@@ -76,6 +81,7 @@ namespace Diver_Contest
         {
             if(diver.JumpButton.Enabled)
             {
+                //Perform Jump
                 Diver Diver = new Diver();
                 Diver.jump();
             }

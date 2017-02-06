@@ -24,8 +24,11 @@ namespace Diver_Contest
 
         public void Login_Click(object sender, EventArgs e)
         {
+            string authCode = authBox.Text.ToString();
             if(this.EventLogin != null)
-                this.EventLogin();
+                this.EventLogin(authCode);
+
+            this.Hide();
         }
 
         public void ExitButn_Click(object sender, EventArgs e)
@@ -49,6 +52,16 @@ namespace Diver_Contest
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void authBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DiverButton_CheckedChanged(object sender, EventArgs e)
         {
 
         }

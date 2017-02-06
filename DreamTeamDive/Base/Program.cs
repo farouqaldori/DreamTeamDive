@@ -20,7 +20,7 @@ namespace Diver_Contest
             main_auth_form MainForm = new main_auth_form();
             CompetitionRegister Register = new CompetitionRegister();
             PresenterForMain Present = new PresenterForMain(MainForm, Register);
-
+            
             Application.Run(MainForm); 
             
         }

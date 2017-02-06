@@ -30,10 +30,10 @@
         {
             this.LoginButton = new MetroFramework.Controls.MetroButton();
             this.ExitButn = new MetroFramework.Controls.MetroButton();
-            this.authBOX = new MetroFramework.Controls.MetroTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.JudgeRadioButton = new MetroFramework.Controls.MetroRadioButton();
-            this.DiverRadioButton = new MetroFramework.Controls.MetroRadioButton();
+            this.authBox = new System.Windows.Forms.TextBox();
+            this.DiverButton = new MetroFramework.Controls.MetroCheckBox();
+            this.JudgeButton = new MetroFramework.Controls.MetroCheckBox();
             this.SuspendLayout();
             // 
             // LoginButton
@@ -56,37 +56,6 @@
             this.ExitButn.UseSelectable = true;
             this.ExitButn.Click += new System.EventHandler(this.ExitButn_Click);
             // 
-            // authBOX
-            // 
-            // 
-            // 
-            // 
-            this.authBOX.CustomButton.Image = null;
-            this.authBOX.CustomButton.Location = new System.Drawing.Point(233, 1);
-            this.authBOX.CustomButton.Name = "";
-            this.authBOX.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.authBOX.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.authBOX.CustomButton.TabIndex = 1;
-            this.authBOX.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.authBOX.CustomButton.UseSelectable = true;
-            this.authBOX.CustomButton.Visible = false;
-            this.authBOX.Lines = new string[0];
-            this.authBOX.Location = new System.Drawing.Point(23, 140);
-            this.authBOX.MaxLength = 32767;
-            this.authBOX.Name = "authBOX";
-            this.authBOX.PasswordChar = '\0';
-            this.authBOX.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.authBOX.SelectedText = "";
-            this.authBOX.SelectionLength = 0;
-            this.authBOX.SelectionStart = 0;
-            this.authBOX.ShortcutsEnabled = true;
-            this.authBOX.Size = new System.Drawing.Size(255, 23);
-            this.authBOX.TabIndex = 5;
-            this.authBOX.UseSelectable = true;
-            this.authBOX.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.authBOX.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.authBOX.Click += new System.EventHandler(this.TextBox_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -97,25 +66,35 @@
             this.label1.Text = "Identify yourself with authentication code";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // JudgeRadioButton
+            // authBox
             // 
-            this.JudgeRadioButton.AutoSize = true;
-            this.JudgeRadioButton.Location = new System.Drawing.Point(152, 119);
-            this.JudgeRadioButton.Name = "JudgeRadioButton";
-            this.JudgeRadioButton.Size = new System.Drawing.Size(54, 15);
-            this.JudgeRadioButton.TabIndex = 7;
-            this.JudgeRadioButton.Text = "Judge";
-            this.JudgeRadioButton.UseSelectable = true;
+            this.authBox.Location = new System.Drawing.Point(23, 143);
+            this.authBox.Name = "authBox";
+            this.authBox.Size = new System.Drawing.Size(255, 20);
+            this.authBox.TabIndex = 9;
+            this.authBox.UseSystemPasswordChar = true;
+            this.authBox.TextChanged += new System.EventHandler(this.authBox_TextChanged);
             // 
-            // DiverRadioButton
+            // DiverButton
             // 
-            this.DiverRadioButton.AutoSize = true;
-            this.DiverRadioButton.Location = new System.Drawing.Point(23, 119);
-            this.DiverRadioButton.Name = "DiverRadioButton";
-            this.DiverRadioButton.Size = new System.Drawing.Size(50, 15);
-            this.DiverRadioButton.TabIndex = 8;
-            this.DiverRadioButton.Text = "Diver";
-            this.DiverRadioButton.UseSelectable = true;
+            this.DiverButton.AutoSize = true;
+            this.DiverButton.Location = new System.Drawing.Point(23, 122);
+            this.DiverButton.Name = "DiverButton";
+            this.DiverButton.Size = new System.Drawing.Size(50, 15);
+            this.DiverButton.TabIndex = 10;
+            this.DiverButton.Text = "Diver";
+            this.DiverButton.UseSelectable = true;
+            this.DiverButton.CheckedChanged += new System.EventHandler(this.DiverButton_CheckedChanged);
+            // 
+            // JudgeButton
+            // 
+            this.JudgeButton.AutoSize = true;
+            this.JudgeButton.Location = new System.Drawing.Point(152, 122);
+            this.JudgeButton.Name = "JudgeButton";
+            this.JudgeButton.Size = new System.Drawing.Size(54, 15);
+            this.JudgeButton.TabIndex = 11;
+            this.JudgeButton.Text = "Judge";
+            this.JudgeButton.UseSelectable = true;
             // 
             // main_auth_form
             // 
@@ -123,10 +102,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(304, 241);
-            this.Controls.Add(this.DiverRadioButton);
-            this.Controls.Add(this.JudgeRadioButton);
+            this.Controls.Add(this.JudgeButton);
+            this.Controls.Add(this.DiverButton);
+            this.Controls.Add(this.authBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.authBOX);
             this.Controls.Add(this.ExitButn);
             this.Controls.Add(this.LoginButton);
             this.Name = "main_auth_form";
@@ -143,8 +122,8 @@
         public MetroFramework.Controls.MetroButton LoginButton;
         public MetroFramework.Controls.MetroButton ExitButn;
         private System.Windows.Forms.Label label1;
-        public MetroFramework.Controls.MetroTextBox authBOX;
-        public MetroFramework.Controls.MetroRadioButton JudgeRadioButton;
-        public MetroFramework.Controls.MetroRadioButton DiverRadioButton;
+        public System.Windows.Forms.TextBox authBox;
+        public MetroFramework.Controls.MetroCheckBox DiverButton;
+        public MetroFramework.Controls.MetroCheckBox JudgeButton;
     }
 }
