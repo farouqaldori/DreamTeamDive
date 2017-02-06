@@ -8,7 +8,7 @@ namespace Diver_Contest
 {
     public interface ICompetition
     {
-        void Continute();
+        void Login();
 
         void Exit();
 

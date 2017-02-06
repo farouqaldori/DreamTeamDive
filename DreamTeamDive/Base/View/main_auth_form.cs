@@ -22,10 +22,10 @@ namespace Diver_Contest
 
         }
 
-        public void metroButton1_Click(object sender, EventArgs e)
+        public void Login_Click(object sender, EventArgs e)
         {
-            if(this.EventContinue != null)
-                this.EventContinue();
+            if(this.EventLogin != null)
+                this.EventLogin();
         }
 
         public void ExitButn_Click(object sender, EventArgs e)
@@ -34,10 +34,23 @@ namespace Diver_Contest
              this.EventExit();
         }
 
-        public event DelegateConinute EventContinue = null;
+        public event DelegateLogin EventLogin = null;
         public event DelegateExit EventExit = null;
         public event DelegateJump EventJump = null;
-        
 
+        private void main_auth_form_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TextBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

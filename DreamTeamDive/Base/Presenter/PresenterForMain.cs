@@ -20,14 +20,14 @@ namespace Diver_Contest
         {
             this._Model = cr;
             this._view = view;
-            this._view.EventContinue += Continute;
+            this._view.EventLogin += Login;
             this._view.EventExit += Exit;
             this._view.EventJump += Jump;
         }
 
-        public void Continute()
+        public void Login()
         {
-            this._Model.Continute();
+            this._Model.Login();
         }
 
         public void Exit()

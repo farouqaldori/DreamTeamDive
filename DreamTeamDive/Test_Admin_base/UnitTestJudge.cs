@@ -19,7 +19,15 @@ namespace Test_Admin_base
             string command = "SELECT * FROM Divers";
 
             // Execute command
-            Assert.AreEqual(Mysql_db.execute(command), true);
+            try
+            {
+                Mysql_db.execute(command);
+                Assert.AreEqual(1, 1);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail();
+            }
         }
 
         [TestMethod]

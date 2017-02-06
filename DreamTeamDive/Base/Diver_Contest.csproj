@@ -73,12 +73,6 @@
     <Compile Include="Model\Mysql_db.cs" />
     <Compile Include="Presenter\PresenterForMain.cs" />
     <Compile Include="Model\CompetitionRegister.cs" />
-    <Compile Include="View\auth_form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\auth_form.Designer.cs">
-      <DependentUpon>auth_form.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\IFormMain.cs" />
     <Compile Include="View\main_auth_form.cs">
       <SubType>Form</SubType>
@@ -102,9 +96,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\auth_form.resx">
-      <DependentUpon>auth_form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\main_auth_form.resx">
       <DependentUpon>main_auth_form.cs</DependentUpon>

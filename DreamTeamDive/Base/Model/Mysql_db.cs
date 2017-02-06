@@ -54,7 +54,7 @@ namespace Diver_Contest
         /// </summary>
         /// <param name="sqlCommand">The SQL command to execute.</param>
         /// /// <returns>True if command executed.</returns>
-        public static bool execute(string sqlCommand)
+        public static MySqlCommand execute(string sqlCommand)
         {
             //Create command and assign the sqlCommand plus connection.
             MySqlCommand cmd = new MySqlCommand(sqlCommand, connection);
@@ -63,12 +63,12 @@ namespace Diver_Contest
             {
                 //Execute command
                 cmd.ExecuteNonQuery();
-                return true;
+                return cmd;
             }
-            catch
+            catch (MySqlException e)
             {
                 // Command failed
-                return false;
+                throw e;
             }
         }
     }

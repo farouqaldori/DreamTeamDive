@@ -48,7 +48,7 @@ namespace Diver_Contest
                 EventJump();
         }
 
-        public event DelegateConinute EventContinue = null;
+        public event DelegateLogin EventLogin = null;
         public event DelegateExit EventExit = null;
         public event DelegateJump EventJump = null;
 
