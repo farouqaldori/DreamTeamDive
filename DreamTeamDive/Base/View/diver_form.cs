@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Diver_Contest
 {
-    public partial class diver_form : MetroFramework.Forms.MetroForm
+    public partial class diver_form : MetroFramework.Forms.MetroForm, IFormMain
     {
         public diver_form()
         {
@@ -41,5 +41,16 @@ namespace Diver_Contest
         {
 
         }
+
+        private void Jump_Click(object sender, EventArgs e)
+        {
+            if (this.EventJump != null)
+                EventJump();
+        }
+
+        public event DelegateConinute EventContinue = null;
+        public event DelegateExit EventExit = null;
+        public event DelegateJump EventJump = null;
+
     }
 }

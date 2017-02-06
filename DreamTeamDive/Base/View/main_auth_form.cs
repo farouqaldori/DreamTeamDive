@@ -30,12 +30,13 @@ namespace Diver_Contest
 
         public void ExitButn_Click(object sender, EventArgs e)
         {
-            if (this.EventExit != null)
-                 this.EventExit();
+            if(this.EventExit != null)
+             this.EventExit();
         }
 
         public event DelegateConinute EventContinue = null;
         public event DelegateExit EventExit = null;
+        public event DelegateJump EventJump = null;
         
 
     }

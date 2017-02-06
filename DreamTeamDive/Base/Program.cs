@@ -16,7 +16,13 @@ namespace Diver_Contest
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new main_auth_form());
+
+            main_auth_form MainForm = new main_auth_form();
+            CompetitionRegister Register = new CompetitionRegister();
+            PresenterForMain Present = new PresenterForMain(MainForm, Register);
+
+            Application.Run(MainForm); 
+            
         }
     }
 }

@@ -36,7 +36,7 @@
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.JumpButton = new MetroFramework.Controls.MetroButton();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.metroProgressSpinner1 = new MetroFramework.Controls.MetroProgressSpinner();
@@ -122,19 +122,20 @@
             this.metroLabel8.Text = "Set Difficulity";
             this.metroLabel8.Click += new System.EventHandler(this.metroLabel8_Click);
             // 
-            // metroButton1
+            // JumpButton
             // 
-            this.metroButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroButton1.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.metroButton1.Highlight = true;
-            this.metroButton1.Location = new System.Drawing.Point(179, 221);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(117, 109);
-            this.metroButton1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroButton1.TabIndex = 8;
-            this.metroButton1.Text = "Jump";
-            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroButton1.UseSelectable = true;
+            this.JumpButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.JumpButton.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.JumpButton.Highlight = true;
+            this.JumpButton.Location = new System.Drawing.Point(179, 221);
+            this.JumpButton.Name = "JumpButton";
+            this.JumpButton.Size = new System.Drawing.Size(117, 109);
+            this.JumpButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.JumpButton.TabIndex = 8;
+            this.JumpButton.Text = "Jump";
+            this.JumpButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.JumpButton.UseSelectable = true;
+            this.JumpButton.Click += new System.EventHandler(this.Jump_Click);
             // 
             // metroComboBox1
             // 
@@ -231,7 +232,7 @@
             this.Controls.Add(this.metroProgressSpinner1);
             this.Controls.Add(this.metroComboBox2);
             this.Controls.Add(this.metroComboBox1);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.JumpButton);
             this.Controls.Add(this.metroLabel8);
             this.Controls.Add(this.metroLabel7);
             this.Controls.Add(this.metroLabel6);
@@ -258,7 +259,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel8;
-        private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
         private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner1;
@@ -268,5 +268,6 @@
         private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner5;
         private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner6;
         private MetroFramework.Components.MetroToolTip metroToolTip1;
+        public MetroFramework.Controls.MetroButton JumpButton;
     }
 }

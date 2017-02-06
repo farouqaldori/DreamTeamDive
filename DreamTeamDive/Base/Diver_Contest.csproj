@@ -55,20 +55,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Presenter\ModelV.cs" />
+    <Compile Include="Model\ICompetition.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Competition.cs" />
-    <Compile Include="Classes\Diver.cs" />
-    <Compile Include="Classes\Judge.cs" />
-    <Compile Include="Classes\Jump.cs" />
-    <Compile Include="Classes\Mysql_db.cs" />
+    <Compile Include="Model\Competition.cs" />
+    <Compile Include="Model\Diver.cs" />
+    <Compile Include="Model\Judge.cs" />
+    <Compile Include="Model\Jump.cs" />
+    <Compile Include="Model\Mysql_db.cs" />
     <Compile Include="Presenter\PresenterForMain.cs" />
-    <Compile Include="Presenter\Register.cs" />
+    <Compile Include="Model\CompetitionRegister.cs" />
     <Compile Include="View\auth_form.cs">
       <SubType>Form</SubType>
     </Compile>

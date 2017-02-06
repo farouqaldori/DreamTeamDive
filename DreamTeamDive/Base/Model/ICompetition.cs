@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Diver_Contest
 {
-    public interface ModelV
+    public interface ICompetition
     {
         void Continute();
 
         void Exit();
+
+        void Jump();
     }
 }
