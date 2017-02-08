@@ -13,78 +13,77 @@ namespace Diver_Contest
 {
     public class CompetitionRegister : ICompetition
     {
-        main_auth_form mainForm = new main_auth_form();
-        diver_form diver = new diver_form();
-        void ICompetition.Login(string authCode, Diver diver, diver_form DivForm)
+        void ICompetition.StartConnection()
         {
-            string sqlAuthCheck;
-            if (mainForm.DiverButton.Enabled == true)
+            Mysql_db.connect();
+        }
+
+        Diver ICompetition.Login(string _authcode)
+        {
+            // Construct MySql code to be executed.
+            MySqlCommand command = new MySqlCommand("SELECT * FROM Divers WHERE auth_code = @authCode", Mysql_db.connection);
+            command.Parameters.AddWithValue("@authCode", _authcode);
+
+            if (Convert.ToInt32(command.ExecuteScalar()) == 0)
             {
-                sqlAuthCheck = "SELECT * FROM Divers WHERE auth_code = " + authCode;
+                throw new System.ArgumentException("Invalid_auth");
             }
             else
             {
-                sqlAuthCheck = "SELECT * FROM Judges WHERE auth_code = " + authCode;
-            }
-
-            try
-            {
-                //Connect to Database
-                Mysql_db.connect();
-                // Check authentication code
-                MySqlCommand command = Mysql_db.execute(sqlAuthCheck);
-             
-                //While not 0
-                if(Convert.ToInt32(command.ExecuteScalar()) != 0)
+                using (MySqlDataReader reader = command.ExecuteReader())
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    Diver diver = new Diver();
+                    while (reader.Read())
                     {
-                        //While reading in DB
-                        while (reader.Read())
-                        {
-                            //Fetch data from database and create new diver
-                            
-
-                            diver.id = Convert.ToInt32(reader["id"]);
-                            diver.name = reader["name"].ToString();
-                            diver.country = reader["country"].ToString();
-                            diver.competition = Convert.ToInt32(reader["in_competition"]);
-                        }
+                        diver.id = Convert.ToInt32(reader["id"]);
+                        diver.name = reader["name"].ToString();
+                        diver.country = reader["country"].ToString();
+                        diver.competition = Convert.ToInt32(reader["in_competition"]);
                     }
-                    //If validation open driver form
-                    DivForm.Show();
-                    
+                    return diver;
                 }
-                else
-                {
-                    MessageBox.Show("Not a valid Code!", "Error");
-
-                }
-               
-            }
-            catch
-            {
-                // Logg error
             }
 
         }
 
         void ICompetition.Exit()
         {
-            if (mainForm.ExitButton.Enabled == true)
-            {
-                //Exit application
-                Application.Exit();
-            }
+
         }
 
-        void ICompetition.Jump(Diver diver, diver_form DivForm)
+        void ICompetition.Jump()
         {
-            if(DivForm.JumpButton.Enabled)
-            {
-                //Perform Jump
-                diver.jump();
-            }
+
         }
+
+        List<Jump> ICompetition.UpdateJumps(int diver_id)
+        {
+            // Construct MySql code to be executed.
+            MySqlCommand command = new MySqlCommand("SELECT * FROM Jumps WHERE jumper = @diverId", Mysql_db.connection);
+            command.Parameters.AddWithValue("@diverId", diver_id);
+
+            // Create new jump lists.
+            List<Jump> newJumps = new List<Jump>();
+
+            using (MySqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    Jump newJump = new Jump();
+                    newJump.id = Convert.ToInt32(reader["id"]);
+                    newJump.difficulty = Convert.ToInt32(reader["difficulty"]);
+                    newJump.status = Convert.ToInt32(reader["status"]);
+                    newJump.style = Convert.ToInt32(reader["style"]);
+                    newJump.form = Convert.ToDouble(reader["form"]);
+                    newJump.takeOff = Convert.ToDouble(reader["takeOff"]);
+                    newJump.finishing = Convert.ToDouble(reader["finishing"]);
+
+                    newJumps.Add(newJump);
+                }
+                return newJumps;
+            }
+
+        }
+        
     }
 }

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 
 namespace Diver_Contest
 {
-    public class PresenterForMain
+    public class PresenterForMain 
     {
-        public IFormMain _view { get; set; }
+        public main_auth_form _mainform { get; set; }
+        public diver_form _diverform { get; set; }
 
         public ICompetition _Model { get; set; }
 
@@ -16,18 +18,49 @@ namespace Diver_Contest
         /// Default Constructor
         /// </summary>
         /// <param name="view"></param>
-        public PresenterForMain(IFormMain view, CompetitionRegister cr)
+        public PresenterForMain(diver_form diverform, main_auth_form mainform, CompetitionRegister cr)
         {
             this._Model = cr;
-            this._view = view;
-            this._view.EventLogin += Login;
-            this._view.EventExit += Exit;
-            this._view.EventJump += Jump;
+            this._mainform = mainform;
+            this._diverform = diverform;
+
+            // Start db connection
+            this._Model.StartConnection();
+
+            this._mainform.EventLogin += Login;
+            this._mainform.EventExit += Exit;
+            this._mainform.EventJump += Jump;
+            this._diverform.EventUpdateJumps += UpdateJumps;
+            
         }
 
-        public void Login(string authCode, Diver diver, diver_form DivForm)
+        public void UpdateJumps()
         {
-            this._Model.Login(authCode, diver, DivForm);
+            List <Jump> newJumps = this._Model.UpdateJumps(_diverform.diver.id);
+            this._diverform.jump_updater_backgroundWorker.ReportProgress(1, newJumps);
+        }
+
+        public void Login()
+        {
+            string authCode = _mainform.authBox.Text;
+            if (_mainform.diver_radio_button.Checked)
+            {
+                try
+                {
+                    // Authentication successfull
+                    Diver diver = this._Model.Login(authCode);
+                    _mainform.Hide();
+                    _diverform.diver = diver;
+                    _diverform.Text = "Welcome, " + diver.name;
+                    _diverform.jump_updater_backgroundWorker.RunWorkerAsync();
+                    _diverform.Show();
+                }
+                catch
+                {
+                    // Authentication failed
+                    System.Windows.Forms.MessageBox.Show("Please re-enter your authentication or choose the right type.", "Error!");
+                }
+            }
         }
 
         public void Exit()
@@ -35,9 +68,9 @@ namespace Diver_Contest
             this._Model.Exit();
         }
 
-        public void Jump(Diver diver, diver_form DivForm)
+        public void Jump()
         {
-            this._Model.Jump(diver, DivForm);
+            this._Model.Jump();
         }
     }
 }

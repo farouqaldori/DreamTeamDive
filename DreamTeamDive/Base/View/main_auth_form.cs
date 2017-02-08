@@ -12,6 +12,11 @@ namespace Diver_Contest
 {
     public partial class main_auth_form : MetroFramework.Forms.MetroForm, IFormMain
     {
+        public event DelegateLogin EventLogin = null;
+        public event DelegateExit EventExit = null;
+        public event DelegateJump EventJump = null;
+        public event DelegateUpdateJumps EventUpdateJumps = null;
+
         public main_auth_form()
         {
             InitializeComponent();
@@ -19,33 +24,27 @@ namespace Diver_Contest
 
         private void main_auth_form_Load(object sender, EventArgs e)
         {
-
         }
 
         public void Login_Click(object sender, EventArgs e)
         {
-            string authCode = authBox.Text.ToString();
-            diver_form form = new diver_form();
-            Diver div = new Diver();
             if (this.EventLogin != null)
-                this.EventLogin(authCode, div, form);
-
-            this.Hide();
+            {
+                this.EventLogin();
+            }
         }
 
         public void ExitButn_Click(object sender, EventArgs e)
         {
-            if(this.EventExit != null)
-             this.EventExit();
+            if (this.EventExit != null)
+            {
+                this.EventExit();
+            }
         }
-
-        public event DelegateLogin EventLogin = null;
-        public event DelegateExit EventExit = null;
-        public event DelegateJump EventJump = null;
 
         private void main_auth_form_MouseHover(object sender, EventArgs e)
         {
-            
+          
         }
 
         private void TextBox_Click(object sender, EventArgs e)

@@ -12,10 +12,12 @@ namespace Diver_Contest
         public int difficulty { get; set; }
         // List containing a tuple with a judge object, and the grade given by the judge. Used to store multiple ratings.
         public List<Tuple<Judge, double>> grade = new List<Tuple<Judge, double>>();
+        // Status of the jump, 0 = waiting, 1 = jumped, 2 = graded.
+        public int status { get; set; }
         public int style { get; set; }
         public double form { get; set; }
-        public float takeOff { get; set; }
-        public float finishing { get; set; }
+        public double takeOff { get; set; }
+        public double finishing { get; set; }
         public Jump()
         {
             Random rnd = new Random();

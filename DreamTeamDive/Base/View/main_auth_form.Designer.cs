@@ -32,8 +32,8 @@
             this.ExitButton = new MetroFramework.Controls.MetroButton();
             this.label1 = new System.Windows.Forms.Label();
             this.authBox = new System.Windows.Forms.TextBox();
-            this.DiverButton = new MetroFramework.Controls.MetroCheckBox();
-            this.JudgeButton = new MetroFramework.Controls.MetroCheckBox();
+            this.diver_radio_button = new MetroFramework.Controls.MetroRadioButton();
+            this.judge_radio_button = new MetroFramework.Controls.MetroRadioButton();
             this.SuspendLayout();
             // 
             // LoginButton
@@ -75,26 +75,25 @@
             this.authBox.UseSystemPasswordChar = true;
             this.authBox.TextChanged += new System.EventHandler(this.authBox_TextChanged);
             // 
-            // DiverButton
+            // diver_radio_button
             // 
-            this.DiverButton.AutoSize = true;
-            this.DiverButton.Location = new System.Drawing.Point(23, 122);
-            this.DiverButton.Name = "DiverButton";
-            this.DiverButton.Size = new System.Drawing.Size(50, 15);
-            this.DiverButton.TabIndex = 10;
-            this.DiverButton.Text = "Diver";
-            this.DiverButton.UseSelectable = true;
-            this.DiverButton.CheckedChanged += new System.EventHandler(this.DiverButton_CheckedChanged);
+            this.diver_radio_button.AutoSize = true;
+            this.diver_radio_button.Location = new System.Drawing.Point(23, 122);
+            this.diver_radio_button.Name = "diver_radio_button";
+            this.diver_radio_button.Size = new System.Drawing.Size(50, 15);
+            this.diver_radio_button.TabIndex = 10;
+            this.diver_radio_button.Text = "Diver";
+            this.diver_radio_button.UseSelectable = true;
             // 
-            // JudgeButton
+            // judge_radio_button
             // 
-            this.JudgeButton.AutoSize = true;
-            this.JudgeButton.Location = new System.Drawing.Point(152, 122);
-            this.JudgeButton.Name = "JudgeButton";
-            this.JudgeButton.Size = new System.Drawing.Size(54, 15);
-            this.JudgeButton.TabIndex = 11;
-            this.JudgeButton.Text = "Judge";
-            this.JudgeButton.UseSelectable = true;
+            this.judge_radio_button.AutoSize = true;
+            this.judge_radio_button.Location = new System.Drawing.Point(152, 122);
+            this.judge_radio_button.Name = "judge_radio_button";
+            this.judge_radio_button.Size = new System.Drawing.Size(54, 15);
+            this.judge_radio_button.TabIndex = 11;
+            this.judge_radio_button.Text = "Judge";
+            this.judge_radio_button.UseSelectable = true;
             // 
             // main_auth_form
             // 
@@ -102,8 +101,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(304, 241);
-            this.Controls.Add(this.JudgeButton);
-            this.Controls.Add(this.DiverButton);
+            this.Controls.Add(this.judge_radio_button);
+            this.Controls.Add(this.diver_radio_button);
             this.Controls.Add(this.authBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ExitButton);
@@ -123,7 +122,7 @@
         public MetroFramework.Controls.MetroButton ExitButton;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox authBox;
-        public MetroFramework.Controls.MetroCheckBox DiverButton;
-        public MetroFramework.Controls.MetroCheckBox JudgeButton;
+        public MetroFramework.Controls.MetroRadioButton diver_radio_button;
+        public MetroFramework.Controls.MetroRadioButton judge_radio_button;
     }
 }

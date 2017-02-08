@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Diver_Contest
 {
-    public delegate void DelegateLogin(string authCode, Diver diver, diver_form DivForm);
+    public delegate void DelegateLogin();
     public delegate void DelegateExit();
-    public delegate void DelegateJump(Diver diver, diver_form DivForm);
-    
+    public delegate void DelegateJump();
+    public delegate void DelegateUpdateJumps();
+
     public interface IFormMain
     {
         event DelegateLogin EventLogin;
         event DelegateExit EventExit;
         event DelegateJump EventJump;
-
+        event DelegateUpdateJumps EventUpdateJumps;
     }
 }
