@@ -15,7 +15,7 @@ namespace Diver_Contest
     {
         main_auth_form mainForm = new main_auth_form();
         diver_form diver = new diver_form();
-        void ICompetition.Login(string authCode)
+        void ICompetition.Login(string authCode, Diver diver, diver_form DivForm)
         {
             string sqlAuthCheck;
             if (mainForm.DiverButton.Enabled == true)
@@ -33,7 +33,7 @@ namespace Diver_Contest
                 Mysql_db.connect();
                 // Check authentication code
                 MySqlCommand command = Mysql_db.execute(sqlAuthCheck);
-                
+             
                 //While not 0
                 if(Convert.ToInt32(command.ExecuteScalar()) != 0)
                 {
@@ -43,7 +43,7 @@ namespace Diver_Contest
                         while (reader.Read())
                         {
                             //Fetch data from database and create new diver
-                            Diver diver = new Diver();
+                            
 
                             diver.id = Convert.ToInt32(reader["id"]);
                             diver.name = reader["name"].ToString();
@@ -52,12 +52,13 @@ namespace Diver_Contest
                         }
                     }
                     //If validation open driver form
-                    diver.Show();
+                    DivForm.Show();
                     
                 }
                 else
                 {
-                    // Error validating auth code
+                    MessageBox.Show("Not a valid Code!", "Error");
+
                 }
                
             }
@@ -70,20 +71,19 @@ namespace Diver_Contest
 
         void ICompetition.Exit()
         {
-            if (mainForm.ExitButn.Enabled == true)
+            if (mainForm.ExitButton.Enabled == true)
             {
                 //Exit application
                 Application.Exit();
             }
         }
 
-        void ICompetition.Jump()
+        void ICompetition.Jump(Diver diver, diver_form DivForm)
         {
-            if(diver.JumpButton.Enabled)
+            if(DivForm.JumpButton.Enabled)
             {
                 //Perform Jump
-                Diver Diver = new Diver();
-                Diver.jump();
+                diver.jump();
             }
         }
     }

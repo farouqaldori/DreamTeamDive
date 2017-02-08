@@ -47,17 +47,25 @@
             this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
-            this.metroProgressBar2 = new MetroFramework.Controls.MetroProgressBar();
-            this.metroProgressBar3 = new MetroFramework.Controls.MetroProgressBar();
-            this.metroProgressBar4 = new MetroFramework.Controls.MetroProgressBar();
-            this.metroProgressBar5 = new MetroFramework.Controls.MetroProgressBar();
-            this.metroProgressBar6 = new MetroFramework.Controls.MetroProgressBar();
-            this.metroProgressBar7 = new MetroFramework.Controls.MetroProgressBar();
-            this.metroProgressBar8 = new MetroFramework.Controls.MetroProgressBar();
-            this.metroProgressBar9 = new MetroFramework.Controls.MetroProgressBar();
+            this.SendRatingButton = new MetroFramework.Controls.MetroButton();
+            this.RatingBox = new MetroFramework.Controls.MetroComboBox();
+            this.DiverNameLabel1 = new System.Windows.Forms.Label();
+            this.DiverNameLabel2 = new System.Windows.Forms.Label();
+            this.DiverNameLabel3 = new System.Windows.Forms.Label();
+            this.DiverNameLabel6 = new System.Windows.Forms.Label();
+            this.DiverNameLabel5 = new System.Windows.Forms.Label();
+            this.DiverNameLabel4 = new System.Windows.Forms.Label();
+            this.DiverNameLabel9 = new System.Windows.Forms.Label();
+            this.DiverNameLabel8 = new System.Windows.Forms.Label();
+            this.DiverNameLabel7 = new System.Windows.Forms.Label();
+            this.FormLabel = new System.Windows.Forms.Label();
+            this.DifficultyLabel = new System.Windows.Forms.Label();
+            this.SyleLabel = new System.Windows.Forms.Label();
+            this.FinishingLabel = new System.Windows.Forms.Label();
+            this.TakeOfLabel = new System.Windows.Forms.Label();
+            this.CurrentDiverGenderLabel = new System.Windows.Forms.Label();
+            this.CurrentDiverNameLabel = new System.Windows.Forms.Label();
+            this.CurrentDiverCountryLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -231,104 +239,226 @@
             this.metroLabel19.TabIndex = 18;
             this.metroLabel19.Text = "Country:";
             // 
-            // metroButton1
+            // SendRatingButton
             // 
-            this.metroButton1.Location = new System.Drawing.Point(253, 364);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(110, 38);
-            this.metroButton1.TabIndex = 19;
-            this.metroButton1.Text = "Send Rating";
-            this.metroButton1.UseSelectable = true;
+            this.SendRatingButton.Location = new System.Drawing.Point(253, 364);
+            this.SendRatingButton.Name = "SendRatingButton";
+            this.SendRatingButton.Size = new System.Drawing.Size(110, 38);
+            this.SendRatingButton.TabIndex = 19;
+            this.SendRatingButton.Text = "Send Rating";
+            this.SendRatingButton.UseSelectable = true;
+            this.SendRatingButton.Click += new System.EventHandler(this.SendRatingButton_Click);
             // 
-            // metroComboBox1
+            // RatingBox
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(253, 329);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(110, 29);
-            this.metroComboBox1.TabIndex = 20;
-            this.metroComboBox1.UseSelectable = true;
+            this.RatingBox.DisplayMember = "0";
+            this.RatingBox.FormattingEnabled = true;
+            this.RatingBox.ItemHeight = 23;
+            this.RatingBox.Items.AddRange(new object[] {
+            "0",
+            "0.5",
+            "1.0",
+            "1.5",
+            "2.0",
+            "2.5",
+            "3.0",
+            "3.5",
+            "4.0",
+            "4.5",
+            "5.0",
+            "5.5",
+            "6.0",
+            "6.5",
+            "7.0",
+            "7.5",
+            "8.0",
+            "8.5",
+            "9.0",
+            "9.5",
+            "10.0"});
+            this.RatingBox.Location = new System.Drawing.Point(253, 329);
+            this.RatingBox.Name = "RatingBox";
+            this.RatingBox.Size = new System.Drawing.Size(110, 29);
+            this.RatingBox.TabIndex = 20;
+            this.RatingBox.UseSelectable = true;
             // 
-            // metroProgressBar1
+            // DiverNameLabel1
             // 
-            this.metroProgressBar1.Location = new System.Drawing.Point(80, 81);
-            this.metroProgressBar1.Name = "metroProgressBar1";
-            this.metroProgressBar1.Size = new System.Drawing.Size(51, 19);
-            this.metroProgressBar1.TabIndex = 21;
+            this.DiverNameLabel1.AutoSize = true;
+            this.DiverNameLabel1.Location = new System.Drawing.Point(81, 86);
+            this.DiverNameLabel1.Name = "DiverNameLabel1";
+            this.DiverNameLabel1.Size = new System.Drawing.Size(47, 13);
+            this.DiverNameLabel1.TabIndex = 21;
+            this.DiverNameLabel1.Text = "<Name>";
             // 
-            // metroProgressBar2
+            // DiverNameLabel2
             // 
-            this.metroProgressBar2.Location = new System.Drawing.Point(80, 116);
-            this.metroProgressBar2.Name = "metroProgressBar2";
-            this.metroProgressBar2.Size = new System.Drawing.Size(51, 19);
-            this.metroProgressBar2.TabIndex = 22;
+            this.DiverNameLabel2.AutoSize = true;
+            this.DiverNameLabel2.Location = new System.Drawing.Point(81, 122);
+            this.DiverNameLabel2.Name = "DiverNameLabel2";
+            this.DiverNameLabel2.Size = new System.Drawing.Size(47, 13);
+            this.DiverNameLabel2.TabIndex = 22;
+            this.DiverNameLabel2.Text = "<Name>";
             // 
-            // metroProgressBar3
+            // DiverNameLabel3
             // 
-            this.metroProgressBar3.Location = new System.Drawing.Point(80, 151);
-            this.metroProgressBar3.Name = "metroProgressBar3";
-            this.metroProgressBar3.Size = new System.Drawing.Size(51, 19);
-            this.metroProgressBar3.TabIndex = 23;
+            this.DiverNameLabel3.AutoSize = true;
+            this.DiverNameLabel3.Location = new System.Drawing.Point(81, 157);
+            this.DiverNameLabel3.Name = "DiverNameLabel3";
+            this.DiverNameLabel3.Size = new System.Drawing.Size(47, 13);
+            this.DiverNameLabel3.TabIndex = 23;
+            this.DiverNameLabel3.Text = "<Name>";
             // 
-            // metroProgressBar4
+            // DiverNameLabel6
             // 
-            this.metroProgressBar4.Location = new System.Drawing.Point(196, 81);
-            this.metroProgressBar4.Name = "metroProgressBar4";
-            this.metroProgressBar4.Size = new System.Drawing.Size(51, 19);
-            this.metroProgressBar4.TabIndex = 24;
+            this.DiverNameLabel6.AutoSize = true;
+            this.DiverNameLabel6.Location = new System.Drawing.Point(196, 157);
+            this.DiverNameLabel6.Name = "DiverNameLabel6";
+            this.DiverNameLabel6.Size = new System.Drawing.Size(47, 13);
+            this.DiverNameLabel6.TabIndex = 26;
+            this.DiverNameLabel6.Text = "<Name>";
             // 
-            // metroProgressBar5
+            // DiverNameLabel5
             // 
-            this.metroProgressBar5.Location = new System.Drawing.Point(197, 116);
-            this.metroProgressBar5.Name = "metroProgressBar5";
-            this.metroProgressBar5.Size = new System.Drawing.Size(51, 19);
-            this.metroProgressBar5.TabIndex = 25;
+            this.DiverNameLabel5.AutoSize = true;
+            this.DiverNameLabel5.Location = new System.Drawing.Point(196, 122);
+            this.DiverNameLabel5.Name = "DiverNameLabel5";
+            this.DiverNameLabel5.Size = new System.Drawing.Size(47, 13);
+            this.DiverNameLabel5.TabIndex = 25;
+            this.DiverNameLabel5.Text = "<Name>";
             // 
-            // metroProgressBar6
+            // DiverNameLabel4
             // 
-            this.metroProgressBar6.Location = new System.Drawing.Point(196, 151);
-            this.metroProgressBar6.Name = "metroProgressBar6";
-            this.metroProgressBar6.Size = new System.Drawing.Size(51, 19);
-            this.metroProgressBar6.TabIndex = 26;
+            this.DiverNameLabel4.AutoSize = true;
+            this.DiverNameLabel4.Location = new System.Drawing.Point(196, 86);
+            this.DiverNameLabel4.Name = "DiverNameLabel4";
+            this.DiverNameLabel4.Size = new System.Drawing.Size(47, 13);
+            this.DiverNameLabel4.TabIndex = 24;
+            this.DiverNameLabel4.Text = "<Name>";
             // 
-            // metroProgressBar7
+            // DiverNameLabel9
             // 
-            this.metroProgressBar7.Location = new System.Drawing.Point(312, 81);
-            this.metroProgressBar7.Name = "metroProgressBar7";
-            this.metroProgressBar7.Size = new System.Drawing.Size(51, 19);
-            this.metroProgressBar7.TabIndex = 27;
+            this.DiverNameLabel9.AutoSize = true;
+            this.DiverNameLabel9.Location = new System.Drawing.Point(312, 157);
+            this.DiverNameLabel9.Name = "DiverNameLabel9";
+            this.DiverNameLabel9.Size = new System.Drawing.Size(47, 13);
+            this.DiverNameLabel9.TabIndex = 29;
+            this.DiverNameLabel9.Text = "<Name>";
             // 
-            // metroProgressBar8
+            // DiverNameLabel8
             // 
-            this.metroProgressBar8.Location = new System.Drawing.Point(312, 116);
-            this.metroProgressBar8.Name = "metroProgressBar8";
-            this.metroProgressBar8.Size = new System.Drawing.Size(51, 19);
-            this.metroProgressBar8.TabIndex = 28;
+            this.DiverNameLabel8.AutoSize = true;
+            this.DiverNameLabel8.Location = new System.Drawing.Point(312, 122);
+            this.DiverNameLabel8.Name = "DiverNameLabel8";
+            this.DiverNameLabel8.Size = new System.Drawing.Size(47, 13);
+            this.DiverNameLabel8.TabIndex = 28;
+            this.DiverNameLabel8.Text = "<Name>";
             // 
-            // metroProgressBar9
+            // DiverNameLabel7
             // 
-            this.metroProgressBar9.Location = new System.Drawing.Point(312, 151);
-            this.metroProgressBar9.Name = "metroProgressBar9";
-            this.metroProgressBar9.Size = new System.Drawing.Size(51, 19);
-            this.metroProgressBar9.TabIndex = 29;
+            this.DiverNameLabel7.AutoSize = true;
+            this.DiverNameLabel7.Location = new System.Drawing.Point(312, 86);
+            this.DiverNameLabel7.Name = "DiverNameLabel7";
+            this.DiverNameLabel7.Size = new System.Drawing.Size(47, 13);
+            this.DiverNameLabel7.TabIndex = 27;
+            this.DiverNameLabel7.Text = "<Name>";
+            // 
+            // FormLabel
+            // 
+            this.FormLabel.AutoSize = true;
+            this.FormLabel.Location = new System.Drawing.Point(93, 309);
+            this.FormLabel.Name = "FormLabel";
+            this.FormLabel.Size = new System.Drawing.Size(42, 13);
+            this.FormLabel.TabIndex = 32;
+            this.FormLabel.Text = "<Form>";
+            // 
+            // DifficultyLabel
+            // 
+            this.DifficultyLabel.AutoSize = true;
+            this.DifficultyLabel.Location = new System.Drawing.Point(93, 280);
+            this.DifficultyLabel.Name = "DifficultyLabel";
+            this.DifficultyLabel.Size = new System.Drawing.Size(59, 13);
+            this.DifficultyLabel.TabIndex = 31;
+            this.DifficultyLabel.Text = "<Difficulty>";
+            // 
+            // SyleLabel
+            // 
+            this.SyleLabel.AutoSize = true;
+            this.SyleLabel.Location = new System.Drawing.Point(93, 251);
+            this.SyleLabel.Name = "SyleLabel";
+            this.SyleLabel.Size = new System.Drawing.Size(42, 13);
+            this.SyleLabel.TabIndex = 30;
+            this.SyleLabel.Text = "<Style>";
+            // 
+            // FinishingLabel
+            // 
+            this.FinishingLabel.AutoSize = true;
+            this.FinishingLabel.Location = new System.Drawing.Point(93, 367);
+            this.FinishingLabel.Name = "FinishingLabel";
+            this.FinishingLabel.Size = new System.Drawing.Size(60, 13);
+            this.FinishingLabel.TabIndex = 34;
+            this.FinishingLabel.Text = "<Finishing>";
+            // 
+            // TakeOfLabel
+            // 
+            this.TakeOfLabel.AutoSize = true;
+            this.TakeOfLabel.Location = new System.Drawing.Point(93, 338);
+            this.TakeOfLabel.Name = "TakeOfLabel";
+            this.TakeOfLabel.Size = new System.Drawing.Size(61, 13);
+            this.TakeOfLabel.TabIndex = 33;
+            this.TakeOfLabel.Text = "<Take Off>";
+            // 
+            // CurrentDiverGenderLabel
+            // 
+            this.CurrentDiverGenderLabel.AutoSize = true;
+            this.CurrentDiverGenderLabel.Location = new System.Drawing.Point(316, 280);
+            this.CurrentDiverGenderLabel.Name = "CurrentDiverGenderLabel";
+            this.CurrentDiverGenderLabel.Size = new System.Drawing.Size(54, 13);
+            this.CurrentDiverGenderLabel.TabIndex = 36;
+            this.CurrentDiverGenderLabel.Text = "<Gender>";
+            // 
+            // CurrentDiverNameLabel
+            // 
+            this.CurrentDiverNameLabel.AutoSize = true;
+            this.CurrentDiverNameLabel.Location = new System.Drawing.Point(316, 251);
+            this.CurrentDiverNameLabel.Name = "CurrentDiverNameLabel";
+            this.CurrentDiverNameLabel.Size = new System.Drawing.Size(47, 13);
+            this.CurrentDiverNameLabel.TabIndex = 35;
+            this.CurrentDiverNameLabel.Text = "<Name>";
+            // 
+            // CurrentDiverCountryLabel
+            // 
+            this.CurrentDiverCountryLabel.AutoSize = true;
+            this.CurrentDiverCountryLabel.Location = new System.Drawing.Point(316, 309);
+            this.CurrentDiverCountryLabel.Name = "CurrentDiverCountryLabel";
+            this.CurrentDiverCountryLabel.Size = new System.Drawing.Size(55, 13);
+            this.CurrentDiverCountryLabel.TabIndex = 37;
+            this.CurrentDiverCountryLabel.Text = "<Country>";
             // 
             // judge_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(397, 425);
-            this.Controls.Add(this.metroProgressBar9);
-            this.Controls.Add(this.metroProgressBar8);
-            this.Controls.Add(this.metroProgressBar7);
-            this.Controls.Add(this.metroProgressBar6);
-            this.Controls.Add(this.metroProgressBar5);
-            this.Controls.Add(this.metroProgressBar4);
-            this.Controls.Add(this.metroProgressBar3);
-            this.Controls.Add(this.metroProgressBar2);
-            this.Controls.Add(this.metroProgressBar1);
-            this.Controls.Add(this.metroComboBox1);
-            this.Controls.Add(this.metroButton1);
+            this.Controls.Add(this.CurrentDiverCountryLabel);
+            this.Controls.Add(this.CurrentDiverGenderLabel);
+            this.Controls.Add(this.CurrentDiverNameLabel);
+            this.Controls.Add(this.FinishingLabel);
+            this.Controls.Add(this.TakeOfLabel);
+            this.Controls.Add(this.FormLabel);
+            this.Controls.Add(this.DifficultyLabel);
+            this.Controls.Add(this.SyleLabel);
+            this.Controls.Add(this.DiverNameLabel9);
+            this.Controls.Add(this.DiverNameLabel8);
+            this.Controls.Add(this.DiverNameLabel7);
+            this.Controls.Add(this.DiverNameLabel6);
+            this.Controls.Add(this.DiverNameLabel5);
+            this.Controls.Add(this.DiverNameLabel4);
+            this.Controls.Add(this.DiverNameLabel3);
+            this.Controls.Add(this.DiverNameLabel2);
+            this.Controls.Add(this.DiverNameLabel1);
+            this.Controls.Add(this.RatingBox);
+            this.Controls.Add(this.SendRatingButton);
             this.Controls.Add(this.metroLabel19);
             this.Controls.Add(this.metroLabel18);
             this.Controls.Add(this.metroLabel17);
@@ -377,16 +507,24 @@
         private MetroFramework.Controls.MetroLabel metroLabel17;
         private MetroFramework.Controls.MetroLabel metroLabel18;
         private MetroFramework.Controls.MetroLabel metroLabel19;
-        private MetroFramework.Controls.MetroButton metroButton1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar2;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar3;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar4;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar5;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar6;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar7;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar8;
-        private MetroFramework.Controls.MetroProgressBar metroProgressBar9;
+        private MetroFramework.Controls.MetroButton SendRatingButton;
+        private MetroFramework.Controls.MetroComboBox RatingBox;
+        private System.Windows.Forms.Label DiverNameLabel1;
+        private System.Windows.Forms.Label DiverNameLabel2;
+        private System.Windows.Forms.Label DiverNameLabel3;
+        private System.Windows.Forms.Label DiverNameLabel6;
+        private System.Windows.Forms.Label DiverNameLabel5;
+        private System.Windows.Forms.Label DiverNameLabel4;
+        private System.Windows.Forms.Label DiverNameLabel9;
+        private System.Windows.Forms.Label DiverNameLabel8;
+        private System.Windows.Forms.Label DiverNameLabel7;
+        private System.Windows.Forms.Label FormLabel;
+        private System.Windows.Forms.Label DifficultyLabel;
+        private System.Windows.Forms.Label SyleLabel;
+        private System.Windows.Forms.Label FinishingLabel;
+        private System.Windows.Forms.Label TakeOfLabel;
+        private System.Windows.Forms.Label CurrentDiverGenderLabel;
+        private System.Windows.Forms.Label CurrentDiverNameLabel;
+        private System.Windows.Forms.Label CurrentDiverCountryLabel;
     }
 }

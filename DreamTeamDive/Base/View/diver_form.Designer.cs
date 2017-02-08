@@ -37,15 +37,15 @@
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.JumpButton = new MetroFramework.Controls.MetroButton();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
-            this.metroProgressSpinner1 = new MetroFramework.Controls.MetroProgressSpinner();
-            this.metroProgressSpinner2 = new MetroFramework.Controls.MetroProgressSpinner();
-            this.metroProgressSpinner3 = new MetroFramework.Controls.MetroProgressSpinner();
-            this.metroProgressSpinner4 = new MetroFramework.Controls.MetroProgressSpinner();
-            this.metroProgressSpinner5 = new MetroFramework.Controls.MetroProgressSpinner();
-            this.metroProgressSpinner6 = new MetroFramework.Controls.MetroProgressSpinner();
+            this.PerformJumpBox = new MetroFramework.Controls.MetroComboBox();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
+            this.Jump1Label = new System.Windows.Forms.Label();
+            this.Jump2Label = new System.Windows.Forms.Label();
+            this.Jump3Label = new System.Windows.Forms.Label();
+            this.Jump6Label = new System.Windows.Forms.Label();
+            this.Jump5Label = new System.Windows.Forms.Label();
+            this.Jump4Label = new System.Windows.Forms.Label();
+            this.DifficultyBox = new MetroFramework.Controls.MetroComboBox();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -137,81 +137,15 @@
             this.JumpButton.UseSelectable = true;
             this.JumpButton.Click += new System.EventHandler(this.Jump_Click);
             // 
-            // metroComboBox1
+            // PerformJumpBox
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(24, 221);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(92, 29);
-            this.metroComboBox1.TabIndex = 9;
-            this.metroComboBox1.UseSelectable = true;
-            // 
-            // metroComboBox2
-            // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
-            this.metroComboBox2.Location = new System.Drawing.Point(24, 301);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(93, 29);
-            this.metroComboBox2.TabIndex = 10;
-            this.metroComboBox2.UseSelectable = true;
-            // 
-            // metroProgressSpinner1
-            // 
-            this.metroProgressSpinner1.Location = new System.Drawing.Point(85, 82);
-            this.metroProgressSpinner1.Maximum = 100;
-            this.metroProgressSpinner1.Name = "metroProgressSpinner1";
-            this.metroProgressSpinner1.Size = new System.Drawing.Size(69, 16);
-            this.metroProgressSpinner1.TabIndex = 11;
-            this.metroProgressSpinner1.UseSelectable = true;
-            this.metroProgressSpinner1.Click += new System.EventHandler(this.metroProgressSpinner1_Click);
-            // 
-            // metroProgressSpinner2
-            // 
-            this.metroProgressSpinner2.Location = new System.Drawing.Point(85, 116);
-            this.metroProgressSpinner2.Maximum = 100;
-            this.metroProgressSpinner2.Name = "metroProgressSpinner2";
-            this.metroProgressSpinner2.Size = new System.Drawing.Size(69, 16);
-            this.metroProgressSpinner2.TabIndex = 12;
-            this.metroProgressSpinner2.UseSelectable = true;
-            // 
-            // metroProgressSpinner3
-            // 
-            this.metroProgressSpinner3.Location = new System.Drawing.Point(85, 150);
-            this.metroProgressSpinner3.Maximum = 100;
-            this.metroProgressSpinner3.Name = "metroProgressSpinner3";
-            this.metroProgressSpinner3.Size = new System.Drawing.Size(69, 16);
-            this.metroProgressSpinner3.TabIndex = 13;
-            this.metroProgressSpinner3.UseSelectable = true;
-            // 
-            // metroProgressSpinner4
-            // 
-            this.metroProgressSpinner4.Location = new System.Drawing.Point(240, 82);
-            this.metroProgressSpinner4.Maximum = 100;
-            this.metroProgressSpinner4.Name = "metroProgressSpinner4";
-            this.metroProgressSpinner4.Size = new System.Drawing.Size(69, 16);
-            this.metroProgressSpinner4.TabIndex = 14;
-            this.metroProgressSpinner4.UseSelectable = true;
-            this.metroProgressSpinner4.Click += new System.EventHandler(this.metroProgressSpinner4_Click);
-            // 
-            // metroProgressSpinner5
-            // 
-            this.metroProgressSpinner5.Location = new System.Drawing.Point(240, 116);
-            this.metroProgressSpinner5.Maximum = 100;
-            this.metroProgressSpinner5.Name = "metroProgressSpinner5";
-            this.metroProgressSpinner5.Size = new System.Drawing.Size(69, 16);
-            this.metroProgressSpinner5.TabIndex = 15;
-            this.metroProgressSpinner5.UseSelectable = true;
-            // 
-            // metroProgressSpinner6
-            // 
-            this.metroProgressSpinner6.Location = new System.Drawing.Point(240, 150);
-            this.metroProgressSpinner6.Maximum = 100;
-            this.metroProgressSpinner6.Name = "metroProgressSpinner6";
-            this.metroProgressSpinner6.Size = new System.Drawing.Size(69, 16);
-            this.metroProgressSpinner6.TabIndex = 16;
-            this.metroProgressSpinner6.UseSelectable = true;
+            this.PerformJumpBox.FormattingEnabled = true;
+            this.PerformJumpBox.ItemHeight = 23;
+            this.PerformJumpBox.Location = new System.Drawing.Point(24, 221);
+            this.PerformJumpBox.Name = "PerformJumpBox";
+            this.PerformJumpBox.Size = new System.Drawing.Size(92, 29);
+            this.PerformJumpBox.TabIndex = 9;
+            this.PerformJumpBox.UseSelectable = true;
             // 
             // metroToolTip1
             // 
@@ -219,19 +153,94 @@
             this.metroToolTip1.StyleManager = null;
             this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
+            // Jump1Label
+            // 
+            this.Jump1Label.AutoSize = true;
+            this.Jump1Label.Location = new System.Drawing.Point(85, 85);
+            this.Jump1Label.Name = "Jump1Label";
+            this.Jump1Label.Size = new System.Drawing.Size(44, 13);
+            this.Jump1Label.TabIndex = 11;
+            this.Jump1Label.Text = "<Jump>";
+            // 
+            // Jump2Label
+            // 
+            this.Jump2Label.AutoSize = true;
+            this.Jump2Label.Location = new System.Drawing.Point(85, 119);
+            this.Jump2Label.Name = "Jump2Label";
+            this.Jump2Label.Size = new System.Drawing.Size(44, 13);
+            this.Jump2Label.TabIndex = 12;
+            this.Jump2Label.Text = "<Jump>";
+            // 
+            // Jump3Label
+            // 
+            this.Jump3Label.AutoSize = true;
+            this.Jump3Label.Location = new System.Drawing.Point(85, 153);
+            this.Jump3Label.Name = "Jump3Label";
+            this.Jump3Label.Size = new System.Drawing.Size(44, 13);
+            this.Jump3Label.TabIndex = 13;
+            this.Jump3Label.Text = "<Jump>";
+            // 
+            // Jump6Label
+            // 
+            this.Jump6Label.AutoSize = true;
+            this.Jump6Label.Location = new System.Drawing.Point(240, 153);
+            this.Jump6Label.Name = "Jump6Label";
+            this.Jump6Label.Size = new System.Drawing.Size(44, 13);
+            this.Jump6Label.TabIndex = 16;
+            this.Jump6Label.Text = "<Jump>";
+            // 
+            // Jump5Label
+            // 
+            this.Jump5Label.AutoSize = true;
+            this.Jump5Label.Location = new System.Drawing.Point(240, 119);
+            this.Jump5Label.Name = "Jump5Label";
+            this.Jump5Label.Size = new System.Drawing.Size(44, 13);
+            this.Jump5Label.TabIndex = 15;
+            this.Jump5Label.Text = "<Jump>";
+            // 
+            // Jump4Label
+            // 
+            this.Jump4Label.AutoSize = true;
+            this.Jump4Label.Location = new System.Drawing.Point(240, 85);
+            this.Jump4Label.Name = "Jump4Label";
+            this.Jump4Label.Size = new System.Drawing.Size(44, 13);
+            this.Jump4Label.TabIndex = 14;
+            this.Jump4Label.Text = "<Jump>";
+            // 
+            // DifficultyBox
+            // 
+            this.DifficultyBox.FormattingEnabled = true;
+            this.DifficultyBox.ItemHeight = 23;
+            this.DifficultyBox.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"});
+            this.DifficultyBox.Location = new System.Drawing.Point(24, 301);
+            this.DifficultyBox.Name = "DifficultyBox";
+            this.DifficultyBox.Size = new System.Drawing.Size(93, 29);
+            this.DifficultyBox.TabIndex = 10;
+            this.DifficultyBox.UseSelectable = true;
+            // 
             // diver_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(319, 353);
-            this.Controls.Add(this.metroProgressSpinner6);
-            this.Controls.Add(this.metroProgressSpinner5);
-            this.Controls.Add(this.metroProgressSpinner4);
-            this.Controls.Add(this.metroProgressSpinner3);
-            this.Controls.Add(this.metroProgressSpinner2);
-            this.Controls.Add(this.metroProgressSpinner1);
-            this.Controls.Add(this.metroComboBox2);
-            this.Controls.Add(this.metroComboBox1);
+            this.Controls.Add(this.Jump6Label);
+            this.Controls.Add(this.Jump5Label);
+            this.Controls.Add(this.Jump4Label);
+            this.Controls.Add(this.Jump3Label);
+            this.Controls.Add(this.Jump2Label);
+            this.Controls.Add(this.Jump1Label);
+            this.Controls.Add(this.DifficultyBox);
+            this.Controls.Add(this.PerformJumpBox);
             this.Controls.Add(this.JumpButton);
             this.Controls.Add(this.metroLabel8);
             this.Controls.Add(this.metroLabel7);
@@ -259,15 +268,15 @@
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel8;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
-        private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner1;
-        private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner2;
-        private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner3;
-        private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner4;
-        private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner5;
-        private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner6;
+        private MetroFramework.Controls.MetroComboBox PerformJumpBox;
         private MetroFramework.Components.MetroToolTip metroToolTip1;
         public MetroFramework.Controls.MetroButton JumpButton;
+        private System.Windows.Forms.Label Jump1Label;
+        private System.Windows.Forms.Label Jump2Label;
+        private System.Windows.Forms.Label Jump3Label;
+        private System.Windows.Forms.Label Jump6Label;
+        private System.Windows.Forms.Label Jump5Label;
+        private System.Windows.Forms.Label Jump4Label;
+        private MetroFramework.Controls.MetroComboBox DifficultyBox;
     }
 }

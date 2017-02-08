@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Diver_Contest
 {
-    public delegate void DelegateLogin(string authCode);
+    public delegate void DelegateLogin(string authCode, Diver diver, diver_form DivForm);
     public delegate void DelegateExit();
-    public delegate void DelegateJump();
+    public delegate void DelegateJump(Diver diver, diver_form DivForm);
     
     public interface IFormMain
     {

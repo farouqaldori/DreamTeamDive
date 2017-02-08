@@ -44,8 +44,10 @@ namespace Diver_Contest
 
         private void Jump_Click(object sender, EventArgs e)
         {
+            diver_form form = new diver_form();
+            Diver div = new Diver();
             if (this.EventJump != null)
-                EventJump();
+                EventJump(div, form);
         }
 
         public event DelegateLogin EventLogin = null;

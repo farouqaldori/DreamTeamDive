@@ -25,9 +25,9 @@ namespace Diver_Contest
             this._view.EventJump += Jump;
         }
 
-        public void Login(string authCode)
+        public void Login(string authCode, Diver diver, diver_form DivForm)
         {
-            this._Model.Login(authCode);
+            this._Model.Login(authCode, diver, DivForm);
         }
 
         public void Exit()
@@ -35,9 +35,9 @@ namespace Diver_Contest
             this._Model.Exit();
         }
 
-        public void Jump()
+        public void Jump(Diver diver, diver_form DivForm)
         {
-            this._Model.Jump();
+            this._Model.Jump(diver, DivForm);
         }
     }
 }

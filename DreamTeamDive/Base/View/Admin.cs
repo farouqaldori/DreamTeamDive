@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUIGUI
+namespace Diver_Contest
 {
-    public partial class Main : MetroFramework.Forms.MetroForm
+    public partial class Admin : MetroFramework.Forms.MetroForm
     {
-        public Main()
+        public Admin()
         {
             InitializeComponent();
             this.StyleManager = msmMain;
@@ -45,6 +45,11 @@ namespace GUIGUI
         }
 
         private void metroDateTime1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Hopper_tab_Click(object sender, EventArgs e)
         {
 
         }

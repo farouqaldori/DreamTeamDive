@@ -1,6 +1,6 @@
-﻿namespace GUIGUI
+﻿namespace Diver_Contest
 {
-    partial class Main
+    partial class Admin
     {
         /// <summary>
         /// Required designer variable.
@@ -37,6 +37,10 @@
             this.showchld = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.contest_tab = new MetroFramework.Controls.MetroTabPage();
+            this.ResetButton = new MetroFramework.Controls.MetroButton();
+            this.SubmitButton = new MetroFramework.Controls.MetroButton();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.metroRadioButton7 = new MetroFramework.Controls.MetroRadioButton();
             this.metroRadioButton6 = new MetroFramework.Controls.MetroRadioButton();
             this.metroRadioButton5 = new MetroFramework.Controls.MetroRadioButton();
@@ -45,9 +49,13 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.judge_tab = new MetroFramework.Controls.MetroTabPage();
+            this.metroButton3 = new MetroFramework.Controls.MetroButton();
+            this.metroButton4 = new MetroFramework.Controls.MetroButton();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.Hopper_tab = new MetroFramework.Controls.MetroTabPage();
+            this.metroButton5 = new MetroFramework.Controls.MetroButton();
+            this.metroButton6 = new MetroFramework.Controls.MetroButton();
             this.metroRadioButton3 = new MetroFramework.Controls.MetroRadioButton();
             this.metroRadioButton2 = new MetroFramework.Controls.MetroRadioButton();
             this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
@@ -57,14 +65,6 @@
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
-            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
-            this.metroButton2 = new MetroFramework.Controls.MetroButton();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.metroButton4 = new MetroFramework.Controls.MetroButton();
-            this.metroButton5 = new MetroFramework.Controls.MetroButton();
-            this.metroButton6 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).BeginInit();
             this.metroTabControl1.SuspendLayout();
             this.contest_tab.SuspendLayout();
@@ -147,15 +147,15 @@
             this.metroTabControl1.Controls.Add(this.Hopper_tab);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 63);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 2;
             this.metroTabControl1.Size = new System.Drawing.Size(461, 266);
             this.metroTabControl1.TabIndex = 5;
             this.metroTabControl1.UseSelectable = true;
             // 
             // contest_tab
             // 
-            this.contest_tab.Controls.Add(this.metroButton2);
-            this.contest_tab.Controls.Add(this.metroButton1);
+            this.contest_tab.Controls.Add(this.ResetButton);
+            this.contest_tab.Controls.Add(this.SubmitButton);
             this.contest_tab.Controls.Add(this.metroLabel3);
             this.contest_tab.Controls.Add(this.metroDateTime1);
             this.contest_tab.Controls.Add(this.metroRadioButton7);
@@ -176,6 +176,42 @@
             this.contest_tab.VerticalScrollbarBarColor = true;
             this.contest_tab.VerticalScrollbarHighlightOnWheel = false;
             this.contest_tab.VerticalScrollbarSize = 10;
+            // 
+            // ResetButton
+            // 
+            this.ResetButton.Location = new System.Drawing.Point(169, 183);
+            this.ResetButton.Name = "ResetButton";
+            this.ResetButton.Size = new System.Drawing.Size(135, 38);
+            this.ResetButton.TabIndex = 13;
+            this.ResetButton.Text = "Reset";
+            this.ResetButton.UseSelectable = true;
+            // 
+            // SubmitButton
+            // 
+            this.SubmitButton.Location = new System.Drawing.Point(0, 183);
+            this.SubmitButton.Name = "SubmitButton";
+            this.SubmitButton.Size = new System.Drawing.Size(135, 38);
+            this.SubmitButton.TabIndex = 12;
+            this.SubmitButton.Text = "Submit";
+            this.SubmitButton.UseSelectable = true;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(0, 117);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(39, 19);
+            this.metroLabel3.TabIndex = 11;
+            this.metroLabel3.Text = "Date:";
+            // 
+            // metroDateTime1
+            // 
+            this.metroDateTime1.Location = new System.Drawing.Point(104, 113);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime1.Name = "metroDateTime1";
+            this.metroDateTime1.Size = new System.Drawing.Size(200, 29);
+            this.metroDateTime1.TabIndex = 10;
+            this.metroDateTime1.ValueChanged += new System.EventHandler(this.metroDateTime1_ValueChanged);
             // 
             // metroRadioButton7
             // 
@@ -286,6 +322,24 @@
             this.judge_tab.VerticalScrollbarHighlightOnWheel = false;
             this.judge_tab.VerticalScrollbarSize = 10;
             // 
+            // metroButton3
+            // 
+            this.metroButton3.Location = new System.Drawing.Point(169, 183);
+            this.metroButton3.Name = "metroButton3";
+            this.metroButton3.Size = new System.Drawing.Size(135, 38);
+            this.metroButton3.TabIndex = 15;
+            this.metroButton3.Text = "Reset";
+            this.metroButton3.UseSelectable = true;
+            // 
+            // metroButton4
+            // 
+            this.metroButton4.Location = new System.Drawing.Point(0, 183);
+            this.metroButton4.Name = "metroButton4";
+            this.metroButton4.Size = new System.Drawing.Size(135, 38);
+            this.metroButton4.TabIndex = 14;
+            this.metroButton4.Text = "Submit";
+            this.metroButton4.UseSelectable = true;
+            // 
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
@@ -327,6 +381,25 @@
             this.Hopper_tab.VerticalScrollbarBarColor = true;
             this.Hopper_tab.VerticalScrollbarHighlightOnWheel = false;
             this.Hopper_tab.VerticalScrollbarSize = 10;
+            this.Hopper_tab.Click += new System.EventHandler(this.Hopper_tab_Click);
+            // 
+            // metroButton5
+            // 
+            this.metroButton5.Location = new System.Drawing.Point(169, 183);
+            this.metroButton5.Name = "metroButton5";
+            this.metroButton5.Size = new System.Drawing.Size(135, 38);
+            this.metroButton5.TabIndex = 17;
+            this.metroButton5.Text = "Reset";
+            this.metroButton5.UseSelectable = true;
+            // 
+            // metroButton6
+            // 
+            this.metroButton6.Location = new System.Drawing.Point(0, 183);
+            this.metroButton6.Name = "metroButton6";
+            this.metroButton6.Size = new System.Drawing.Size(135, 38);
+            this.metroButton6.TabIndex = 16;
+            this.metroButton6.Text = "Submit";
+            this.metroButton6.UseSelectable = true;
             // 
             // metroRadioButton3
             // 
@@ -455,78 +528,6 @@
             this.metroToolTip1.StyleManager = null;
             this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // metroDateTime1
-            // 
-            this.metroDateTime1.Location = new System.Drawing.Point(104, 113);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(200, 29);
-            this.metroDateTime1.TabIndex = 10;
-            this.metroDateTime1.ValueChanged += new System.EventHandler(this.metroDateTime1_ValueChanged);
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(0, 117);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(39, 19);
-            this.metroLabel3.TabIndex = 11;
-            this.metroLabel3.Text = "Date:";
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Location = new System.Drawing.Point(0, 183);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(135, 38);
-            this.metroButton1.TabIndex = 12;
-            this.metroButton1.Text = "Submit";
-            this.metroButton1.UseSelectable = true;
-            // 
-            // metroButton2
-            // 
-            this.metroButton2.Location = new System.Drawing.Point(169, 183);
-            this.metroButton2.Name = "metroButton2";
-            this.metroButton2.Size = new System.Drawing.Size(135, 38);
-            this.metroButton2.TabIndex = 13;
-            this.metroButton2.Text = "Reset";
-            this.metroButton2.UseSelectable = true;
-            // 
-            // metroButton3
-            // 
-            this.metroButton3.Location = new System.Drawing.Point(169, 183);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(135, 38);
-            this.metroButton3.TabIndex = 15;
-            this.metroButton3.Text = "Reset";
-            this.metroButton3.UseSelectable = true;
-            // 
-            // metroButton4
-            // 
-            this.metroButton4.Location = new System.Drawing.Point(0, 183);
-            this.metroButton4.Name = "metroButton4";
-            this.metroButton4.Size = new System.Drawing.Size(135, 38);
-            this.metroButton4.TabIndex = 14;
-            this.metroButton4.Text = "Submit";
-            this.metroButton4.UseSelectable = true;
-            // 
-            // metroButton5
-            // 
-            this.metroButton5.Location = new System.Drawing.Point(169, 183);
-            this.metroButton5.Name = "metroButton5";
-            this.metroButton5.Size = new System.Drawing.Size(135, 38);
-            this.metroButton5.TabIndex = 17;
-            this.metroButton5.Text = "Reset";
-            this.metroButton5.UseSelectable = true;
-            // 
-            // metroButton6
-            // 
-            this.metroButton6.Location = new System.Drawing.Point(0, 183);
-            this.metroButton6.Name = "metroButton6";
-            this.metroButton6.Size = new System.Drawing.Size(135, 38);
-            this.metroButton6.TabIndex = 16;
-            this.metroButton6.Text = "Submit";
-            this.metroButton6.UseSelectable = true;
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -584,8 +585,8 @@
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroDateTime metroDateTime1;
-        private MetroFramework.Controls.MetroButton metroButton2;
-        private MetroFramework.Controls.MetroButton metroButton1;
+        private MetroFramework.Controls.MetroButton ResetButton;
+        private MetroFramework.Controls.MetroButton SubmitButton;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroButton metroButton3;
         private MetroFramework.Controls.MetroButton metroButton4;

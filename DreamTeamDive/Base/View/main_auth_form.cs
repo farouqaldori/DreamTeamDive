@@ -25,8 +25,10 @@ namespace Diver_Contest
         public void Login_Click(object sender, EventArgs e)
         {
             string authCode = authBox.Text.ToString();
-            if(this.EventLogin != null)
-                this.EventLogin(authCode);
+            diver_form form = new diver_form();
+            Diver div = new Diver();
+            if (this.EventLogin != null)
+                this.EventLogin(authCode, div, form);
 
             this.Hide();
         }

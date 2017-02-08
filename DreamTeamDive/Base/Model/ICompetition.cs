@@ -8,10 +8,10 @@ namespace Diver_Contest
 {
     public interface ICompetition
     {
-        void Login(string authCode);
+        void Login(string authCode, Diver diver, diver_form DivForm);
 
         void Exit();
 
-        void Jump();
+        void Jump(Diver diver, diver_form DivForm);
     }
 }

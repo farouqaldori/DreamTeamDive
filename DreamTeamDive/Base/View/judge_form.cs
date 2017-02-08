@@ -21,5 +21,10 @@ namespace Diver_Contest
         {
 
         }
+
+        private void SendRatingButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
