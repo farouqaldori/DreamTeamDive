@@ -42,6 +42,9 @@ namespace Diver_Contest
 
         public void Login()
         {
+            this._mainform.authBox.Enabled = false;
+            this._mainform.LoginButton.Enabled = false;
+            
             string authCode = _mainform.authBox.Text;
             if (_mainform.diver_radio_button.Checked)
             {
@@ -59,6 +62,8 @@ namespace Diver_Contest
                 {
                     // Authentication failed
                     System.Windows.Forms.MessageBox.Show("Please re-enter your authentication or choose the right type.", "Error!");
+                    this._mainform.authBox.Enabled = true;
+                    this._mainform.LoginButton.Enabled = true;
                 }
             }
         }

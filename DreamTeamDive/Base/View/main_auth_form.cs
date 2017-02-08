@@ -22,9 +22,6 @@ namespace Diver_Contest
             InitializeComponent();
         }
 
-        private void main_auth_form_Load(object sender, EventArgs e)
-        {
-        }
 
         public void Login_Click(object sender, EventArgs e)
         {
@@ -65,6 +62,17 @@ namespace Diver_Contest
         private void DiverButton_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void show_pass_button_Click(object sender, EventArgs e)
+        {
+            if (authBox.UseSystemPasswordChar)
+            {
+                authBox.UseSystemPasswordChar = false;
+            } else
+            {
+                authBox.UseSystemPasswordChar = true;
+            }
         }
     }
 }
