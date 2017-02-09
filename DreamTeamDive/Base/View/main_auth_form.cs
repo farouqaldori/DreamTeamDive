@@ -16,6 +16,7 @@ namespace Diver_Contest
         public event DelegateExit EventExit = null;
         public event DelegateJump EventJump = null;
         public event DelegateUpdateJumps EventUpdateJumps = null;
+        //public event DelegateSendRating EventSendRating = null;
 
         public main_auth_form()
         {
@@ -66,11 +67,14 @@ namespace Diver_Contest
 
         private void show_pass_button_Click(object sender, EventArgs e)
         {
+            // If the authentication Box uses Password Char else True
             if (authBox.UseSystemPasswordChar)
             {
+                // Set it to False
                 authBox.UseSystemPasswordChar = false;
             } else
             {
+                // Else true
                 authBox.UseSystemPasswordChar = true;
             }
         }

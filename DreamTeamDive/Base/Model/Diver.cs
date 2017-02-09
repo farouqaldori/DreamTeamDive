@@ -39,6 +39,7 @@ namespace Diver_Contest
 
         public void calcSum()
         {
+            // For every jump made, get the summary of the grades
             foreach (var jump in jumps)
             {
                 foreach(var grade in jump.grade)

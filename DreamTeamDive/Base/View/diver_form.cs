@@ -16,6 +16,7 @@ namespace Diver_Contest
         public event DelegateExit EventExit = null;
         public event DelegateJump EventJump = null;
         public event DelegateUpdateJumps EventUpdateJumps = null;
+        //public event DelegateSendRating EventSendRating = null;
 
         public Diver diver;
 
@@ -83,6 +84,12 @@ namespace Diver_Contest
             }
         }
 
+        /// <summary>
+        /// Current backround worker, to be updated to TCP later
+        /// Uses the jumps in the list to display the jumps done and the awaited jumps
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void jump_updater_backgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             if (e.UserState != null)

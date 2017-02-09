@@ -22,17 +22,20 @@ namespace Diver_Contest
         {
             // Construct MySql code to be executed.
             MySqlCommand command = new MySqlCommand("SELECT * FROM Divers WHERE auth_code = @authCode", Mysql_db.connection);
+            // Check if the Authentication code is valid using the parameter authCode
             command.Parameters.AddWithValue("@authCode", _authcode);
 
+            // If the command does not return a value, throw exception
             if (Convert.ToInt32(command.ExecuteScalar()) == 0)
             {
                 throw new System.ArgumentException("Invalid_auth");
-            }
-            else
+            } else
             {
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
+                    // Create a new diver
                     Diver diver = new Diver();
+                    // While it's not end of line
                     while (reader.Read())
                     {
                         diver.id = Convert.ToInt32(reader["id"]);
@@ -56,6 +59,11 @@ namespace Diver_Contest
 
         }
 
+        //Judge ICompetition.SendRating()
+        //{
+
+        //}
+
         List<Jump> ICompetition.UpdateJumps(int diver_id)
         {
             // Construct MySql code to be executed.
@@ -69,6 +77,7 @@ namespace Diver_Contest
             {
                 while (reader.Read())
                 {
+                    
                     Jump newJump = new Jump();
                     newJump.id = Convert.ToInt32(reader["id"]);
                     newJump.difficulty = Convert.ToInt32(reader["difficulty"]);
@@ -78,6 +87,7 @@ namespace Diver_Contest
                     newJump.takeOff = Convert.ToDouble(reader["takeOff"]);
                     newJump.finishing = Convert.ToDouble(reader["finishing"]);
 
+                    // Add the new Jump to the Jump list
                     newJumps.Add(newJump);
                 }
                 return newJumps;

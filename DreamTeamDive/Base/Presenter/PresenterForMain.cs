@@ -18,7 +18,7 @@ namespace Diver_Contest
         /// Default Constructor
         /// </summary>
         /// <param name="view"></param>
-        public PresenterForMain(diver_form diverform, main_auth_form mainform, CompetitionRegister cr)
+        public PresenterForMain(diver_form diverform, main_auth_form mainform, CompetitionRegister cr /*, judge_form judgeform */)
         {
             this._Model = cr;
             this._mainform = mainform;
@@ -26,7 +26,7 @@ namespace Diver_Contest
 
             // Start db connection
             this._Model.StartConnection();
-
+            //this.judgeform += SendRating
             this._mainform.EventLogin += Login;
             this._mainform.EventExit += Exit;
             this._mainform.EventJump += Jump;
@@ -67,6 +67,11 @@ namespace Diver_Contest
                 }
             }
         }
+
+        /*public void SendRating()
+         *{
+         *    this._Model.SendRating();
+         *} */
 
         public void Exit()
         {
