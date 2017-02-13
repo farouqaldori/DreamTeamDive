@@ -15,6 +15,9 @@ namespace Diver_Contest
         public string country { get; set; }
         public int competition { get; set; }
 
+        // To track which jump to perform.
+        public int jumpIndex = 0;
+
         public List<Jump> jumps = new List<Jump>();
         public double sumGrades { get; set; }
 

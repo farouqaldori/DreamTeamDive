@@ -16,6 +16,7 @@ namespace Diver_Contest
         public event DelegateExit EventExit = null;
         public event DelegateJump EventJump = null;
         public event DelegateUpdateJumps EventUpdateJumps = null;
+        public event DelegateSendRating EventSendRating = null;
 
         public Diver diver;
 
@@ -27,7 +28,7 @@ namespace Diver_Contest
         private void Jump_Click(object sender, EventArgs e)
         {
             if (this.EventJump != null)
-                EventJump();
+                this.EventJump();
         }
 
         private void jump_updater_backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
@@ -38,7 +39,7 @@ namespace Diver_Contest
                 {
                     EventUpdateJumps();
                     // Update every 5 seconds
-                    System.Threading.Thread.Sleep(5000);
+                    System.Threading.Thread.Sleep(500);
                 }
             }
         }

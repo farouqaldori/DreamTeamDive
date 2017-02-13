@@ -10,11 +10,13 @@ namespace Diver_Contest
     {
         void StartConnection();
 
-        Diver Login(string _authcode);
+        Diver DiverLogin(string _authcode);
 
         void Exit();
 
-        void Jump();
+        void Jump(Diver _diver);
+
+        void SendRating(Judge _judge);
 
         List<Jump> UpdateJumps(int diver_id);
     }

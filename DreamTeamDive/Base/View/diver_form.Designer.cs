@@ -28,123 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
+            this.JumpButton = new MetroFramework.Controls.MetroButton();
+            this.PerformJumpBox = new MetroFramework.Controls.MetroComboBox();
+            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
+            this.DifficultyBox = new MetroFramework.Controls.MetroComboBox();
+            this.jump_updater_backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.JumpButton = new MetroFramework.Controls.MetroButton();
-            this.PerformJumpBox = new MetroFramework.Controls.MetroComboBox();
-            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.Jump1Label = new System.Windows.Forms.Label();
             this.Jump2Label = new System.Windows.Forms.Label();
             this.Jump3Label = new System.Windows.Forms.Label();
-            this.Jump6Label = new System.Windows.Forms.Label();
-            this.Jump5Label = new System.Windows.Forms.Label();
             this.Jump4Label = new System.Windows.Forms.Label();
-            this.DifficultyBox = new MetroFramework.Controls.MetroComboBox();
-            this.jump_updater_backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.Jump5Label = new System.Windows.Forms.Label();
+            this.Jump6Label = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(24, 79);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(57, 19);
-            this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "Jump 1:";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(24, 113);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(57, 19);
-            this.metroLabel2.TabIndex = 1;
-            this.metroLabel2.Text = "Jump 2:";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.Location = new System.Drawing.Point(24, 147);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(57, 19);
-            this.metroLabel3.TabIndex = 2;
-            this.metroLabel3.Text = "Jump 3:";
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(179, 79);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(57, 19);
-            this.metroLabel4.TabIndex = 3;
-            this.metroLabel4.Text = "Jump 4:";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.Location = new System.Drawing.Point(179, 113);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(57, 19);
-            this.metroLabel5.TabIndex = 4;
-            this.metroLabel5.Text = "Jump 5:";
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.Location = new System.Drawing.Point(179, 147);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(57, 19);
-            this.metroLabel6.TabIndex = 5;
-            this.metroLabel6.Text = "Jump 6:";
             // 
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(23, 199);
+            this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel7.Location = new System.Drawing.Point(8, 24);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(93, 19);
+            this.metroLabel7.Size = new System.Drawing.Size(60, 15);
             this.metroLabel7.TabIndex = 6;
-            this.metroLabel7.Text = "Perform Jump";
+            this.metroLabel7.Text = "Jump Style";
             // 
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(24, 279);
+            this.metroLabel8.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel8.Location = new System.Drawing.Point(8, 84);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(83, 19);
+            this.metroLabel8.Size = new System.Drawing.Size(68, 15);
             this.metroLabel8.TabIndex = 7;
             this.metroLabel8.Text = "Set Difficulity";
             // 
             // JumpButton
             // 
             this.JumpButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.JumpButton.FontSize = MetroFramework.MetroButtonSize.Tall;
-            this.JumpButton.Highlight = true;
-            this.JumpButton.Location = new System.Drawing.Point(179, 221);
+            this.JumpButton.FontSize = MetroFramework.MetroButtonSize.Medium;
+            this.JumpButton.Location = new System.Drawing.Point(159, 42);
             this.JumpButton.Name = "JumpButton";
-            this.JumpButton.Size = new System.Drawing.Size(117, 109);
+            this.JumpButton.Size = new System.Drawing.Size(106, 88);
             this.JumpButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.JumpButton.TabIndex = 3;
             this.JumpButton.Text = "Jump";
             this.JumpButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroToolTip1.SetToolTip(this.JumpButton, "Send Jump!");
             this.JumpButton.UseSelectable = true;
             this.JumpButton.Click += new System.EventHandler(this.Jump_Click);
             // 
@@ -152,9 +92,9 @@
             // 
             this.PerformJumpBox.FormattingEnabled = true;
             this.PerformJumpBox.ItemHeight = 23;
-            this.PerformJumpBox.Location = new System.Drawing.Point(24, 221);
+            this.PerformJumpBox.Location = new System.Drawing.Point(8, 42);
             this.PerformJumpBox.Name = "PerformJumpBox";
-            this.PerformJumpBox.Size = new System.Drawing.Size(92, 29);
+            this.PerformJumpBox.Size = new System.Drawing.Size(135, 29);
             this.PerformJumpBox.TabIndex = 1;
             this.PerformJumpBox.UseSelectable = true;
             // 
@@ -163,60 +103,6 @@
             this.metroToolTip1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroToolTip1.StyleManager = null;
             this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // Jump1Label
-            // 
-            this.Jump1Label.AutoSize = true;
-            this.Jump1Label.Location = new System.Drawing.Point(81, 84);
-            this.Jump1Label.Name = "Jump1Label";
-            this.Jump1Label.Size = new System.Drawing.Size(47, 13);
-            this.Jump1Label.TabIndex = 11;
-            this.Jump1Label.Text = "loading..";
-            // 
-            // Jump2Label
-            // 
-            this.Jump2Label.AutoSize = true;
-            this.Jump2Label.Location = new System.Drawing.Point(81, 118);
-            this.Jump2Label.Name = "Jump2Label";
-            this.Jump2Label.Size = new System.Drawing.Size(47, 13);
-            this.Jump2Label.TabIndex = 12;
-            this.Jump2Label.Text = "loading..";
-            // 
-            // Jump3Label
-            // 
-            this.Jump3Label.AutoSize = true;
-            this.Jump3Label.Location = new System.Drawing.Point(81, 152);
-            this.Jump3Label.Name = "Jump3Label";
-            this.Jump3Label.Size = new System.Drawing.Size(47, 13);
-            this.Jump3Label.TabIndex = 13;
-            this.Jump3Label.Text = "loading..";
-            // 
-            // Jump6Label
-            // 
-            this.Jump6Label.AutoSize = true;
-            this.Jump6Label.Location = new System.Drawing.Point(236, 152);
-            this.Jump6Label.Name = "Jump6Label";
-            this.Jump6Label.Size = new System.Drawing.Size(47, 13);
-            this.Jump6Label.TabIndex = 16;
-            this.Jump6Label.Text = "loading..";
-            // 
-            // Jump5Label
-            // 
-            this.Jump5Label.AutoSize = true;
-            this.Jump5Label.Location = new System.Drawing.Point(236, 118);
-            this.Jump5Label.Name = "Jump5Label";
-            this.Jump5Label.Size = new System.Drawing.Size(47, 13);
-            this.Jump5Label.TabIndex = 15;
-            this.Jump5Label.Text = "loading..";
-            // 
-            // Jump4Label
-            // 
-            this.Jump4Label.AutoSize = true;
-            this.Jump4Label.Location = new System.Drawing.Point(236, 84);
-            this.Jump4Label.Name = "Jump4Label";
-            this.Jump4Label.Size = new System.Drawing.Size(47, 13);
-            this.Jump4Label.TabIndex = 14;
-            this.Jump4Label.Text = "loading..";
             // 
             // DifficultyBox
             // 
@@ -233,9 +119,9 @@
             "8",
             "9",
             "10"});
-            this.DifficultyBox.Location = new System.Drawing.Point(24, 301);
+            this.DifficultyBox.Location = new System.Drawing.Point(8, 101);
             this.DifficultyBox.Name = "DifficultyBox";
-            this.DifficultyBox.Size = new System.Drawing.Size(93, 29);
+            this.DifficultyBox.Size = new System.Drawing.Size(135, 29);
             this.DifficultyBox.TabIndex = 2;
             this.DifficultyBox.UseSelectable = true;
             // 
@@ -245,43 +131,181 @@
             this.jump_updater_backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.jump_updater_backgroundWorker_DoWork);
             this.jump_updater_backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.jump_updater_backgroundWorker_ProgressChanged);
             // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(6, 25);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(57, 19);
+            this.metroLabel1.TabIndex = 0;
+            this.metroLabel1.Text = "Jump 1:";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(6, 59);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(57, 19);
+            this.metroLabel2.TabIndex = 1;
+            this.metroLabel2.Text = "Jump 2:";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.Location = new System.Drawing.Point(6, 93);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(57, 19);
+            this.metroLabel3.TabIndex = 2;
+            this.metroLabel3.Text = "Jump 3:";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.Location = new System.Drawing.Point(161, 25);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(57, 19);
+            this.metroLabel4.TabIndex = 3;
+            this.metroLabel4.Text = "Jump 4:";
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Cursor = System.Windows.Forms.Cursors.Default;
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel5.Location = new System.Drawing.Point(161, 59);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(57, 19);
+            this.metroLabel5.TabIndex = 4;
+            this.metroLabel5.Text = "Jump 5:";
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel6.Location = new System.Drawing.Point(161, 93);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(57, 19);
+            this.metroLabel6.TabIndex = 5;
+            this.metroLabel6.Text = "Jump 6:";
+            // 
+            // Jump1Label
+            // 
+            this.Jump1Label.AutoSize = true;
+            this.Jump1Label.Location = new System.Drawing.Point(63, 30);
+            this.Jump1Label.Name = "Jump1Label";
+            this.Jump1Label.Size = new System.Drawing.Size(47, 13);
+            this.Jump1Label.TabIndex = 11;
+            this.Jump1Label.Text = "loading..";
+            // 
+            // Jump2Label
+            // 
+            this.Jump2Label.AutoSize = true;
+            this.Jump2Label.Location = new System.Drawing.Point(63, 64);
+            this.Jump2Label.Name = "Jump2Label";
+            this.Jump2Label.Size = new System.Drawing.Size(47, 13);
+            this.Jump2Label.TabIndex = 12;
+            this.Jump2Label.Text = "loading..";
+            // 
+            // Jump3Label
+            // 
+            this.Jump3Label.AutoSize = true;
+            this.Jump3Label.Location = new System.Drawing.Point(63, 98);
+            this.Jump3Label.Name = "Jump3Label";
+            this.Jump3Label.Size = new System.Drawing.Size(47, 13);
+            this.Jump3Label.TabIndex = 13;
+            this.Jump3Label.Text = "loading..";
+            // 
+            // Jump4Label
+            // 
+            this.Jump4Label.AutoSize = true;
+            this.Jump4Label.Location = new System.Drawing.Point(218, 30);
+            this.Jump4Label.Name = "Jump4Label";
+            this.Jump4Label.Size = new System.Drawing.Size(47, 13);
+            this.Jump4Label.TabIndex = 14;
+            this.Jump4Label.Text = "loading..";
+            // 
+            // Jump5Label
+            // 
+            this.Jump5Label.AutoSize = true;
+            this.Jump5Label.Location = new System.Drawing.Point(218, 64);
+            this.Jump5Label.Name = "Jump5Label";
+            this.Jump5Label.Size = new System.Drawing.Size(47, 13);
+            this.Jump5Label.TabIndex = 15;
+            this.Jump5Label.Text = "loading..";
+            // 
+            // Jump6Label
+            // 
+            this.Jump6Label.AutoSize = true;
+            this.Jump6Label.Location = new System.Drawing.Point(218, 98);
+            this.Jump6Label.Name = "Jump6Label";
+            this.Jump6Label.Size = new System.Drawing.Size(47, 13);
+            this.Jump6Label.TabIndex = 16;
+            this.Jump6Label.Text = "loading..";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.metroLabel1);
+            this.groupBox1.Controls.Add(this.Jump6Label);
+            this.groupBox1.Controls.Add(this.metroLabel2);
+            this.groupBox1.Controls.Add(this.Jump5Label);
+            this.groupBox1.Controls.Add(this.metroLabel3);
+            this.groupBox1.Controls.Add(this.Jump4Label);
+            this.groupBox1.Controls.Add(this.metroLabel4);
+            this.groupBox1.Controls.Add(this.Jump3Label);
+            this.groupBox1.Controls.Add(this.metroLabel5);
+            this.groupBox1.Controls.Add(this.Jump2Label);
+            this.groupBox1.Controls.Add(this.metroLabel6);
+            this.groupBox1.Controls.Add(this.Jump1Label);
+            this.groupBox1.Location = new System.Drawing.Point(24, 63);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(282, 133);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Jump List";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.JumpButton);
+            this.groupBox2.Controls.Add(this.PerformJumpBox);
+            this.groupBox2.Controls.Add(this.metroLabel8);
+            this.groupBox2.Controls.Add(this.DifficultyBox);
+            this.groupBox2.Controls.Add(this.metroLabel7);
+            this.groupBox2.Location = new System.Drawing.Point(24, 210);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(282, 148);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Perform Jump";
+            // 
             // diver_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(319, 353);
-            this.Controls.Add(this.Jump6Label);
-            this.Controls.Add(this.Jump5Label);
-            this.Controls.Add(this.Jump4Label);
-            this.Controls.Add(this.Jump3Label);
-            this.Controls.Add(this.Jump2Label);
-            this.Controls.Add(this.Jump1Label);
-            this.Controls.Add(this.DifficultyBox);
-            this.Controls.Add(this.PerformJumpBox);
-            this.Controls.Add(this.JumpButton);
-            this.Controls.Add(this.metroLabel8);
-            this.Controls.Add(this.metroLabel7);
-            this.Controls.Add(this.metroLabel6);
-            this.Controls.Add(this.metroLabel5);
-            this.Controls.Add(this.metroLabel4);
-            this.Controls.Add(this.metroLabel3);
-            this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.metroLabel1);
+            this.ClientSize = new System.Drawing.Size(328, 381);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "diver_form";
+            this.Resizable = false;
             this.Text = "Diver";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroComboBox PerformJumpBox;
@@ -289,11 +313,19 @@
         public MetroFramework.Controls.MetroButton JumpButton;
         private MetroFramework.Controls.MetroComboBox DifficultyBox;
         public System.ComponentModel.BackgroundWorker jump_updater_backgroundWorker;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
         public System.Windows.Forms.Label Jump1Label;
         public System.Windows.Forms.Label Jump2Label;
         public System.Windows.Forms.Label Jump3Label;
-        public System.Windows.Forms.Label Jump6Label;
-        public System.Windows.Forms.Label Jump5Label;
         public System.Windows.Forms.Label Jump4Label;
+        public System.Windows.Forms.Label Jump5Label;
+        public System.Windows.Forms.Label Jump6Label;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
