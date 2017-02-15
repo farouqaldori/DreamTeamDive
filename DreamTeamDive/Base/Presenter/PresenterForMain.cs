@@ -68,12 +68,17 @@ namespace Diver_Contest
                     this._mainform.authBox.Enabled = true;
                     this._mainform.LoginButton.Enabled = true;
                 }
-            } else if (/* Kontrollera ifall judge button är intryckt. (False är bara platsbehållare)*/ false)
+            }
+            else if (_mainform.judge_radio_button.Checked)
             {
                 // If the user is a judge, check auth input.
                 try
                 {
-
+                    Judge judge = this._Model.JudgeLogin(authCode);
+                    _mainform.Hide();
+                    _judgeform.judge = judge;
+                    _judgeform.Text = "Welcome, " + judge.name;
+                    _judgeform.Show();
                     /* Skapa en ny funktion i CompetitionRegister vid namnet JudgeLogin.
 
                     // Information is accurate.
@@ -82,8 +87,12 @@ namespace Diver_Contest
                      * Lägg in informationen från login 
                      * Göm formen, visa judge. 
                     */
-                } catch
+                }
+                catch
                 {
+                    System.Windows.Forms.MessageBox.Show("Please re-enter your authentication or choose the right type.", "Error!");
+                    this._mainform.authBox.Enabled = true;
+                    this._mainform.LoginButton.Enabled = true;
                     // Information is false
                     /* Visa error
                      * Throw exception

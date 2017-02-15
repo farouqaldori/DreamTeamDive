@@ -12,6 +12,8 @@ namespace Diver_Contest
 
         Diver DiverLogin(string _authcode);
 
+        Judge JudgeLogin(string _authcode);
+
         void Exit();
 
         void Jump(Diver _diver);

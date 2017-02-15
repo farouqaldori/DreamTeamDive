@@ -18,8 +18,34 @@ namespace Diver_Contest
             Mysql_db.connect();
         }
 
-        /* Skapa ny funktion JudgeLogin. */
-        
+        Judge ICompetition.JudgeLogin(string _authcode)
+        {
+            MySqlCommand command = new MySqlCommand("SELECT * FROM Judge WHERE auth_code = @authCode", Mysql_db.connection);
+
+            command.Parameters.AddWithValue("@authCode", _authcode);
+
+            if (Convert.ToInt32(command.ExecuteScalar()) == 0)
+            {
+                throw new System.ArgumentException("Invalid_auth");
+            }
+            else
+            {
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    Judge judge = new Judge();
+                    while (reader.Read())
+                    {
+                        judge.id = Convert.ToInt32(reader["id"]);
+                        judge.name = reader["name"].ToString();
+                        judge.competition = Convert.ToInt32(reader["in_competition"]);
+                    }
+                    reader.Close();
+                    return judge;
+                }
+            }
+
+
+        }
 
         /// <summary>
         /// Authorize a diver via the MySql database.
