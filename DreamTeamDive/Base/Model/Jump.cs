@@ -12,9 +12,11 @@ namespace Diver_Contest
         public List<Tuple<Judge, double>> grade = new List<Tuple<Judge, double>>();
         public int id { get; set; }
         public int difficulty { get; set; }
+
         // Status of the jump, 0 = waiting, 1 = jumped, 2 = graded.
         public int status { get; set; }
         public int style { get; set; }
+        public double form { get; set; }
 
         // Five elements to think about when judging a compitition
         public double starting { get; set; }
@@ -22,7 +24,6 @@ namespace Diver_Contest
         public double takeOff { get; set; }
         public double flight { get; set; }
         public double entry { get; set; }
-        public double form { get; set; }
 
         public Jump()
         {
