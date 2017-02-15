@@ -81,13 +81,13 @@ namespace Diver_Contest
             }
             
             // Update jump in database
-            MySqlCommand command2 = new MySqlCommand("UPDATE `Jumps` SET `status`= @jumpStatus, `difficulty`= @jumpDifficulty, `style`= @jumpStyle, `form`= @jumpForm, `takeOff`= @jumpTakeoff,`finishing`= @jumpFinishing WHERE `id` = @jumpId", Mysql_db.connection);
+            MySqlCommand command2 = new MySqlCommand("UPDATE `Jumps` SET `status`= @jumpStatus, `difficulty`= @jumpDifficulty, `style`= @jumpStyle, `form`= @jumpForm, `takeOff`= @jumpTakeoff,`Takeoff`= @jumpFinishing WHERE `id` = @jumpId", Mysql_db.connection);
             command2.Parameters.AddWithValue("@jumpStatus", 1);
             command2.Parameters.AddWithValue("@jumpDifficulty", _diver.jumps[_diver.jumpIndex].difficulty);
             command2.Parameters.AddWithValue("@jumpStyle", _diver.jumps[_diver.jumpIndex].style);
             command2.Parameters.AddWithValue("@jumpForm", _diver.jumps[_diver.jumpIndex].form);
             command2.Parameters.AddWithValue("@jumpTakeoff", _diver.jumps[_diver.jumpIndex].takeOff);
-            command2.Parameters.AddWithValue("@jumpFinishing", _diver.jumps[_diver.jumpIndex].finishing);
+            command2.Parameters.AddWithValue("@jumpFinishing", _diver.jumps[_diver.jumpIndex].flight);
             command2.Parameters.AddWithValue("@jumpId", jumpId);
 
             command2.ExecuteNonQuery();
@@ -121,7 +121,7 @@ namespace Diver_Contest
                     newJump.style = Convert.ToInt32(bgreader["style"]);
                     newJump.form = Convert.ToDouble(bgreader["form"]);
                     newJump.takeOff = Convert.ToDouble(bgreader["takeOff"]);
-                    newJump.finishing = Convert.ToDouble(bgreader["finishing"]);
+                    newJump.flight = Convert.ToDouble(bgreader["flight"]);
 
                     // Add the new Jump to the Jump list
                     newJumps.Add(newJump);

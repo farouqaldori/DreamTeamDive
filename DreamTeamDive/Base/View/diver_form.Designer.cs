@@ -92,6 +92,24 @@
             // 
             this.PerformJumpBox.FormattingEnabled = true;
             this.PerformJumpBox.ItemHeight = 23;
+            this.PerformJumpBox.Items.AddRange(new object[] {
+            "101A",
+            "112B",
+            "200C",
+            "213D",
+            "315D",
+            "302A",
+            "412C",
+            "403B",
+            "------",
+            "5211A",
+            "5337D",
+            "------",
+            "600A",
+            "624C",
+            "------",
+            "6432D",
+            "6311A"});
             this.PerformJumpBox.Location = new System.Drawing.Point(8, 42);
             this.PerformJumpBox.Name = "PerformJumpBox";
             this.PerformJumpBox.Size = new System.Drawing.Size(135, 29);
