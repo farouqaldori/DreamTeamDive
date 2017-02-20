@@ -13,6 +13,7 @@ namespace Diver_Contest
         public int authCode { get; set; }
         public string name { get; set; }
         public string country { get; set; }
+        public string gender { get; set; }
         public int competition { get; set; }
 
         // To track which jump to perform.
@@ -36,8 +37,8 @@ namespace Diver_Contest
         {
             // Generate new jump and add to list.
             Jump jump = new Jump();
-          
-            jumps.Add(jump);
+
+            jumps[jumpIndex] = jump;
         }
 
         public void calcSum()

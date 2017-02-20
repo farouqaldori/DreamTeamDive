@@ -30,9 +30,12 @@ namespace Diver_Contest
 
             this._mainform.EventLogin += Login;
             this._mainform.EventExit += Exit;
+
             this._diverform.EventJump += Jump;
             this._diverform.EventUpdateJumps += UpdateJumps;
-            this._judgeform.EventSendRating += SendJump;
+
+            this._judgeform.EventSendRating += RateJump;
+            this._judgeform.EventGetJump += GetJumps;
         }
 
         public void UpdateJumps()
@@ -40,6 +43,22 @@ namespace Diver_Contest
             List <Jump> newJumps = this._Model.UpdateJumps(_diverform.diver.id);
             this._diverform.diver.jumps = newJumps;
             this._diverform.jump_updater_backgroundWorker.ReportProgress(1, newJumps);
+        }
+
+        public void GetJumps()
+        {
+            try
+            {
+                Tuple<Jump, Diver> newJumpDiver = this._Model.GetJumps(_judgeform.judge.competition);
+                this._judgeform.mode = 1;
+                this._judgeform.jump_rater_backgroundworker.ReportProgress(1, newJumpDiver);
+            }
+            catch
+            {
+                // Unable to get any divers to rate.
+                this._judgeform.mode = 0;
+                this._judgeform.jump_rater_backgroundworker.ReportProgress(1, 0);
+            }
         }
 
         public void Login()
@@ -74,30 +93,20 @@ namespace Diver_Contest
                 // If the user is a judge, check auth input.
                 try
                 {
+                    // Information is accurate.
                     Judge judge = this._Model.JudgeLogin(authCode);
                     _mainform.Hide();
                     _judgeform.judge = judge;
                     _judgeform.Text = "Welcome, " + judge.name;
+                    _judgeform.jump_rater_backgroundworker.RunWorkerAsync();
                     _judgeform.Show();
-                    /* Skapa en ny funktion i CompetitionRegister vid namnet JudgeLogin.
-
-                    // Information is accurate.
-
-                    /* Skapa ny judge 
-                     * Lägg in informationen från login 
-                     * Göm formen, visa judge. 
-                    */
                 }
                 catch
                 {
+                    // Information is false
                     System.Windows.Forms.MessageBox.Show("Please re-enter your authentication or choose the right type.", "Error!");
                     this._mainform.authBox.Enabled = true;
                     this._mainform.LoginButton.Enabled = true;
-                    // Information is false
-                    /* Visa error
-                     * Throw exception
-                     * Enabla knappen
-                    */
                 }
             }
         }
@@ -111,12 +120,14 @@ namespace Diver_Contest
                 if (_diverform.diver.jumpIndex == 6)
                 {
                     System.Windows.Forms.MessageBox.Show("You have used all your jumps, please wait for the results.", "Info!");
+                    this._diverform.JumpButton.Enabled = true;
                     return;
                 }
                 // Check if previous jump has been graded.
                 if (_diverform.diver.jumps[_diverform.diver.jumpIndex-1].status != 2)
                 {
                     System.Windows.Forms.MessageBox.Show("Please wait until your previous jump has been graded.", "Info!");
+                    this._diverform.JumpButton.Enabled = true;
                     return;
                 }
             }
@@ -124,13 +135,10 @@ namespace Diver_Contest
             this._diverform.JumpButton.Enabled = true;
         }
 
-        public void SendJump()
+        public void RateJump()
         {
             this._judgeform.SendRatingButton.Enabled = false;
-            // Send Rate.s
-            this._Model.SendRating(_judgeform.judge);
-            this._judgeform.SendRatingButton.Enabled = true;
-
+            this._Model.SendRating(_judgeform.judge, _judgeform.currentJumpId, _judgeform.RatingBox.Text);
         }
         
         public void Exit()

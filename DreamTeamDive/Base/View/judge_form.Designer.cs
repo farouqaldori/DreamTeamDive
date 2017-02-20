@@ -40,19 +40,20 @@
             this.FormLabel = new System.Windows.Forms.Label();
             this.DifficultyLabel = new System.Windows.Forms.Label();
             this.StyleLabel = new System.Windows.Forms.Label();
-            this.FinishingLabel = new System.Windows.Forms.Label();
-            this.TakeOfLabel = new System.Windows.Forms.Label();
+            this.startingLabel = new System.Windows.Forms.Label();
+            this.approachLabel = new System.Windows.Forms.Label();
             this.CurrentDiverGenderLabel = new System.Windows.Forms.Label();
             this.CurrentDiverNameLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.entryLabel = new System.Windows.Forms.Label();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.flightLabel = new System.Windows.Forms.Label();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
+            this.takeoffLabel = new System.Windows.Forms.Label();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.jump_rater_backgroundworker = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -127,7 +128,7 @@
             // 
             this.SendRatingButton.Location = new System.Drawing.Point(6, 73);
             this.SendRatingButton.Name = "SendRatingButton";
-            this.SendRatingButton.Size = new System.Drawing.Size(152, 99);
+            this.SendRatingButton.Size = new System.Drawing.Size(152, 88);
             this.SendRatingButton.TabIndex = 19;
             this.SendRatingButton.Text = "Send Rating";
             this.SendRatingButton.UseSelectable = true;
@@ -196,25 +197,25 @@
             this.StyleLabel.TabIndex = 30;
             this.StyleLabel.Text = "<Style>";
             // 
-            // FinishingLabel
+            // startingLabel
             // 
-            this.FinishingLabel.AutoSize = true;
-            this.FinishingLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.FinishingLabel.Location = new System.Drawing.Point(81, 118);
-            this.FinishingLabel.Name = "FinishingLabel";
-            this.FinishingLabel.Size = new System.Drawing.Size(55, 13);
-            this.FinishingLabel.TabIndex = 34;
-            this.FinishingLabel.Text = "<Starting>";
+            this.startingLabel.AutoSize = true;
+            this.startingLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.startingLabel.Location = new System.Drawing.Point(81, 118);
+            this.startingLabel.Name = "startingLabel";
+            this.startingLabel.Size = new System.Drawing.Size(55, 13);
+            this.startingLabel.TabIndex = 34;
+            this.startingLabel.Text = "<Starting>";
             // 
-            // TakeOfLabel
+            // approachLabel
             // 
-            this.TakeOfLabel.AutoSize = true;
-            this.TakeOfLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.TakeOfLabel.Location = new System.Drawing.Point(81, 148);
-            this.TakeOfLabel.Name = "TakeOfLabel";
-            this.TakeOfLabel.Size = new System.Drawing.Size(65, 13);
-            this.TakeOfLabel.TabIndex = 33;
-            this.TakeOfLabel.Text = "<Approach>";
+            this.approachLabel.AutoSize = true;
+            this.approachLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.approachLabel.Location = new System.Drawing.Point(81, 148);
+            this.approachLabel.Name = "approachLabel";
+            this.approachLabel.Size = new System.Drawing.Size(65, 13);
+            this.approachLabel.TabIndex = 33;
+            this.approachLabel.Text = "<Approach>";
             // 
             // CurrentDiverGenderLabel
             // 
@@ -238,18 +239,18 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.entryLabel);
             this.groupBox1.Controls.Add(this.metroLabel3);
-            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.flightLabel);
             this.groupBox1.Controls.Add(this.metroLabel2);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.takeoffLabel);
             this.groupBox1.Controls.Add(this.metroLabel1);
             this.groupBox1.Controls.Add(this.metroLabel11);
             this.groupBox1.Controls.Add(this.metroLabel15);
             this.groupBox1.Controls.Add(this.metroLabel12);
-            this.groupBox1.Controls.Add(this.FinishingLabel);
+            this.groupBox1.Controls.Add(this.startingLabel);
             this.groupBox1.Controls.Add(this.metroLabel13);
-            this.groupBox1.Controls.Add(this.TakeOfLabel);
+            this.groupBox1.Controls.Add(this.approachLabel);
             this.groupBox1.Controls.Add(this.metroLabel14);
             this.groupBox1.Controls.Add(this.FormLabel);
             this.groupBox1.Controls.Add(this.StyleLabel);
@@ -260,6 +261,63 @@
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Jump Information";
+            // 
+            // entryLabel
+            // 
+            this.entryLabel.AutoSize = true;
+            this.entryLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.entryLabel.Location = new System.Drawing.Point(81, 238);
+            this.entryLabel.Name = "entryLabel";
+            this.entryLabel.Size = new System.Drawing.Size(43, 13);
+            this.entryLabel.TabIndex = 40;
+            this.entryLabel.Text = "<Entry>";
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(8, 235);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(46, 19);
+            this.metroLabel3.TabIndex = 39;
+            this.metroLabel3.Text = "Entry: ";
+            // 
+            // flightLabel
+            // 
+            this.flightLabel.AutoSize = true;
+            this.flightLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.flightLabel.Location = new System.Drawing.Point(81, 208);
+            this.flightLabel.Name = "flightLabel";
+            this.flightLabel.Size = new System.Drawing.Size(44, 13);
+            this.flightLabel.TabIndex = 38;
+            this.flightLabel.Text = "<Flight>";
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(8, 205);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(44, 19);
+            this.metroLabel2.TabIndex = 37;
+            this.metroLabel2.Text = "Flight:";
+            // 
+            // takeoffLabel
+            // 
+            this.takeoffLabel.AutoSize = true;
+            this.takeoffLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.takeoffLabel.Location = new System.Drawing.Point(81, 178);
+            this.takeoffLabel.Name = "takeoffLabel";
+            this.takeoffLabel.Size = new System.Drawing.Size(61, 13);
+            this.takeoffLabel.TabIndex = 36;
+            this.takeoffLabel.Text = "<Take Off>";
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(8, 175);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(61, 19);
+            this.metroLabel1.TabIndex = 35;
+            this.metroLabel1.Text = "Take Off:";
             // 
             // groupBox2
             // 
@@ -285,62 +343,11 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Diver Information";
             // 
-            // label1
+            // jump_rater_backgroundworker
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(81, 178);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "<Take Off>";
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(8, 175);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(61, 19);
-            this.metroLabel1.TabIndex = 35;
-            this.metroLabel1.Text = "Take Off:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(81, 208);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "<Flight>";
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(8, 205);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(44, 19);
-            this.metroLabel2.TabIndex = 37;
-            this.metroLabel2.Text = "Flight:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(81, 238);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "<Entry>";
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(8, 235);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(46, 19);
-            this.metroLabel3.TabIndex = 39;
-            this.metroLabel3.Text = "Entry: ";
+            this.jump_rater_backgroundworker.WorkerReportsProgress = true;
+            this.jump_rater_backgroundworker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.jump_rater_backgroundworker_DoWork);
+            this.jump_rater_backgroundworker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.jump_rater_backgroundworker_ProgressChanged);
             // 
             // judge_form
             // 
@@ -371,23 +378,24 @@
         private MetroFramework.Controls.MetroLabel metroLabel14;
         private MetroFramework.Controls.MetroLabel metroLabel17;
         private MetroFramework.Controls.MetroLabel metroLabel18;
-        private MetroFramework.Controls.MetroComboBox RatingBox;
         private System.Windows.Forms.Label FormLabel;
         private System.Windows.Forms.Label DifficultyLabel;
         private System.Windows.Forms.Label StyleLabel;
-        private System.Windows.Forms.Label FinishingLabel;
-        private System.Windows.Forms.Label TakeOfLabel;
+        private System.Windows.Forms.Label startingLabel;
+        private System.Windows.Forms.Label approachLabel;
         private System.Windows.Forms.Label CurrentDiverGenderLabel;
         private System.Windows.Forms.Label CurrentDiverNameLabel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         public MetroFramework.Controls.MetroButton SendRatingButton;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label entryLabel;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label flightLabel;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label takeoffLabel;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.GroupBox groupBox3;
+        public System.ComponentModel.BackgroundWorker jump_rater_backgroundworker;
+        public MetroFramework.Controls.MetroComboBox RatingBox;
     }
 }

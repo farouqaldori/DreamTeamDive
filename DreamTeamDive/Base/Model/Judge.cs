@@ -30,5 +30,6 @@ namespace Diver_Contest
             var rating = Tuple.Create(this, _grade);
             _jump.grade.Add(rating);
         }
+
     }
 }

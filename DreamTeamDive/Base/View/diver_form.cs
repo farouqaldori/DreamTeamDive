@@ -17,6 +17,7 @@ namespace Diver_Contest
         public event DelegateJump EventJump = null;
         public event DelegateUpdateJumps EventUpdateJumps = null;
         public event DelegateSendRating EventSendRating = null;
+        public event DelegateGetJump EventGetJump = null;
 
         public Diver diver;
 
