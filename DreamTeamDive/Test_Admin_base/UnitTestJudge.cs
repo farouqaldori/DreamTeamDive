@@ -24,7 +24,7 @@ namespace Test_Admin_base
                 Mysql_db.execute(command);
                 Assert.AreEqual(1, 1);
             }
-            catch (Exception e)
+            catch
             {
                 Assert.Fail();
             }

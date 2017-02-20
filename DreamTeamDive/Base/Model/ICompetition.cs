@@ -13,8 +13,9 @@ namespace Diver_Contest
         void Exit();
 
         // Functions for diver
+        Dictionary<int, string> GetJumpTypes();
         Diver DiverLogin(string _authcode);
-        void Jump(Diver _diver);
+        void Jump(Diver _diver, int _jumpStyle, int _difficulty);
         List<Jump> UpdateJumps(int diver_id);
 
         // Functions for judge

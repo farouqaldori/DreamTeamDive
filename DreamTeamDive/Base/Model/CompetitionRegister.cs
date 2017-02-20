@@ -88,7 +88,25 @@ namespace Diver_Contest
             Application.Exit();
         }
 
-        void ICompetition.Jump(Diver _diver)
+        Dictionary<int, string> ICompetition.GetJumpTypes()
+        {
+            Dictionary<int, string> comboSource = new Dictionary<int, string>();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM JumpTypes", Mysql_db.connection);
+
+            using (MySqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    comboSource.Add(Convert.ToInt32(reader["id"]), reader["name"].ToString());
+                }
+                reader.Close();
+            }
+
+            return comboSource;
+        }
+
+        void ICompetition.Jump(Diver _diver, int _jumpStyle, int _difficulty)
         {
             int jumpId = 0;
             _diver.jump();
@@ -110,8 +128,8 @@ namespace Diver_Contest
             MySqlCommand command2 = new MySqlCommand("UPDATE `Jumps` SET `status`= @jumpStatus , `difficulty`= @jumpDifficulty , `style`= @jumpStyle , `form`= @jumpForm , `starting`= @jumpStarting , `approach` = @jumpApproach , `takeOff`= @jumpTakeoff , `flight`= @jumpFlight , `entry`= @jumpEntry WHERE `id` = @jumpId", Mysql_db.connection);
 
             command2.Parameters.AddWithValue("@jumpStatus", 1);
-            command2.Parameters.AddWithValue("@jumpDifficulty", _diver.jumps[_diver.jumpIndex].difficulty);
-            command2.Parameters.AddWithValue("@jumpStyle", _diver.jumps[_diver.jumpIndex].style);
+            command2.Parameters.AddWithValue("@jumpDifficulty", _difficulty);
+            command2.Parameters.AddWithValue("@jumpStyle", _jumpStyle);
             command2.Parameters.AddWithValue("@jumpForm", _diver.jumps[_diver.jumpIndex].form);
             command2.Parameters.AddWithValue("@jumpStarting", _diver.jumps[_diver.jumpIndex].starting);
             command2.Parameters.AddWithValue("@jumpApproach", _diver.jumps[_diver.jumpIndex].approach);
@@ -150,6 +168,18 @@ namespace Diver_Contest
                     newJump.takeOff = Convert.ToDouble(bgreader["takeOff"]);
                     newJump.flight = Convert.ToDouble(bgreader["flight"]);
                     newJump.entry = Convert.ToDouble(bgreader["entry"]);
+
+                    // Get Grades
+                    MySqlCommand command2 = new MySqlCommand("SELECT * FROM Jumps WHERE jumper = @diverId", Mysql_db.connection2);
+                    command.Parameters.AddWithValue("@diverId", diver_id);
+
+                    using (MySqlDataReader bgreader2 = command.ExecuteReader())
+                    {
+                        while (bgreader2.Read())
+                        {
+                        }
+                        bgreader2.Close();
+                    }
 
                     // Add the new Jump to the Jump list
                     newJumps.Add(newJump);
