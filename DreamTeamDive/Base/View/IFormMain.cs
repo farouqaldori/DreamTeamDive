@@ -8,16 +8,30 @@ namespace Diver_Contest
 {
     public delegate void DelegateLogin();
     public delegate void DelegateExit();
+
+    // Diver delegates
     public delegate void DelegateJump();
     public delegate void DelegateUpdateJumps();
+
+    // Judge delegates
     public delegate void DelegateSendRating();
+<<<<<<< HEAD
+=======
+    public delegate void DelegateGetJump();
+
+>>>>>>> origin/master
     public interface IFormMain
     {
        
         event DelegateLogin EventLogin;
         event DelegateExit EventExit;
+
+        // Diver events
         event DelegateJump EventJump;
         event DelegateUpdateJumps EventUpdateJumps;
+
+        // Judge events
         event DelegateSendRating EventSendRating;
+        event DelegateGetJump EventGetJump;
     }
 }

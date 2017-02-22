@@ -24,7 +24,7 @@ namespace Test_Admin_base
                 Mysql_db.execute(command);
                 Assert.AreEqual(1, 1);
             }
-            catch (Exception e)
+            catch
             {
                 Assert.Fail();
             }
@@ -122,13 +122,13 @@ namespace Test_Admin_base
             Assert.AreEqual(diver2.jumps[1].grade[0].Item2, 1);
             Assert.AreEqual(diver2.jumps[1].grade[1].Item2, 10);
 
-            // Calculate sum of diver points
-            diver1.calcSum();
-            diver2.calcSum();
-
+            
             // Check if total grade is accurate.
             Assert.AreEqual(diver1.sumGrades, 28);
             Assert.AreEqual(diver2.sumGrades, 16);
+            // Calculate sum of diver points
+            diver1.calcSum();
+            diver2.calcSum();
 
             // End event and check winner
             Assert.AreEqual(competition1.end(), diver1.sumGrades);
