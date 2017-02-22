@@ -15,11 +15,9 @@ namespace Diver_Contest
 
     // Judge delegates
     public delegate void DelegateSendRating();
-<<<<<<< HEAD
-=======
+
     public delegate void DelegateGetJump();
 
->>>>>>> origin/master
     public interface IFormMain
     {
        
