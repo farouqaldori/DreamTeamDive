@@ -11,9 +11,9 @@ namespace Diver_Contest
     public delegate void DelegateJump();
     public delegate void DelegateUpdateJumps();
     public delegate void DelegateSendRating();
-
     public interface IFormMain
     {
+       
         event DelegateLogin EventLogin;
         event DelegateExit EventExit;
         event DelegateJump EventJump;

@@ -3,23 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Diver_Contest
 {
-    public class Diver
+    [Serializable()]
+    public class Diver /*: IComparable<Diver>*/
     {
-
-        public int id { get; set; }
-        public int authCode { get; set; }
         public string name { get; set; }
         public string country { get; set; }
         public int competition { get; set; }
+        public int id { get; set; }
+        public int authCode { get; set; }
 
         // To track which jump to perform.
+        [XmlIgnore]
         public int jumpIndex = 0;
-
-        public List<Jump> jumps = new List<Jump>();
+        [XmlIgnore]
         public double sumGrades { get; set; }
+
+        [XmlIgnore]
+        public List<Jump> jumps = new List<Jump>();
+       
 
 
         public Diver()
@@ -27,10 +32,20 @@ namespace Diver_Contest
 
         }
 
+
         public void Auth()
         {
 
         }
+
+        //public int CompareTo(Diver obj)
+        //{
+        //    int c = this.name.CompareTo(obj.name);
+        //    if (c == 0)
+        //        return this.sumGrades.CompareTo(obj.sumGrades);
+        //    else
+        //        return c;
+        //}
 
         public void jump()
         {

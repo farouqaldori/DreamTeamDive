@@ -42,8 +42,8 @@
     <Reference Include="MetroFramework.Fonts">
       <HintPath>.\MetroFramework.Fonts.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.6.8.8\lib\net45\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -59,7 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\AdminRegister.cs" />
+    <Compile Include="Model\IAdmin.cs" />
     <Compile Include="Model\ICompetition.cs" />
+    <Compile Include="Presenter\PresenterForAdmin.cs" />
     <Compile Include="View\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +76,7 @@
     <Compile Include="Model\Mysql_db.cs" />
     <Compile Include="Presenter\PresenterForMain.cs" />
     <Compile Include="Model\CompetitionRegister.cs" />
+    <Compile Include="View\IAdminForm.cs" />
     <Compile Include="View\IFormMain.cs" />
     <Compile Include="View\main_auth_form.cs">
       <SubType>Form</SubType>
