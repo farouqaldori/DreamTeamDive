@@ -9,14 +9,19 @@ using System.Collections.ObjectModel;
 
 namespace Diver_Contest
 {
+    // Judge delegates
     public delegate void DelegateUpdateJudgeGridTable();
-    public delegate void DelegateUpdateDiverGridTable();
-    public delegate void DelegateDeleteJudge(int index);
-    public delegate void DelegateDeleteDiver(int index);
-    public delegate void DelegateWriteToFileDiver();
-    public delegate void DelegateReadFromFileDiver();
     public delegate void DelegateWriteToFileJudge();
     public delegate void DelegateReadFromFileJudge();
+    public delegate void DelegateInsertNewJudges(int JudgeCount);
+    // Diver delegates
+    public delegate void DelegateUpdateDiverGridTable();
+    public delegate void DelegateWriteToFileDiver();
+    public delegate void DelegateReadFromFileDiver();
+    public delegate void DelegateInsertNewDivers(int DiverCount);
+
+    // Competition delegate
+    public delegate void DelegateCreateNewCompetition(string _name, string _date);
     public interface IAdminForm
     {
         void SetDiversList(Collection<Diver> divers);
@@ -24,11 +29,12 @@ namespace Diver_Contest
 
         event DelegateUpdateDiverGridTable EventUpdateDiverGridTable;
         event DelegateUpdateJudgeGridTable EventUpdateJudgeGridTable;
-        event DelegateDeleteJudge EventDeleteJudge;
-        event DelegateDeleteDiver EventDeleteDiver;
         event DelegateWriteToFileDiver EventWriteToFileDiver;
         event DelegateReadFromFileDiver EventReadFromFileDiver;
         event DelegateWriteToFileJudge EventWriteToFileJudge;
         event DelegateReadFromFileJudge EventReadFromFileJudge;
+        event DelegateCreateNewCompetition EventCreateNewCompetition;
+        event DelegateInsertNewDivers EventInsertNewDivers;
+        event DelegateInsertNewJudges EventInsertNewJudges;
     }
 }

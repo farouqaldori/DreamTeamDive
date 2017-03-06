@@ -43,8 +43,6 @@ namespace Diver_Contest
                     return judge;
                 }
             }
-
-
         }
 
         /// <summary>
@@ -262,7 +260,7 @@ namespace Diver_Contest
         {
             if (_jumpId != 0)
             {
-                MySqlCommand command = new MySqlCommand("INSERT INTO `Grade`(`judge_id`, `jump_id`, `grade`) VALUES (@judgeid , @jumpId , @grade)", Mysql_db.connection);
+                MySqlCommand command = new MySqlCommand("INSERT INTO `Grade`(`jump_id`, `grade`) VALUES (@judgeid , @jumpId , @grade)", Mysql_db.connection);
                 command.Parameters.AddWithValue("@judgeid", _judge.id);
                 command.Parameters.AddWithValue("@jumpId", _jumpId);
                 command.Parameters.AddWithValue("@grade", _grade);

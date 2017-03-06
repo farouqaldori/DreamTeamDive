@@ -32,8 +32,6 @@
             this.msmMain = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.contest_tab = new MetroFramework.Controls.MetroTabPage();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.ID__TextBox = new MetroFramework.Controls.MetroTextBox();
             this.Reset_Button = new MetroFramework.Controls.MetroButton();
             this.Create_Button = new MetroFramework.Controls.MetroButton();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -50,8 +48,6 @@
             this.Diver_tab = new MetroFramework.Controls.MetroTabPage();
             this.ReadFromfileDiver_Button = new MetroFramework.Controls.MetroButton();
             this.SaveToFileDiver_Button = new MetroFramework.Controls.MetroButton();
-            this.DeleteDiver_Button = new MetroFramework.Controls.MetroButton();
-            this.AddDiver_Button = new MetroFramework.Controls.MetroButton();
             this.DiverGridView = new System.Windows.Forms.DataGridView();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).BeginInit();
@@ -81,8 +77,6 @@
             // 
             // contest_tab
             // 
-            this.contest_tab.Controls.Add(this.metroLabel7);
-            this.contest_tab.Controls.Add(this.ID__TextBox);
             this.contest_tab.Controls.Add(this.Reset_Button);
             this.contest_tab.Controls.Add(this.Create_Button);
             this.contest_tab.Controls.Add(this.metroLabel3);
@@ -104,50 +98,9 @@
             this.contest_tab.VerticalScrollbarHighlightOnWheel = false;
             this.contest_tab.VerticalScrollbarSize = 10;
             // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(3, 35);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(24, 19);
-            this.metroLabel7.TabIndex = 6;
-            this.metroLabel7.Text = "ID:";
-            // 
-            // ID__TextBox
-            // 
-            // 
-            // 
-            // 
-            this.ID__TextBox.CustomButton.Image = null;
-            this.ID__TextBox.CustomButton.Location = new System.Drawing.Point(21, 1);
-            this.ID__TextBox.CustomButton.Name = "";
-            this.ID__TextBox.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.ID__TextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.ID__TextBox.CustomButton.TabIndex = 1;
-            this.ID__TextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.ID__TextBox.CustomButton.UseSelectable = true;
-            this.ID__TextBox.CustomButton.Visible = false;
-            this.ID__TextBox.Lines = new string[] {
-        "<ID>"};
-            this.ID__TextBox.Location = new System.Drawing.Point(59, 35);
-            this.ID__TextBox.MaxLength = 32767;
-            this.ID__TextBox.Name = "ID__TextBox";
-            this.ID__TextBox.PasswordChar = '\0';
-            this.ID__TextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.ID__TextBox.SelectedText = "";
-            this.ID__TextBox.SelectionLength = 0;
-            this.ID__TextBox.SelectionStart = 0;
-            this.ID__TextBox.ShortcutsEnabled = true;
-            this.ID__TextBox.Size = new System.Drawing.Size(95, 29);
-            this.ID__TextBox.TabIndex = 14;
-            this.ID__TextBox.Text = "<ID>";
-            this.ID__TextBox.UseSelectable = true;
-            this.ID__TextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.ID__TextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // Reset_Button
             // 
-            this.Reset_Button.Location = new System.Drawing.Point(160, 273);
+            this.Reset_Button.Location = new System.Drawing.Point(160, 235);
             this.Reset_Button.Name = "Reset_Button";
             this.Reset_Button.Size = new System.Drawing.Size(95, 38);
             this.Reset_Button.TabIndex = 13;
@@ -157,17 +110,18 @@
             // 
             // Create_Button
             // 
-            this.Create_Button.Location = new System.Drawing.Point(59, 273);
+            this.Create_Button.Location = new System.Drawing.Point(59, 235);
             this.Create_Button.Name = "Create_Button";
             this.Create_Button.Size = new System.Drawing.Size(95, 38);
             this.Create_Button.TabIndex = 12;
             this.Create_Button.Text = "Create";
             this.Create_Button.UseSelectable = true;
+            this.Create_Button.Click += new System.EventHandler(this.Create_Button_Click);
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(3, 201);
+            this.metroLabel3.Location = new System.Drawing.Point(3, 159);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(39, 19);
             this.metroLabel3.TabIndex = 11;
@@ -175,8 +129,8 @@
             // 
             // metroDateTime1
             // 
-            this.metroDateTime1.Location = new System.Drawing.Point(59, 197);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(4, 29);
+            this.metroDateTime1.Location = new System.Drawing.Point(59, 155);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime1.Name = "metroDateTime1";
             this.metroDateTime1.Size = new System.Drawing.Size(196, 29);
             this.metroDateTime1.TabIndex = 10;
@@ -185,7 +139,7 @@
             // Judges_Seven_Check
             // 
             this.Judges_Seven_Check.AutoSize = true;
-            this.Judges_Seven_Check.Location = new System.Drawing.Point(125, 151);
+            this.Judges_Seven_Check.Location = new System.Drawing.Point(125, 109);
             this.Judges_Seven_Check.Name = "Judges_Seven_Check";
             this.Judges_Seven_Check.Size = new System.Drawing.Size(29, 15);
             this.Judges_Seven_Check.TabIndex = 7;
@@ -196,7 +150,7 @@
             // Judges_Five_Check
             // 
             this.Judges_Five_Check.AutoSize = true;
-            this.Judges_Five_Check.Location = new System.Drawing.Point(64, 151);
+            this.Judges_Five_Check.Location = new System.Drawing.Point(64, 109);
             this.Judges_Five_Check.Name = "Judges_Five_Check";
             this.Judges_Five_Check.Size = new System.Drawing.Size(29, 15);
             this.Judges_Five_Check.TabIndex = 6;
@@ -210,7 +164,7 @@
             // 
             // 
             this.CompetitionName_TextBox.CustomButton.Image = null;
-            this.CompetitionName_TextBox.CustomButton.Location = new System.Drawing.Point(67, 1);
+            this.CompetitionName_TextBox.CustomButton.Location = new System.Drawing.Point(168, 1);
             this.CompetitionName_TextBox.CustomButton.Name = "";
             this.CompetitionName_TextBox.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.CompetitionName_TextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -220,7 +174,7 @@
             this.CompetitionName_TextBox.CustomButton.Visible = false;
             this.CompetitionName_TextBox.Lines = new string[] {
         "<Name>"};
-            this.CompetitionName_TextBox.Location = new System.Drawing.Point(59, 93);
+            this.CompetitionName_TextBox.Location = new System.Drawing.Point(59, 51);
             this.CompetitionName_TextBox.MaxLength = 32767;
             this.CompetitionName_TextBox.Name = "CompetitionName_TextBox";
             this.CompetitionName_TextBox.PasswordChar = '\0';
@@ -239,7 +193,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(3, 147);
+            this.metroLabel2.Location = new System.Drawing.Point(3, 105);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(52, 19);
             this.metroLabel2.TabIndex = 3;
@@ -248,7 +202,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(3, 93);
+            this.metroLabel1.Location = new System.Drawing.Point(3, 51);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(48, 19);
             this.metroLabel1.TabIndex = 2;
@@ -310,8 +264,6 @@
             // 
             this.Diver_tab.Controls.Add(this.ReadFromfileDiver_Button);
             this.Diver_tab.Controls.Add(this.SaveToFileDiver_Button);
-            this.Diver_tab.Controls.Add(this.DeleteDiver_Button);
-            this.Diver_tab.Controls.Add(this.AddDiver_Button);
             this.Diver_tab.Controls.Add(this.DiverGridView);
             this.Diver_tab.HorizontalScrollbarBarColor = true;
             this.Diver_tab.HorizontalScrollbarHighlightOnWheel = false;
@@ -328,7 +280,7 @@
             // 
             // ReadFromfileDiver_Button
             // 
-            this.ReadFromfileDiver_Button.Location = new System.Drawing.Point(306, 327);
+            this.ReadFromfileDiver_Button.Location = new System.Drawing.Point(104, 327);
             this.ReadFromfileDiver_Button.Name = "ReadFromfileDiver_Button";
             this.ReadFromfileDiver_Button.Size = new System.Drawing.Size(95, 38);
             this.ReadFromfileDiver_Button.TabIndex = 27;
@@ -338,33 +290,13 @@
             // 
             // SaveToFileDiver_Button
             // 
-            this.SaveToFileDiver_Button.Location = new System.Drawing.Point(205, 327);
+            this.SaveToFileDiver_Button.Location = new System.Drawing.Point(3, 327);
             this.SaveToFileDiver_Button.Name = "SaveToFileDiver_Button";
             this.SaveToFileDiver_Button.Size = new System.Drawing.Size(95, 38);
             this.SaveToFileDiver_Button.TabIndex = 26;
             this.SaveToFileDiver_Button.Text = "Save to file";
             this.SaveToFileDiver_Button.UseSelectable = true;
             this.SaveToFileDiver_Button.Click += new System.EventHandler(this.SaveToFileDiver_Button_Click);
-            // 
-            // DeleteDiver_Button
-            // 
-            this.DeleteDiver_Button.Location = new System.Drawing.Point(104, 327);
-            this.DeleteDiver_Button.Name = "DeleteDiver_Button";
-            this.DeleteDiver_Button.Size = new System.Drawing.Size(95, 38);
-            this.DeleteDiver_Button.TabIndex = 25;
-            this.DeleteDiver_Button.Text = "Delete";
-            this.DeleteDiver_Button.UseSelectable = true;
-            this.DeleteDiver_Button.Click += new System.EventHandler(this.DeleteDiver_Button_Click);
-            // 
-            // AddDiver_Button
-            // 
-            this.AddDiver_Button.Location = new System.Drawing.Point(3, 327);
-            this.AddDiver_Button.Name = "AddDiver_Button";
-            this.AddDiver_Button.Size = new System.Drawing.Size(95, 38);
-            this.AddDiver_Button.TabIndex = 24;
-            this.AddDiver_Button.Text = "Add Diver";
-            this.AddDiver_Button.UseSelectable = true;
-            this.AddDiver_Button.Click += new System.EventHandler(this.AddDiver_Button_Click);
             // 
             // DiverGridView
             // 
@@ -416,8 +348,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Components.MetroToolTip metroToolTip1;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
-        public MetroFramework.Controls.MetroTextBox ID__TextBox;
         public MetroFramework.Controls.MetroRadioButton Judges_Seven_Check;
         public MetroFramework.Controls.MetroRadioButton Judges_Five_Check;
         public MetroFramework.Controls.MetroDateTime metroDateTime1;
@@ -426,8 +356,6 @@
         public MetroFramework.Controls.MetroTextBox CompetitionName_TextBox;
         public System.Windows.Forms.DataGridView JudgeGridView;
         public System.Windows.Forms.DataGridView DiverGridView;
-        public MetroFramework.Controls.MetroButton DeleteDiver_Button;
-        public MetroFramework.Controls.MetroButton AddDiver_Button;
         public MetroFramework.Controls.MetroButton ReadFromFileJudge_Button;
         public MetroFramework.Controls.MetroButton SaveToFileJudge_button;
         public MetroFramework.Controls.MetroButton ReadFromfileDiver_Button;

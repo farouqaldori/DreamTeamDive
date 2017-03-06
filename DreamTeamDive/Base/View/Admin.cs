@@ -18,16 +18,18 @@ namespace Diver_Contest
         private int _JudgeRow = -1;
         public event DelegateUpdateJudgeGridTable EventUpdateJudgeGridTable = null;
         public event DelegateUpdateDiverGridTable EventUpdateDiverGridTable = null;
-        public event DelegateDeleteJudge EventDeleteJudge = null;
-        public event DelegateDeleteDiver EventDeleteDiver = null;
         public event DelegateWriteToFileDiver EventWriteToFileDiver = null;
         public event DelegateWriteToFileJudge EventWriteToFileJudge = null;
         public event DelegateReadFromFileDiver EventReadFromFileDiver = null;
         public event DelegateReadFromFileJudge EventReadFromFileJudge = null;
+        public event DelegateCreateNewCompetition EventCreateNewCompetition = null;
+        public event DelegateInsertNewDivers EventInsertNewDivers = null;
+        public event DelegateInsertNewJudges EventInsertNewJudges = null;
         public Admin()
         {
             InitializeComponent();
             this.StyleManager = msmMain;
+
         }
 
         void IAdminForm.SetDiversList(Collection<Diver> divers)
@@ -43,12 +45,17 @@ namespace Diver_Contest
 
         private void Main_Load(object sender, EventArgs e)
         {
+            // Hide Judge information.
             this.JudgeGridView.Columns[2].Visible = false;
-            this.JudgeGridView.Columns[3].Visible = false;
+            
+            // Hide Diver information.
             this.DiverGridView.Columns[2].Visible = false;
-            this.DiverGridView.Columns[3].Visible = false;
             this.DiverGridView.Columns[4].Visible = false;
-            this.DiverGridView.Columns[5].Visible = false;
+            this.DiverGridView.Columns[6].Visible = false;
+
+            // Make the Authentication Code readonly.
+            this.JudgeGridView.Columns[3].ReadOnly = true;
+            this.DiverGridView.Columns[5].ReadOnly = true;
         }
 
         private void metroLabel1_Click(object sender, EventArgs e)
@@ -68,10 +75,10 @@ namespace Diver_Contest
 
         private void Reset_Button_Click(object sender, EventArgs e)
         {
+            // Reset all changes in form.
             if (Reset_Button.Enabled)
             {
                 CompetitionName_TextBox.Text = "<Name>";
-                ID__TextBox.Text = "<ID>";
                 Judges_Five_Check.Checked = false;
                 Judges_Seven_Check.Checked = false;
                 metroDateTime1.Value = DateTime.Today;
@@ -85,28 +92,6 @@ namespace Diver_Contest
         private void DiverGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             this._DiverRow = e.RowIndex;
-        }
-        
-        private void DeleteDiver_Button_Click(object sender, EventArgs e)
-        {
-            // Checks which row is choosen and remove it
-            try
-            {
-                if (this._DiverRow != -1)
-                    if (this.EventDeleteDiver != null)
-                        this.EventDeleteDiver(this._DiverRow);
-                this._DiverRow = DiverGridView.SelectedRows.Count;
-            }
-            catch
-            {
-                MessageBox.Show("Try again!", "Waring");
-            }
-        }
-
-        private void AddDiver_Button_Click(object sender, EventArgs e)
-        {
-            if (this.EventUpdateDiverGridTable != null)
-                this.EventUpdateDiverGridTable();
         }
 
         private void judge_tab_Click(object sender, EventArgs e)
@@ -141,39 +126,72 @@ namespace Diver_Contest
         private void Judges_Five_Check_CheckedChanged(object sender, EventArgs e)
         {
             int MaxJudgeRowCount = 5;
+            int MaxDiverRowCount = 6;
             this.JudgeGridView.Rows.Clear();
-            for (int i = 0; i<5;i++)
+            this.DiverGridView.Rows.Clear();
+            for (int i = 0; i< 5; i++)
             {
                 if (this.EventUpdateJudgeGridTable != null)
                     this.EventUpdateJudgeGridTable();
             }
-            if (this.JudgeGridView.Rows.Count > MaxJudgeRowCount)
+            for (int i = 0; i < 6; i++)
+            {
+                if (this.EventUpdateDiverGridTable != null)
+                    this.EventUpdateDiverGridTable();
+            }
+            if (this.JudgeGridView.Rows.Count > MaxJudgeRowCount && this.DiverGridView.Rows.Count > MaxDiverRowCount)
             {
                 this.JudgeGridView.AllowUserToAddRows = false;
+                this.DiverGridView.AllowUserToAddRows = false;
             }
             else
             {
                 this.JudgeGridView.AllowUserToAddRows = true;
+                this.DiverGridView.AllowUserToAddRows = true;
             }
         }
 
         private void Judges_Seven_Check_CheckedChanged(object sender, EventArgs e)
         {
             int MaxJudgeRowCount = 7;
+            int MaxDiverRowCount = 10;
             this.JudgeGridView.Rows.Clear();
+            this.DiverGridView.Rows.Clear();
             for (int i = 0; i < 7; i++)
             {
                 if (this.EventUpdateJudgeGridTable != null)
                     this.EventUpdateJudgeGridTable();
             }
-            if (this.JudgeGridView.Rows.Count > MaxJudgeRowCount)
+            for (int i = 0; i < 10; i++)
+            {
+                if (this.EventUpdateDiverGridTable != null)
+                    this.EventUpdateDiverGridTable();
+            }
+            if (this.JudgeGridView.Rows.Count > MaxJudgeRowCount && this.DiverGridView.Rows.Count > MaxDiverRowCount)
             {
                 this.JudgeGridView.AllowUserToAddRows = false;
+                this.DiverGridView.AllowUserToAddRows = false;
             }
             else
             {
                 this.JudgeGridView.AllowUserToAddRows = true;
+                this.DiverGridView.AllowUserToAddRows = true;
             }
+        }
+
+        private void Create_Button_Click(object sender, EventArgs e)
+        {
+            this.Create_Button.Enabled = false;
+            if (this.EventCreateNewCompetition != null)
+                this.EventCreateNewCompetition(CompetitionName_TextBox.Text.ToString(), metroDateTime1.Text.ToString());
+
+            if (this.EventInsertNewDivers != null)
+                this.EventInsertNewDivers(DiverGridView.RowCount);
+
+            if (this.EventInsertNewJudges != null)
+                this.EventInsertNewJudges(JudgeGridView.RowCount);
+
+            this.Create_Button.Enabled = true;
         }
     }
 }

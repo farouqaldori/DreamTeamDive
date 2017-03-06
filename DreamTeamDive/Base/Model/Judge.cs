@@ -14,14 +14,19 @@ namespace Diver_Contest
         public int competition { get; set; }
         public int id { get; set; }
         public int authCode { get; set; }
+        
+        static Random rand = new Random(120);
 
         public Judge()
-        {
-
+        {   
+            // Generate new Authentication Code for every new Judge.
+            GenerateAuthCode();
         }
 
-        public void Auth()
+      
+        public void GenerateAuthCode()
         {
+            authCode = rand.Next(100000, 999999);
         }
 
         public void rate(Jump _jump, double _grade)

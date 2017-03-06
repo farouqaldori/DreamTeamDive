@@ -30,7 +30,7 @@ namespace Diver_Contest
             PresenterForAdmin AdminPresenter = new PresenterForAdmin(admin, adminRegister);
             PresenterForMain Present = new PresenterForMain(JudgeForm, DiverForm, MainForm, Register);
 
-            Application.Run(MainForm); 
+            Application.Run(admin); 
             
         }
     }

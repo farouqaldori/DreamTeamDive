@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 namespace Diver_Contest
 {
     [Serializable()]
-    public class Diver /*: IComparable<Diver>*/
+    public class Diver 
     {
         public string name { get; set; }
         public string country { get; set; }
@@ -16,37 +16,28 @@ namespace Diver_Contest
         public int competition { get; set; }
         public int id { get; set; }
         public int authCode { get; set; }
+        public double sumGrades { get; set; }
 
         // To track which jump to perform.
         [XmlIgnore]
         public int jumpIndex = 0;
-        [XmlIgnore]
-        public double sumGrades { get; set; }
 
         [XmlIgnore]
         public List<Jump> jumps = new List<Jump>();
-       
 
+        static Random rand = new Random(220);
 
         public Diver()
         {
-
+            // Generate new Authentication Code for every new Diver.
+            GenerateAuthCode();
         }
 
 
-        public void Auth()
+        public void GenerateAuthCode()
         {
-
+            authCode = rand.Next(100000, 999999);
         }
-
-        //public int CompareTo(Diver obj)
-        //{
-        //    int c = this.name.CompareTo(obj.name);
-        //    if (c == 0)
-        //        return this.sumGrades.CompareTo(obj.sumGrades);
-        //    else
-        //        return c;
-        //}
 
         public void jump()
         {

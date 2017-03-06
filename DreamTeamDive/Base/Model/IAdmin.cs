@@ -10,16 +10,15 @@ namespace Diver_Contest
 {
     public interface IAdmin
     {
+        void InsertNewDivers(int DiverCoun);
+        void InsertNewJudges(int JudgeCoun);
+        void startconnection();
         void UpdateJudgeGridTabel(Judge judge);
-
         void UpdateDiverGridTabel(Diver diver);
-
-        void DeleteJudge(int index);
-        void DeleteDiver(int index);
         void WriteToFileDiver();
-
         void ReadFromfileDiver();
         void WriteToFileJudge();
         void ReadFromfileJudge();
+        void CreateNewCompetition(string _name, string _date);
     }
 }
