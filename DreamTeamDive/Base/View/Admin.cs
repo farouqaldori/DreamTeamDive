@@ -51,8 +51,8 @@ namespace Diver_Contest
 
             // Hide Diver information.
             this.DiverGridView.Columns[2].Visible = false;
+            this.DiverGridView.Columns[3].Visible = false;
             this.DiverGridView.Columns[4].Visible = false;
-            this.DiverGridView.Columns[5].Visible = false;
             this.DiverGridView.Columns[6].Visible = false;
 
             // Make the Authentication Code readonly.
