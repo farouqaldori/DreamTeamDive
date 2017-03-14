@@ -20,7 +20,7 @@ namespace Diver_Contest
 
         // Functions for judge
         Judge JudgeLogin(string _authcode);
-        Tuple<Jump, Diver> GetJumps(int _compId);
+        Tuple<Jump, Diver> GetJumps(int _compId, int _thisJudgeId);
         void SendRating(Judge _judge, int _jumpId, string _grade);
     }
 }
