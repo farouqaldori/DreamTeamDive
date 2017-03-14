@@ -16,7 +16,7 @@ namespace Diver_Contest
     [Serializable()]
     public class AdminRegister : IAdmin
     {
-       
+        public long competitionIN = 0;
 
         private Collection<Diver> _divers;
         public Collection<Diver> divers
@@ -95,35 +95,48 @@ namespace Diver_Contest
             stream.Close();
         }
 
+        // Create a new Competition.
         void IAdmin.CreateNewCompetition(string _name, string _date)
         {
            MySqlCommand command = new MySqlCommand("INSERT INTO `Contests`(`name`, `date_created`) VALUES (@name, @date_created)", Mysql_db.connection);
-               
+         
            command.Parameters.AddWithValue("@name", _name);
            command.Parameters.AddWithValue("@date_created", _date);
            command.ExecuteNonQuery();
+
+           competitionIN = command.LastInsertedId;
         }
 
+        // Add the new Divers to DB.
         void IAdmin.InsertNewDivers(int DiverCount)
         {
             for (int i = 0; i < DiverCount; i++)
             {
-                MySqlCommand command2 = new MySqlCommand("INSERT INTO `Divers`(`name`, `auth_code`, `country`, `in_competiton`) VALUES (@name, @auth_code, @country, @in_competiton)", Mysql_db.connection);
+                MySqlCommand command2 = new MySqlCommand("INSERT INTO `Divers`(`name`, `auth_code`, `country`, `in_competition`) VALUES (@name, @auth_code, @country, @in_competition)", Mysql_db.connection2);
+                
                 command2.Parameters.AddWithValue("@name", divers[i].name);
-                command2.Parameters.AddWithValue("@in_competiton", divers[i].competition);
+                command2.Parameters.AddWithValue("@in_competition", competitionIN);
                 command2.Parameters.AddWithValue("@country", divers[i].country);
                 command2.Parameters.AddWithValue("@auth_code", divers[i].authCode);
                 command2.ExecuteNonQuery();
+                long lastId = command2.LastInsertedId;
+                for (int j = 0; j < 6; j++)
+                {
+                    MySqlCommand command3 = new MySqlCommand("INSERT INTO `Jumps`(`jumper`) VALUES (@jumper)", Mysql_db.connection2);
+                    command3.Parameters.AddWithValue("@jumper", lastId);
+                    command3.ExecuteNonQuery();
+                }
             }
         }
 
+        // Add the new judges to DB.
         void IAdmin.InsertNewJudges(int JudgeCount)
         {
             for (int i = 0; i < JudgeCount; i++)
             {
-                MySqlCommand command3 = new MySqlCommand("INSERT INTO `Judge`(`name`, `auth_code`, `in_competiton`) VALUES (@name, @auth_code, @in_competiton)", Mysql_db.connection);
+                MySqlCommand command3 = new MySqlCommand("INSERT INTO `Judge`(`name`, `auth_code`, `in_competition`) VALUES (@name, @auth_code, @in_competiton)", Mysql_db.connection2);
                 command3.Parameters.AddWithValue("@name", judges[i].name);
-                command3.Parameters.AddWithValue("@in_competiton", judges[i].competition);
+                command3.Parameters.AddWithValue("@in_competiton", competitionIN);
                 command3.Parameters.AddWithValue("@auth_code", judges[i].authCode);
                 command3.ExecuteNonQuery();
             }

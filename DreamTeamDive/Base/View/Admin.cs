@@ -46,11 +46,13 @@ namespace Diver_Contest
         private void Main_Load(object sender, EventArgs e)
         {
             // Hide Judge information.
+            this.JudgeGridView.Columns[1].Visible = false;
             this.JudgeGridView.Columns[2].Visible = false;
-            
+
             // Hide Diver information.
             this.DiverGridView.Columns[2].Visible = false;
             this.DiverGridView.Columns[4].Visible = false;
+            this.DiverGridView.Columns[5].Visible = false;
             this.DiverGridView.Columns[6].Visible = false;
 
             // Make the Authentication Code readonly.
@@ -182,16 +184,24 @@ namespace Diver_Contest
         private void Create_Button_Click(object sender, EventArgs e)
         {
             this.Create_Button.Enabled = false;
-            if (this.EventCreateNewCompetition != null)
-                this.EventCreateNewCompetition(CompetitionName_TextBox.Text.ToString(), metroDateTime1.Text.ToString());
+            if (Judges_Five_Check.Checked || Judges_Seven_Check.Checked)
+            {
+                if (this.EventCreateNewCompetition != null)
+                    this.EventCreateNewCompetition(CompetitionName_TextBox.Text.ToString(), metroDateTime1.Text.ToString());
 
-            if (this.EventInsertNewDivers != null)
-                this.EventInsertNewDivers(DiverGridView.RowCount);
+                if (this.EventInsertNewDivers != null)
+                    this.EventInsertNewDivers(DiverGridView.RowCount);
 
-            if (this.EventInsertNewJudges != null)
-                this.EventInsertNewJudges(JudgeGridView.RowCount);
+                if (this.EventInsertNewJudges != null)
+                    this.EventInsertNewJudges(JudgeGridView.RowCount);
 
-            this.Create_Button.Enabled = true;
+                this.Create_Button.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Please select the amount of judges", "Warning");
+                this.Create_Button.Enabled = true;
+            }
         }
     }
 }
