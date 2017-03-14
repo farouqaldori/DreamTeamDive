@@ -50,6 +50,7 @@ namespace Diver_Contest
             this.JudgeGridView.Columns[2].Visible = false;
 
             // Hide Diver information.
+            this.DiverGridView.Columns[1].Visible = false;
             this.DiverGridView.Columns[2].Visible = false;
             this.DiverGridView.Columns[3].Visible = false;
             this.DiverGridView.Columns[4].Visible = false;

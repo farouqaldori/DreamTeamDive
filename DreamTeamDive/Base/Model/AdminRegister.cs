@@ -122,8 +122,10 @@ namespace Diver_Contest
                 long lastId = command2.LastInsertedId;
                 for (int j = 0; j < 6; j++)
                 {
-                    MySqlCommand command3 = new MySqlCommand("INSERT INTO `Jumps`(`jumper`) VALUES (@jumper)", Mysql_db.connection2);
+                    MySqlCommand command3 = new MySqlCommand("INSERT INTO `Jumps`(`competition`,`jumper`) VALUES (@compitition, @jumper)", Mysql_db.connection2);
                     command3.Parameters.AddWithValue("@jumper", lastId);
+                    command3.Parameters.AddWithValue("@compitition", competitionIN);
+
                     command3.ExecuteNonQuery();
                 }
             }
