@@ -49,7 +49,7 @@ namespace Diver_Contest
         {
             try
             {
-                Tuple<Jump, Diver> newJumpDiver = this._Model.GetJumps(_judgeform.judge.competition);
+                Tuple<Jump, Diver> newJumpDiver = this._Model.GetJumps(_judgeform.judge.competition, _judgeform.judge.id);
                 this._judgeform.mode = 1;
                 this._judgeform.jump_rater_backgroundworker.ReportProgress(1, newJumpDiver);
             }
