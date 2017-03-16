@@ -9,28 +9,6 @@ namespace Test_Admin_base
     [TestClass]
     public class UnitTestJudge
     {
-
-        //[TestMethod]
-        //public void databaseInit()
-        //{
-        //    // Test if connection can be established.
-        //    Assert.AreEqual(Mysql_db.connect(), true);
-
-        //    // Test command
-        //    string command = "SELECT * FROM Divers";
-
-        //    // Execute command
-        //    try
-        //    {
-        //        Mysql_db.execute(command);
-        //        Assert.AreEqual(1, 1);
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Assert.Fail();
-        //    }
-        //}
-
         [TestMethod]
         public void databaseInit()
         {
@@ -111,8 +89,8 @@ namespace Test_Admin_base
             judge3.competition = competition1.id;
 
             //Simulate one jump each for each diver.
-            diver1.jump();
-            diver2.jump();
+            diver1.jumpTest();
+            diver2.jumpTest();
 
             // Rate jumps
             judge1.rate(diver1.jumps[0], 10);
@@ -134,8 +112,8 @@ namespace Test_Admin_base
             Assert.AreEqual(diver2.jumps[0].grade[2].Item2, 7.5);
 
             //Simulate another jump each for each diver.
-            diver1.jump();
-            diver2.jump();
+            diver1.jumpTest();
+            diver2.jumpTest();
 
             // Rate jumps
             judge1.rate(diver1.jumps[1], 9);

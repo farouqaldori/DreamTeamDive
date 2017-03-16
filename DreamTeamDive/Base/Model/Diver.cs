@@ -33,17 +33,7 @@ namespace Diver_Contest
         public List<Jump> jumps = new List<Jump>();
         public List<Diver> maleContestens = new List<Diver>();
         static Random rand = new Random(220);
-
-
-        //public Diver()
-        //{
-
-        //}
-
-        //public void Auth()
-        //{
-
-        //}
+       
 
         public Diver()
         {
@@ -63,6 +53,13 @@ namespace Diver_Contest
             Jump jump = new Jump();
 
             jumps[jumpIndex] = jump;
+        }
+
+        public void jumpTest()
+        {
+            // Generate new jump and add to list for test purpose.
+            Jump jump = new Jump();
+            jumps.Add(jump);
         }
 
         public double calcSum(int diffu)
