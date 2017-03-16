@@ -142,7 +142,7 @@ namespace Diver_Contest
 
             _diver.jumpIndex++;
         }
-        
+
 
 
 
@@ -159,7 +159,7 @@ namespace Diver_Contest
             {
                 while (bgreader.Read())
                 {
-                    
+
                     Jump newJump = new Jump();
                     newJump.id = Convert.ToInt32(bgreader["id"]);
                     newJump.difficulty = Convert.ToInt32(bgreader["difficulty"]);
@@ -171,7 +171,7 @@ namespace Diver_Contest
                     newJump.takeOff = Convert.ToDouble(bgreader["takeOff"]);
                     newJump.flight = Convert.ToDouble(bgreader["flight"]);
                     newJump.entry = Convert.ToDouble(bgreader["entry"]);
-                   
+
                     // Add the new Jump to the Jump list
                     newJumps.Add(newJump);
                 }
@@ -181,23 +181,12 @@ namespace Diver_Contest
 
         }
 
-<<<<<<< HEAD
-     
-
-            /// <summary>
-            /// Get the first ungraded jump from competition.
-            /// </summary>
-            /// <param name="_compId">Competition id</param>
-            /// <returns>Jump object of the current jump to grade.</returns>
-        Tuple<Jump, Diver> ICompetition.GetJumps(int _compId)
-=======
         /// <summary>
         /// Get the first ungraded jump from competition.
         /// </summary>
         /// <param name="_compId">Competition id</param>
         /// <returns>Jump object of the current jump to grade.</returns>
         Tuple<Jump, Diver> ICompetition.GetJumps(int _compId, int _thisJudgeId)
->>>>>>> origin/master
         {
             // Get user id to retrieve jumps.
             int userId = 0;

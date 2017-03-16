@@ -18,12 +18,10 @@ namespace Diver_Contest
         public int style { get; set; }
         public double form { get; set; }
 
-<<<<<<< HEAD
         public List<Tuple<Judge, double>> grade = new List<Tuple<Judge, double>>();
         // Five elements to think about when judging a compitition
-=======
+
         // Five elements to think about when judging a competition
->>>>>>> origin/master
         public double starting { get; set; }
         public double approach { get; set; }
         public double takeOff { get; set; }

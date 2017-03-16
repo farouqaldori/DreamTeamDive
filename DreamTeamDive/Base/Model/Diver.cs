@@ -14,15 +14,12 @@ namespace Diver_Contest
         public string country { get; set; }
         public string gender { get; set; }
         public int competition { get; set; }
-<<<<<<< HEAD
+
         public double max { get; set; } = 0.0;
         public double min { get; set; } = 10.0;
         public double result { get; set; }  = 0.0;
         public double Difficulty { get; set; }
 
-        // To track which jump to perform.
-        public int jumpIndex = 1;
-=======
         public int id { get; set; }
         public int authCode { get; set; }
         public double sumGrades { get; set; }
@@ -30,14 +27,13 @@ namespace Diver_Contest
         // To track which jump to perform.
         [XmlIgnore]
         public int jumpIndex = 0;
->>>>>>> origin/master
 
         [XmlIgnore]
         public List<Jump> jumps = new List<Jump>();
 
         static Random rand = new Random(220);
 
-<<<<<<< HEAD
+
         //public Diver()
         //{
 
@@ -47,7 +43,7 @@ namespace Diver_Contest
         //{
 
         //}
-=======
+
         public Diver()
         {
             // Generate new Authentication Code for every new Diver.
@@ -59,7 +55,6 @@ namespace Diver_Contest
         {
             authCode = rand.Next(100000, 999999);
         }
->>>>>>> origin/master
 
         public void jump()
         {

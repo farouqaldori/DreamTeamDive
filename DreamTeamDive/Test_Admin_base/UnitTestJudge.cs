@@ -9,7 +9,7 @@ namespace Test_Admin_base
     [TestClass]
     public class UnitTestJudge
     {
-<<<<<<< HEAD
+
         //[TestMethod]
         //public void databaseInit()
         //{
@@ -30,7 +30,7 @@ namespace Test_Admin_base
         //        Assert.Fail();
         //    }
         //}
-=======
+
         [TestMethod]
         public void databaseInit()
         {
@@ -51,8 +51,6 @@ namespace Test_Admin_base
                 Assert.Fail();
             }
         }
->>>>>>> origin/master
-
         [TestMethod]
         public void generateCompetition()
         {
