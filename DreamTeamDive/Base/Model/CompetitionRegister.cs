@@ -99,6 +99,51 @@ namespace Diver_Contest
             }
         }
 
+        List<Diver> ICompetition.GetRatingDivers()
+        {
+            MySqlCommand command = new MySqlCommand("SELECT * FROM Divers", Mysql_db.connection2);
+            // Create new jump lists.
+            List<Diver> diverStandings = new List<Diver>();
+
+            using (MySqlDataReader bgreader = command.ExecuteReader())
+            {
+                while (bgreader.Read())
+                {
+                    Diver diverStanding = new Diver();
+                    diverStanding.name = bgreader["name"].ToString();
+                    diverStanding.country = bgreader["country"].ToString();
+                    diverStanding.gender = Convert.ToString(bgreader["gender"]);
+
+
+                    diverStandings.Add(diverStanding);
+                }
+                bgreader.Close();
+                return diverStandings;
+            }
+
+
+        }
+
+
+        List<Diver> ICompetition.GetEndResultDivers()
+        {
+            MySqlCommand command2 = new MySqlCommand("select D.name, J.jumper, D.id, G.jump_id, J.id, SUM(G.grade) as sum_grade from Divers D inner join Jumps J on D.id = J.jumper inner join Grade G on J.id = G.jump_id GROUP BY G.jump_id ORDER BY sum_grade DESC", Mysql_db.connection2);
+            List<Diver> endResults = new List<Diver>();
+            using (MySqlDataReader bgreader = command2.ExecuteReader())
+            {
+                while (bgreader.Read())
+                {
+                    Diver endResult = new Diver();
+                    endResult.name = bgreader["name"].ToString();
+                    endResult.sumGrades = Convert.ToInt32(bgreader["sum_grade"]);
+
+                    endResults.Add(endResult);
+                }
+                bgreader.Close();
+                return endResults;
+            }
+        }
+
         void ICompetition.Exit()
         {
             Application.Exit();

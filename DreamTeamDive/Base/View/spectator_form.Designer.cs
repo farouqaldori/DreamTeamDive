@@ -465,11 +465,11 @@
             // NameForm_label
             // 
             this.NameForm_label.AutoSize = true;
-            this.NameForm_label.Location = new System.Drawing.Point(17, 15);
+            this.NameForm_label.Location = new System.Drawing.Point(11, 10);
             this.NameForm_label.Name = "NameForm_label";
-            this.NameForm_label.Size = new System.Drawing.Size(53, 19);
+            this.NameForm_label.Size = new System.Drawing.Size(98, 19);
             this.NameForm_label.TabIndex = 21;
-            this.NameForm_label.Text = "Contest";
+            this.NameForm_label.Text = "Contest statistic";
             // 
             // spectator_form
             // 
