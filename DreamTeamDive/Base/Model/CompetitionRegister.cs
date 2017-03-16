@@ -120,14 +120,13 @@ namespace Diver_Contest
                 bgreader.Close();
                 return diverStandings;
             }
-
-
         }
-
 
         List<Diver> ICompetition.GetEndResultDivers()
         {
-            MySqlCommand command2 = new MySqlCommand("select D.name, J.jumper, D.id, G.jump_id, J.id, SUM(G.grade) as sum_grade from Divers D inner join Jumps J on D.id = J.jumper inner join Grade G on J.id = G.jump_id GROUP BY G.jump_id ORDER BY sum_grade DESC", Mysql_db.connection2);
+            MySqlCommand command2 = new MySqlCommand("select D.name, MAX(G.grade) as maxgrade, MIN(G.grade) as mingrade, SUM(G.grade) as sum_grade, J.difficulty from Divers D inner join Jumps J on D.id = J.jumper inner join Grade G on J.id = G.jump_id GROUP BY J.jumper ORDER BY sum_grade DESC", Mysql_db.connection2);
+            
+
             List<Diver> endResults = new List<Diver>();
             using (MySqlDataReader bgreader = command2.ExecuteReader())
             {
@@ -135,7 +134,8 @@ namespace Diver_Contest
                 {
                     Diver endResult = new Diver();
                     endResult.name = bgreader["name"].ToString();
-                    endResult.sumGrades = Convert.ToInt32(bgreader["sum_grade"]);
+                 
+                    endResult.sumGrades = (Convert.ToInt32(bgreader["sum_grade"]) - Convert.ToInt32(bgreader["maxgrade"]) - Convert.ToInt32(bgreader["mingrade"])) * Convert.ToInt32(bgreader["difficulty"]);
 
                     endResults.Add(endResult);
                 }
