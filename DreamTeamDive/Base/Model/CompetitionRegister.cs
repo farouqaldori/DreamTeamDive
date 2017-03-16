@@ -124,6 +124,9 @@ namespace Diver_Contest
 
             _diver.jumpIndex++;
         }
+        
+
+
 
         List<Jump> ICompetition.UpdateJumps(int diver_id)
         {
@@ -160,11 +163,13 @@ namespace Diver_Contest
 
         }
 
-        /// <summary>
-        /// Get the first ungraded jump from competition.
-        /// </summary>
-        /// <param name="_compId">Competition id</param>
-        /// <returns>Jump object of the current jump to grade.</returns>
+     
+
+            /// <summary>
+            /// Get the first ungraded jump from competition.
+            /// </summary>
+            /// <param name="_compId">Competition id</param>
+            /// <returns>Jump object of the current jump to grade.</returns>
         Tuple<Jump, Diver> ICompetition.GetJumps(int _compId)
         {
             // Get user id to retrieve jumps.
@@ -245,6 +250,32 @@ namespace Diver_Contest
                 command2.ExecuteNonQuery();
             }
         }
-        
+
+        public List<Diver> GetRatingDivers()
+        {
+            
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `Divers` LIMIT 0,1", Mysql_db.connection2);
+            //command.Parameters.AddWithValue("@compId", diver_ID);
+
+            // Create new jump lists.
+            List<Diver> diverStandings = new List<Diver>();
+
+            using(MySqlDataReader bgreader = command.ExecuteReader())
+            {
+                while(bgreader.Read())
+                {
+
+                    Diver diverStanding = new Diver();
+
+                    diverStanding.sumGrades = Convert.ToDouble(bgreader["sumGrades"]);
+                    diverStanding.name = bgreader["name"].ToString();
+                    diverStanding.country = bgreader["country"].ToString();
+
+                    diverStandings.Add(diverStanding);                    
+                }
+                bgreader.Close();
+                return diverStandings;
+            }
+        }
     }
 }

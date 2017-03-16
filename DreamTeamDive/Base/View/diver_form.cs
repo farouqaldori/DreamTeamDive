@@ -18,6 +18,7 @@ namespace Diver_Contest
         public event DelegateUpdateJumps EventUpdateJumps = null;
         public event DelegateSendRating EventSendRating = null;
         public event DelegateGetJump EventGetJump = null;
+        public event DelegateGetRatingDivers EventGetRatingDivers = null;
 
         public Diver diver;
 
@@ -109,6 +110,11 @@ namespace Diver_Contest
                 Jump6Label.Text = statusToString(newJumps[5].status);
                 Jump6Label.ForeColor = statusToColor(newJumps[5].status);
             }
+        }
+
+        private void Jump1Label_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

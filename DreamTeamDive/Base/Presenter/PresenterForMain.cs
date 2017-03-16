@@ -4,6 +4,7 @@ using System.Threading;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using Base.View;
 using MySql.Data.MySqlClient;
 
 namespace Diver_Contest
@@ -13,18 +14,22 @@ namespace Diver_Contest
         public main_auth_form _mainform { get; set; }
         public diver_form _diverform { get; set; }
         public judge_form _judgeform { get; set; }
+        public spectator_form _Spectatorform { get; set; }
         public ICompetition _Model { get; set; }
 
         /// <summary>
         /// Default Constructor
         /// </summary>
         /// <param name="view"></param>
-        public PresenterForMain(judge_form judgeform, diver_form diverform, main_auth_form mainform, CompetitionRegister cr)
+        public PresenterForMain(judge_form judgeform, diver_form diverform, 
+            main_auth_form mainform, CompetitionRegister cr, spectator_form spectatorform )
         {
             this._Model = cr;
             this._mainform = mainform;
             this._diverform = diverform;
             this._judgeform = judgeform;
+            this._Spectatorform = spectatorform;
+
             // Start db connection
             this._Model.StartConnection();
 
@@ -36,6 +41,15 @@ namespace Diver_Contest
 
             this._judgeform.EventSendRating += RateJump;
             this._judgeform.EventGetJump += GetJumps;
+
+            this._Spectatorform.EventGetRatingDivers += GetRatingDivers;
+        }
+
+        public void GetRatingDivers()
+        {
+            List<Diver> diverStandings = this._Model.GetRatingDivers();
+            //backgroundworker
+            this._Spectatorform.comp_updater_backgroundWorker(1, diverStandings);
         }
 
         public void UpdateJumps()

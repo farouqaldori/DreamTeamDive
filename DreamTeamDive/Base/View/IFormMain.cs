@@ -17,6 +17,9 @@ namespace Diver_Contest
     public delegate void DelegateSendRating();
     public delegate void DelegateGetJump();
 
+    //Spectator delegates
+    public delegate void DelegateGetRatingDivers();
+
     public interface IFormMain
     {
         event DelegateLogin EventLogin;
@@ -29,5 +32,8 @@ namespace Diver_Contest
         // Judge events
         event DelegateSendRating EventSendRating;
         event DelegateGetJump EventGetJump;
+
+        //Spectator events
+        event DelegateGetRatingDivers EventGetRatingDivers;
     }
 }
