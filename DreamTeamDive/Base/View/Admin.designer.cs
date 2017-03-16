@@ -29,498 +29,42 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.msmMain = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.Light = new MetroFramework.Controls.MetroButton();
-            this.Dark = new MetroFramework.Controls.MetroButton();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.Apply = new MetroFramework.Controls.MetroButton();
-            this.showchld = new MetroFramework.Controls.MetroButton();
-            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
-            this.contest_tab = new MetroFramework.Controls.MetroTabPage();
-            this.ResetButton = new MetroFramework.Controls.MetroButton();
-            this.SubmitButton = new MetroFramework.Controls.MetroButton();
+            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
+            this.Reset_Button = new MetroFramework.Controls.MetroButton();
+            this.Create_Button = new MetroFramework.Controls.MetroButton();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
-            this.metroRadioButton7 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton6 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton5 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton4 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.Judges_Seven_Check = new MetroFramework.Controls.MetroRadioButton();
+            this.Judges_Five_Check = new MetroFramework.Controls.MetroRadioButton();
+            this.CompetitionName_TextBox = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.judge_tab = new MetroFramework.Controls.MetroTabPage();
-            this.metroButton3 = new MetroFramework.Controls.MetroButton();
-            this.metroButton4 = new MetroFramework.Controls.MetroButton();
-            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.Hopper_tab = new MetroFramework.Controls.MetroTabPage();
-            this.metroButton5 = new MetroFramework.Controls.MetroButton();
-            this.metroButton6 = new MetroFramework.Controls.MetroButton();
-            this.metroRadioButton3 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton2 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroTextBox4 = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.JudgeGridView = new System.Windows.Forms.DataGridView();
+            this.SaveToFileJudge_button = new MetroFramework.Controls.MetroButton();
+            this.ReadFromFileJudge_Button = new MetroFramework.Controls.MetroButton();
+            this.SaveToFileDiver_Button = new MetroFramework.Controls.MetroButton();
+            this.ReadFromfileDiver_Button = new MetroFramework.Controls.MetroButton();
+            this.DiverGridView = new System.Windows.Forms.DataGridView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).BeginInit();
-            this.metroTabControl1.SuspendLayout();
-            this.contest_tab.SuspendLayout();
-            this.judge_tab.SuspendLayout();
-            this.Hopper_tab.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.JudgeGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DiverGridView)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // msmMain
             // 
             this.msmMain.Owner = this;
-            // 
-            // Light
-            // 
-            this.Light.Location = new System.Drawing.Point(430, 24);
-            this.Light.Name = "Light";
-            this.Light.Size = new System.Drawing.Size(45, 29);
-            this.Light.TabIndex = 0;
-            this.Light.Text = "Light";
-            this.Light.UseSelectable = true;
-            this.Light.Click += new System.EventHandler(this.Light_Click);
-            // 
-            // Dark
-            // 
-            this.Dark.Location = new System.Drawing.Point(295, 24);
-            this.Dark.Name = "Dark";
-            this.Dark.Size = new System.Drawing.Size(57, 29);
-            this.Dark.TabIndex = 1;
-            this.Dark.Text = "Dark";
-            this.Dark.UseSelectable = true;
-            this.Dark.Click += new System.EventHandler(this.Dark_Click);
-            // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-            "13",
-            "14"});
-            this.metroComboBox1.Location = new System.Drawing.Point(168, 24);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(121, 29);
-            this.metroComboBox1.TabIndex = 2;
-            this.metroComboBox1.UseSelectable = true;
-            // 
-            // Apply
-            // 
-            this.Apply.Location = new System.Drawing.Point(98, 24);
-            this.Apply.Name = "Apply";
-            this.Apply.Size = new System.Drawing.Size(64, 29);
-            this.Apply.TabIndex = 3;
-            this.Apply.Text = "Apply";
-            this.Apply.UseSelectable = true;
-            this.Apply.Click += new System.EventHandler(this.Apply_Click);
-            // 
-            // showchld
-            // 
-            this.showchld.Location = new System.Drawing.Point(358, 24);
-            this.showchld.Name = "showchld";
-            this.showchld.Size = new System.Drawing.Size(66, 29);
-            this.showchld.TabIndex = 4;
-            this.showchld.Text = "showchld";
-            this.showchld.UseSelectable = true;
-            // 
-            // metroTabControl1
-            // 
-            this.metroTabControl1.Controls.Add(this.contest_tab);
-            this.metroTabControl1.Controls.Add(this.judge_tab);
-            this.metroTabControl1.Controls.Add(this.Hopper_tab);
-            this.metroTabControl1.Location = new System.Drawing.Point(23, 63);
-            this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
-            this.metroTabControl1.Size = new System.Drawing.Size(461, 266);
-            this.metroTabControl1.TabIndex = 5;
-            this.metroTabControl1.UseSelectable = true;
-            // 
-            // contest_tab
-            // 
-            this.contest_tab.Controls.Add(this.ResetButton);
-            this.contest_tab.Controls.Add(this.SubmitButton);
-            this.contest_tab.Controls.Add(this.metroLabel3);
-            this.contest_tab.Controls.Add(this.metroDateTime1);
-            this.contest_tab.Controls.Add(this.metroRadioButton7);
-            this.contest_tab.Controls.Add(this.metroRadioButton6);
-            this.contest_tab.Controls.Add(this.metroRadioButton5);
-            this.contest_tab.Controls.Add(this.metroRadioButton4);
-            this.contest_tab.Controls.Add(this.metroTextBox1);
-            this.contest_tab.Controls.Add(this.metroLabel2);
-            this.contest_tab.Controls.Add(this.metroLabel1);
-            this.contest_tab.HorizontalScrollbarBarColor = true;
-            this.contest_tab.HorizontalScrollbarHighlightOnWheel = false;
-            this.contest_tab.HorizontalScrollbarSize = 10;
-            this.contest_tab.Location = new System.Drawing.Point(4, 38);
-            this.contest_tab.Name = "contest_tab";
-            this.contest_tab.Size = new System.Drawing.Size(453, 224);
-            this.contest_tab.TabIndex = 0;
-            this.contest_tab.Text = "Contest";
-            this.contest_tab.VerticalScrollbarBarColor = true;
-            this.contest_tab.VerticalScrollbarHighlightOnWheel = false;
-            this.contest_tab.VerticalScrollbarSize = 10;
-            // 
-            // ResetButton
-            // 
-            this.ResetButton.Location = new System.Drawing.Point(169, 183);
-            this.ResetButton.Name = "ResetButton";
-            this.ResetButton.Size = new System.Drawing.Size(135, 38);
-            this.ResetButton.TabIndex = 13;
-            this.ResetButton.Text = "Reset";
-            this.ResetButton.UseSelectable = true;
-            // 
-            // SubmitButton
-            // 
-            this.SubmitButton.Location = new System.Drawing.Point(0, 183);
-            this.SubmitButton.Name = "SubmitButton";
-            this.SubmitButton.Size = new System.Drawing.Size(135, 38);
-            this.SubmitButton.TabIndex = 12;
-            this.SubmitButton.Text = "Submit";
-            this.SubmitButton.UseSelectable = true;
-            // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(0, 117);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(39, 19);
-            this.metroLabel3.TabIndex = 11;
-            this.metroLabel3.Text = "Date:";
-            // 
-            // metroDateTime1
-            // 
-            this.metroDateTime1.Location = new System.Drawing.Point(104, 113);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(4, 29);
-            this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(200, 29);
-            this.metroDateTime1.TabIndex = 10;
-            this.metroDateTime1.ValueChanged += new System.EventHandler(this.metroDateTime1_ValueChanged);
-            // 
-            // metroRadioButton7
-            // 
-            this.metroRadioButton7.AutoSize = true;
-            this.metroRadioButton7.Location = new System.Drawing.Point(125, 79);
-            this.metroRadioButton7.Name = "metroRadioButton7";
-            this.metroRadioButton7.Size = new System.Drawing.Size(29, 15);
-            this.metroRadioButton7.TabIndex = 9;
-            this.metroRadioButton7.Text = "3";
-            this.metroRadioButton7.UseSelectable = true;
-            // 
-            // metroRadioButton6
-            // 
-            this.metroRadioButton6.AutoSize = true;
-            this.metroRadioButton6.Location = new System.Drawing.Point(275, 79);
-            this.metroRadioButton6.Name = "metroRadioButton6";
-            this.metroRadioButton6.Size = new System.Drawing.Size(29, 15);
-            this.metroRadioButton6.TabIndex = 8;
-            this.metroRadioButton6.Text = "9";
-            this.metroRadioButton6.UseSelectable = true;
-            // 
-            // metroRadioButton5
-            // 
-            this.metroRadioButton5.AutoSize = true;
-            this.metroRadioButton5.Location = new System.Drawing.Point(225, 79);
-            this.metroRadioButton5.Name = "metroRadioButton5";
-            this.metroRadioButton5.Size = new System.Drawing.Size(29, 15);
-            this.metroRadioButton5.TabIndex = 7;
-            this.metroRadioButton5.Text = "7";
-            this.metroRadioButton5.UseSelectable = true;
-            // 
-            // metroRadioButton4
-            // 
-            this.metroRadioButton4.AutoSize = true;
-            this.metroRadioButton4.Location = new System.Drawing.Point(175, 79);
-            this.metroRadioButton4.Name = "metroRadioButton4";
-            this.metroRadioButton4.Size = new System.Drawing.Size(29, 15);
-            this.metroRadioButton4.TabIndex = 6;
-            this.metroRadioButton4.Text = "5";
-            this.metroRadioButton4.UseSelectable = true;
-            // 
-            // metroTextBox1
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(145, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[] {
-        "<Name and Surname>"};
-            this.metroTextBox1.Location = new System.Drawing.Point(137, 33);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(167, 23);
-            this.metroTextBox1.TabIndex = 5;
-            this.metroTextBox1.Text = "<Name and Surname>";
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel2
-            // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(0, 75);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(119, 19);
-            this.metroLabel2.TabIndex = 3;
-            this.metroLabel2.Text = "Amount of Judges:";
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(0, 33);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(135, 19);
-            this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "Type Of Competition:";
-            this.metroLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
-            // 
-            // judge_tab
-            // 
-            this.judge_tab.Controls.Add(this.metroButton3);
-            this.judge_tab.Controls.Add(this.metroButton4);
-            this.judge_tab.Controls.Add(this.metroLabel8);
-            this.judge_tab.Controls.Add(this.metroLabel7);
-            this.judge_tab.HorizontalScrollbarBarColor = true;
-            this.judge_tab.HorizontalScrollbarHighlightOnWheel = false;
-            this.judge_tab.HorizontalScrollbarSize = 10;
-            this.judge_tab.Location = new System.Drawing.Point(4, 38);
-            this.judge_tab.Name = "judge_tab";
-            this.judge_tab.Size = new System.Drawing.Size(453, 224);
-            this.judge_tab.TabIndex = 1;
-            this.judge_tab.Text = "Judge";
-            this.judge_tab.VerticalScrollbarBarColor = true;
-            this.judge_tab.VerticalScrollbarHighlightOnWheel = false;
-            this.judge_tab.VerticalScrollbarSize = 10;
-            // 
-            // metroButton3
-            // 
-            this.metroButton3.Location = new System.Drawing.Point(169, 183);
-            this.metroButton3.Name = "metroButton3";
-            this.metroButton3.Size = new System.Drawing.Size(135, 38);
-            this.metroButton3.TabIndex = 15;
-            this.metroButton3.Text = "Reset";
-            this.metroButton3.UseSelectable = true;
-            // 
-            // metroButton4
-            // 
-            this.metroButton4.Location = new System.Drawing.Point(0, 183);
-            this.metroButton4.Name = "metroButton4";
-            this.metroButton4.Size = new System.Drawing.Size(135, 38);
-            this.metroButton4.TabIndex = 14;
-            this.metroButton4.Text = "Submit";
-            this.metroButton4.UseSelectable = true;
-            // 
-            // metroLabel8
-            // 
-            this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(0, 75);
-            this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(85, 19);
-            this.metroLabel8.TabIndex = 3;
-            this.metroLabel8.Text = "Competition:";
-            // 
-            // metroLabel7
-            // 
-            this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(0, 33);
-            this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(48, 19);
-            this.metroLabel7.TabIndex = 2;
-            this.metroLabel7.Text = "Name:";
-            // 
-            // Hopper_tab
-            // 
-            this.Hopper_tab.Controls.Add(this.metroButton5);
-            this.Hopper_tab.Controls.Add(this.metroButton6);
-            this.Hopper_tab.Controls.Add(this.metroRadioButton3);
-            this.Hopper_tab.Controls.Add(this.metroRadioButton2);
-            this.Hopper_tab.Controls.Add(this.metroRadioButton1);
-            this.Hopper_tab.Controls.Add(this.metroTextBox2);
-            this.Hopper_tab.Controls.Add(this.metroTextBox4);
-            this.Hopper_tab.Controls.Add(this.metroLabel4);
-            this.Hopper_tab.Controls.Add(this.metroLabel5);
-            this.Hopper_tab.Controls.Add(this.metroLabel6);
-            this.Hopper_tab.HorizontalScrollbarBarColor = true;
-            this.Hopper_tab.HorizontalScrollbarHighlightOnWheel = false;
-            this.Hopper_tab.HorizontalScrollbarSize = 10;
-            this.Hopper_tab.Location = new System.Drawing.Point(4, 38);
-            this.Hopper_tab.Name = "Hopper_tab";
-            this.Hopper_tab.Size = new System.Drawing.Size(453, 224);
-            this.Hopper_tab.TabIndex = 2;
-            this.Hopper_tab.Text = "Hopper";
-            this.Hopper_tab.VerticalScrollbarBarColor = true;
-            this.Hopper_tab.VerticalScrollbarHighlightOnWheel = false;
-            this.Hopper_tab.VerticalScrollbarSize = 10;
-            this.Hopper_tab.Click += new System.EventHandler(this.Hopper_tab_Click);
-            // 
-            // metroButton5
-            // 
-            this.metroButton5.Location = new System.Drawing.Point(169, 183);
-            this.metroButton5.Name = "metroButton5";
-            this.metroButton5.Size = new System.Drawing.Size(135, 38);
-            this.metroButton5.TabIndex = 17;
-            this.metroButton5.Text = "Reset";
-            this.metroButton5.UseSelectable = true;
-            // 
-            // metroButton6
-            // 
-            this.metroButton6.Location = new System.Drawing.Point(0, 183);
-            this.metroButton6.Name = "metroButton6";
-            this.metroButton6.Size = new System.Drawing.Size(135, 38);
-            this.metroButton6.TabIndex = 16;
-            this.metroButton6.Text = "Submit";
-            this.metroButton6.UseSelectable = true;
-            // 
-            // metroRadioButton3
-            // 
-            this.metroRadioButton3.AutoSize = true;
-            this.metroRadioButton3.Location = new System.Drawing.Point(187, 81);
-            this.metroRadioButton3.Name = "metroRadioButton3";
-            this.metroRadioButton3.Size = new System.Drawing.Size(53, 15);
-            this.metroRadioButton3.TabIndex = 15;
-            this.metroRadioButton3.Text = "Other";
-            this.metroRadioButton3.UseSelectable = true;
-            // 
-            // metroRadioButton2
-            // 
-            this.metroRadioButton2.AutoSize = true;
-            this.metroRadioButton2.Location = new System.Drawing.Point(120, 81);
-            this.metroRadioButton2.Name = "metroRadioButton2";
-            this.metroRadioButton2.Size = new System.Drawing.Size(61, 15);
-            this.metroRadioButton2.TabIndex = 14;
-            this.metroRadioButton2.Text = "Female";
-            this.metroRadioButton2.UseSelectable = true;
-            // 
-            // metroRadioButton1
-            // 
-            this.metroRadioButton1.AutoSize = true;
-            this.metroRadioButton1.Location = new System.Drawing.Point(65, 80);
-            this.metroRadioButton1.Name = "metroRadioButton1";
-            this.metroRadioButton1.Size = new System.Drawing.Size(49, 15);
-            this.metroRadioButton1.TabIndex = 13;
-            this.metroRadioButton1.Text = "Male";
-            this.metroRadioButton1.UseSelectable = true;
-            // 
-            // metroTextBox2
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(153, 1);
-            this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox2.CustomButton.TabIndex = 1;
-            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox2.CustomButton.UseSelectable = true;
-            this.metroTextBox2.CustomButton.Visible = false;
-            this.metroTextBox2.Lines = new string[] {
-        "<Country>"};
-            this.metroTextBox2.Location = new System.Drawing.Point(65, 121);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.SelectionLength = 0;
-            this.metroTextBox2.SelectionStart = 0;
-            this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(175, 23);
-            this.metroTextBox2.TabIndex = 12;
-            this.metroTextBox2.Text = "<Country>";
-            this.metroTextBox2.UseSelectable = true;
-            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroTextBox4
-            // 
-            // 
-            // 
-            // 
-            this.metroTextBox4.CustomButton.Image = null;
-            this.metroTextBox4.CustomButton.Location = new System.Drawing.Point(153, 1);
-            this.metroTextBox4.CustomButton.Name = "";
-            this.metroTextBox4.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.metroTextBox4.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox4.CustomButton.TabIndex = 1;
-            this.metroTextBox4.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox4.CustomButton.UseSelectable = true;
-            this.metroTextBox4.CustomButton.Visible = false;
-            this.metroTextBox4.Lines = new string[] {
-        "<Name and Surname>"};
-            this.metroTextBox4.Location = new System.Drawing.Point(65, 33);
-            this.metroTextBox4.MaxLength = 32767;
-            this.metroTextBox4.Name = "metroTextBox4";
-            this.metroTextBox4.PasswordChar = '\0';
-            this.metroTextBox4.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox4.SelectedText = "";
-            this.metroTextBox4.SelectionLength = 0;
-            this.metroTextBox4.SelectionStart = 0;
-            this.metroTextBox4.ShortcutsEnabled = true;
-            this.metroTextBox4.Size = new System.Drawing.Size(175, 23);
-            this.metroTextBox4.TabIndex = 11;
-            this.metroTextBox4.Text = "<Name and Surname>";
-            this.metroTextBox4.UseSelectable = true;
-            this.metroTextBox4.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox4.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(0, 121);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(59, 19);
-            this.metroLabel4.TabIndex = 10;
-            this.metroLabel4.Text = "Country:";
-            // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(0, 77);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(56, 19);
-            this.metroLabel5.TabIndex = 9;
-            this.metroLabel5.Text = "Gender:";
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(0, 33);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(52, 19);
-            this.metroLabel6.TabIndex = 8;
-            this.metroLabel6.Text = "Name: ";
             // 
             // metroToolTip1
             // 
@@ -528,28 +72,282 @@
             this.metroToolTip1.StyleManager = null;
             this.metroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // Main
+            // Reset_Button
+            // 
+            this.Reset_Button.Location = new System.Drawing.Point(23, 545);
+            this.Reset_Button.Name = "Reset_Button";
+            this.Reset_Button.Size = new System.Drawing.Size(641, 38);
+            this.Reset_Button.TabIndex = 44;
+            this.Reset_Button.Text = "Reset";
+            this.Reset_Button.UseSelectable = true;
+            this.Reset_Button.Click += new System.EventHandler(this.Reset_Button_Click);
+            // 
+            // Create_Button
+            // 
+            this.Create_Button.Location = new System.Drawing.Point(24, 501);
+            this.Create_Button.Name = "Create_Button";
+            this.Create_Button.Size = new System.Drawing.Size(640, 38);
+            this.Create_Button.TabIndex = 43;
+            this.Create_Button.Text = "Create";
+            this.Create_Button.UseSelectable = true;
+            this.Create_Button.Click += new System.EventHandler(this.Create_Button_Click);
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(9, 73);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(39, 19);
+            this.metroLabel3.TabIndex = 42;
+            this.metroLabel3.Text = "Date:";
+            // 
+            // metroDateTime1
+            // 
+            this.metroDateTime1.Location = new System.Drawing.Point(63, 68);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime1.Name = "metroDateTime1";
+            this.metroDateTime1.Size = new System.Drawing.Size(196, 29);
+            this.metroDateTime1.TabIndex = 41;
+            // 
+            // Judges_Seven_Check
+            // 
+            this.Judges_Seven_Check.AutoSize = true;
+            this.Judges_Seven_Check.Location = new System.Drawing.Point(386, 32);
+            this.Judges_Seven_Check.Name = "Judges_Seven_Check";
+            this.Judges_Seven_Check.Size = new System.Drawing.Size(29, 15);
+            this.Judges_Seven_Check.TabIndex = 40;
+            this.Judges_Seven_Check.Text = "7";
+            this.Judges_Seven_Check.UseSelectable = true;
+            this.Judges_Seven_Check.CheckedChanged += new System.EventHandler(this.Judges_Seven_Check_CheckedChanged);
+            this.Judges_Seven_Check.Click += new System.EventHandler(this.Judges_Seven_Check_CheckedChanged);
+            // 
+            // Judges_Five_Check
+            // 
+            this.Judges_Five_Check.AutoSize = true;
+            this.Judges_Five_Check.Location = new System.Drawing.Point(350, 32);
+            this.Judges_Five_Check.Name = "Judges_Five_Check";
+            this.Judges_Five_Check.Size = new System.Drawing.Size(29, 15);
+            this.Judges_Five_Check.TabIndex = 39;
+            this.Judges_Five_Check.Text = "5";
+            this.Judges_Five_Check.UseSelectable = true;
+            this.Judges_Five_Check.CheckedChanged += new System.EventHandler(this.Judges_Five_Check_CheckedChanged);
+            this.Judges_Five_Check.Click += new System.EventHandler(this.Judges_Five_Check_CheckedChanged);
+            // 
+            // CompetitionName_TextBox
+            // 
+            // 
+            // 
+            // 
+            this.CompetitionName_TextBox.CustomButton.Image = null;
+            this.CompetitionName_TextBox.CustomButton.Location = new System.Drawing.Point(168, 1);
+            this.CompetitionName_TextBox.CustomButton.Name = "";
+            this.CompetitionName_TextBox.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.CompetitionName_TextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.CompetitionName_TextBox.CustomButton.TabIndex = 1;
+            this.CompetitionName_TextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.CompetitionName_TextBox.CustomButton.UseSelectable = true;
+            this.CompetitionName_TextBox.CustomButton.Visible = false;
+            this.CompetitionName_TextBox.Lines = new string[0];
+            this.CompetitionName_TextBox.Location = new System.Drawing.Point(63, 23);
+            this.CompetitionName_TextBox.MaxLength = 32767;
+            this.CompetitionName_TextBox.Name = "CompetitionName_TextBox";
+            this.CompetitionName_TextBox.PasswordChar = '\0';
+            this.CompetitionName_TextBox.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.CompetitionName_TextBox.SelectedText = "";
+            this.CompetitionName_TextBox.SelectionLength = 0;
+            this.CompetitionName_TextBox.SelectionStart = 0;
+            this.CompetitionName_TextBox.ShortcutsEnabled = true;
+            this.CompetitionName_TextBox.Size = new System.Drawing.Size(196, 29);
+            this.CompetitionName_TextBox.TabIndex = 38;
+            this.CompetitionName_TextBox.UseSelectable = true;
+            this.CompetitionName_TextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.CompetitionName_TextBox.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // metroLabel2
+            // 
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.Location = new System.Drawing.Point(289, 28);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(52, 19);
+            this.metroLabel2.TabIndex = 37;
+            this.metroLabel2.Text = "Judges:";
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(9, 28);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(48, 19);
+            this.metroLabel1.TabIndex = 36;
+            this.metroLabel1.Text = "Name:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.metroLabel1);
+            this.groupBox1.Controls.Add(this.CompetitionName_TextBox);
+            this.groupBox1.Controls.Add(this.metroLabel3);
+            this.groupBox1.Controls.Add(this.metroDateTime1);
+            this.groupBox1.Controls.Add(this.metroLabel2);
+            this.groupBox1.Controls.Add(this.Judges_Five_Check);
+            this.groupBox1.Controls.Add(this.Judges_Seven_Check);
+            this.groupBox1.Location = new System.Drawing.Point(24, 64);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(640, 114);
+            this.groupBox1.TabIndex = 51;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Contest Information";
+            // 
+            // JudgeGridView
+            // 
+            this.JudgeGridView.AllowUserToResizeColumns = false;
+            this.JudgeGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            this.JudgeGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.JudgeGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.JudgeGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.JudgeGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.JudgeGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(4);
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.JudgeGridView.DefaultCellStyle = dataGridViewCellStyle13;
+            this.JudgeGridView.Location = new System.Drawing.Point(6, 19);
+            this.JudgeGridView.Name = "JudgeGridView";
+            this.JudgeGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.JudgeGridView.Size = new System.Drawing.Size(301, 221);
+            this.JudgeGridView.TabIndex = 46;
+            this.JudgeGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.JudgeGridView_CellClick);
+            // 
+            // SaveToFileJudge_button
+            // 
+            this.SaveToFileJudge_button.Location = new System.Drawing.Point(6, 246);
+            this.SaveToFileJudge_button.Name = "SaveToFileJudge_button";
+            this.SaveToFileJudge_button.Size = new System.Drawing.Size(95, 38);
+            this.SaveToFileJudge_button.TabIndex = 51;
+            this.SaveToFileJudge_button.Text = "Save to file";
+            this.SaveToFileJudge_button.UseSelectable = true;
+            this.SaveToFileJudge_button.Click += new System.EventHandler(this.SaveToFileJudge_button_Click);
+            // 
+            // ReadFromFileJudge_Button
+            // 
+            this.ReadFromFileJudge_Button.Location = new System.Drawing.Point(107, 246);
+            this.ReadFromFileJudge_Button.Name = "ReadFromFileJudge_Button";
+            this.ReadFromFileJudge_Button.Size = new System.Drawing.Size(95, 38);
+            this.ReadFromFileJudge_Button.TabIndex = 52;
+            this.ReadFromFileJudge_Button.Text = "Read from file";
+            this.ReadFromFileJudge_Button.UseSelectable = true;
+            this.ReadFromFileJudge_Button.Click += new System.EventHandler(this.ReadFromFileJudge_Button_Click);
+            // 
+            // SaveToFileDiver_Button
+            // 
+            this.SaveToFileDiver_Button.Location = new System.Drawing.Point(9, 246);
+            this.SaveToFileDiver_Button.Name = "SaveToFileDiver_Button";
+            this.SaveToFileDiver_Button.Size = new System.Drawing.Size(95, 38);
+            this.SaveToFileDiver_Button.TabIndex = 56;
+            this.SaveToFileDiver_Button.Text = "Save to file";
+            this.SaveToFileDiver_Button.UseSelectable = true;
+            this.SaveToFileDiver_Button.Click += new System.EventHandler(this.SaveToFileDiver_Button_Click);
+            // 
+            // ReadFromfileDiver_Button
+            // 
+            this.ReadFromfileDiver_Button.Location = new System.Drawing.Point(110, 246);
+            this.ReadFromfileDiver_Button.Name = "ReadFromfileDiver_Button";
+            this.ReadFromfileDiver_Button.Size = new System.Drawing.Size(95, 38);
+            this.ReadFromfileDiver_Button.TabIndex = 57;
+            this.ReadFromfileDiver_Button.Text = "Read from file";
+            this.ReadFromfileDiver_Button.UseSelectable = true;
+            this.ReadFromfileDiver_Button.Click += new System.EventHandler(this.ReadFromfileDiver_Button_Click);
+            // 
+            // DiverGridView
+            // 
+            this.DiverGridView.AllowUserToResizeColumns = false;
+            this.DiverGridView.AllowUserToResizeRows = false;
+            this.DiverGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.DiverGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DiverGridView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DiverGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.DiverGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(4);
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ControlDark;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DiverGridView.DefaultCellStyle = dataGridViewCellStyle15;
+            this.DiverGridView.Location = new System.Drawing.Point(9, 19);
+            this.DiverGridView.Name = "DiverGridView";
+            this.DiverGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.DiverGridView.Size = new System.Drawing.Size(302, 221);
+            this.DiverGridView.TabIndex = 55;
+            this.DiverGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DiverGridView_CellClick);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.DiverGridView);
+            this.groupBox2.Controls.Add(this.SaveToFileDiver_Button);
+            this.groupBox2.Controls.Add(this.ReadFromfileDiver_Button);
+            this.groupBox2.Location = new System.Drawing.Point(24, 185);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(317, 299);
+            this.groupBox2.TabIndex = 58;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Diver List";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.SaveToFileJudge_button);
+            this.groupBox3.Controls.Add(this.ReadFromFileJudge_Button);
+            this.groupBox3.Controls.Add(this.JudgeGridView);
+            this.groupBox3.Location = new System.Drawing.Point(351, 185);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(313, 299);
+            this.groupBox3.TabIndex = 59;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Judge Box";
+            // 
+            // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 352);
-            this.Controls.Add(this.metroTabControl1);
-            this.Controls.Add(this.showchld);
-            this.Controls.Add(this.Apply);
-            this.Controls.Add(this.metroComboBox1);
-            this.Controls.Add(this.Dark);
-            this.Controls.Add(this.Light);
-            this.Name = "Main";
-            this.Text = "Admin";
+            this.ClientSize = new System.Drawing.Size(688, 598);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.Reset_Button);
+            this.Controls.Add(this.Create_Button);
+            this.Name = "Admin";
+            this.Text = "Welcome,";
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).EndInit();
-            this.metroTabControl1.ResumeLayout(false);
-            this.contest_tab.ResumeLayout(false);
-            this.contest_tab.PerformLayout();
-            this.judge_tab.ResumeLayout(false);
-            this.judge_tab.PerformLayout();
-            this.Hopper_tab.ResumeLayout(false);
-            this.Hopper_tab.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.JudgeGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DiverGridView)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -557,41 +355,25 @@
         #endregion
 
         private MetroFramework.Components.MetroStyleManager msmMain;
-        private MetroFramework.Controls.MetroButton Dark;
-        private MetroFramework.Controls.MetroButton Light;
-        private MetroFramework.Controls.MetroButton Apply;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroButton showchld;
-        private MetroFramework.Controls.MetroTabControl metroTabControl1;
-        private MetroFramework.Controls.MetroTabPage contest_tab;
-        private MetroFramework.Controls.MetroTabPage judge_tab;
-        private MetroFramework.Controls.MetroTabPage Hopper_tab;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton3;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton2;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox4;
-        private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
-        private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Components.MetroToolTip metroToolTip1;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton7;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton6;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton5;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton4;
-        private MetroFramework.Controls.MetroLabel metroLabel8;
-        private MetroFramework.Controls.MetroLabel metroLabel7;
-        private MetroFramework.Controls.MetroDateTime metroDateTime1;
-        private MetroFramework.Controls.MetroButton ResetButton;
-        private MetroFramework.Controls.MetroButton SubmitButton;
+        public MetroFramework.Controls.MetroButton Reset_Button;
+        public MetroFramework.Controls.MetroButton Create_Button;
         private MetroFramework.Controls.MetroLabel metroLabel3;
-        private MetroFramework.Controls.MetroButton metroButton3;
-        private MetroFramework.Controls.MetroButton metroButton4;
-        private MetroFramework.Controls.MetroButton metroButton5;
-        private MetroFramework.Controls.MetroButton metroButton6;
+        public MetroFramework.Controls.MetroDateTime metroDateTime1;
+        public MetroFramework.Controls.MetroRadioButton Judges_Seven_Check;
+        public MetroFramework.Controls.MetroRadioButton Judges_Five_Check;
+        public MetroFramework.Controls.MetroTextBox CompetitionName_TextBox;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        public MetroFramework.Controls.MetroButton SaveToFileJudge_button;
+        public MetroFramework.Controls.MetroButton ReadFromFileJudge_Button;
+        public System.Windows.Forms.DataGridView JudgeGridView;
+        private System.Windows.Forms.GroupBox groupBox2;
+        public System.Windows.Forms.DataGridView DiverGridView;
+        public MetroFramework.Controls.MetroButton SaveToFileDiver_Button;
+        public MetroFramework.Controls.MetroButton ReadFromfileDiver_Button;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

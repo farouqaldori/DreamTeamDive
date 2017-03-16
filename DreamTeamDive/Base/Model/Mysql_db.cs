@@ -20,7 +20,6 @@ namespace Diver_Contest
 
         public static MySql.Data.MySqlClient.MySqlConnection connection;
         public static MySql.Data.MySqlClient.MySqlConnection connection2;
-
         /// <summary>
         /// Connect to the MySql database.
         /// </summary>

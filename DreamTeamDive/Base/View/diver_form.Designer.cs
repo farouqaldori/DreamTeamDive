@@ -327,10 +327,8 @@
         #endregion
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel8;
-        private MetroFramework.Controls.MetroComboBox PerformJumpBox;
         private MetroFramework.Components.MetroToolTip metroToolTip1;
         public MetroFramework.Controls.MetroButton JumpButton;
-        private MetroFramework.Controls.MetroComboBox DifficultyBox;
         public System.ComponentModel.BackgroundWorker jump_updater_backgroundWorker;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLabel metroLabel2;
@@ -346,5 +344,7 @@
         public System.Windows.Forms.Label Jump6Label;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        public MetroFramework.Controls.MetroComboBox PerformJumpBox;
+        public MetroFramework.Controls.MetroComboBox DifficultyBox;
     }
 }

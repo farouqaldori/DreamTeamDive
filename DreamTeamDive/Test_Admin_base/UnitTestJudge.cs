@@ -9,6 +9,7 @@ namespace Test_Admin_base
     [TestClass]
     public class UnitTestJudge
     {
+<<<<<<< HEAD
         //[TestMethod]
         //public void databaseInit()
         //{
@@ -29,6 +30,28 @@ namespace Test_Admin_base
         //        Assert.Fail();
         //    }
         //}
+=======
+        [TestMethod]
+        public void databaseInit()
+        {
+            // Test if connection can be established.
+            Assert.AreEqual(Mysql_db.connect(), true);
+
+            // Test command
+            string command = "SELECT * FROM Divers";
+
+            // Execute command
+            try
+            {
+                Mysql_db.execute(command);
+                Assert.AreEqual(1, 1);
+            }
+            catch
+            {
+                Assert.Fail();
+            }
+        }
+>>>>>>> origin/master
 
         [TestMethod]
         public void generateCompetition()

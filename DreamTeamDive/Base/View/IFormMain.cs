@@ -22,6 +22,7 @@ namespace Diver_Contest
 
     public interface IFormMain
     {
+       
         event DelegateLogin EventLogin;
         event DelegateExit EventExit;
 

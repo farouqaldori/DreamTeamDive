@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Diver_Contest
 {
-    public class Diver
+    [Serializable()]
+    public class Diver 
     {
-
-        public int id { get; set; }
-        public int authCode { get; set; }
         public string name { get; set; }
         public string country { get; set; }
         public string gender { get; set; }
         public int competition { get; set; }
+<<<<<<< HEAD
         public double max { get; set; } = 0.0;
         public double min { get; set; } = 10.0;
         public double result { get; set; }  = 0.0;
@@ -22,11 +22,22 @@ namespace Diver_Contest
 
         // To track which jump to perform.
         public int jumpIndex = 1;
-
-        public List<Jump> jumps = new List<Jump>();
+=======
+        public int id { get; set; }
+        public int authCode { get; set; }
         public double sumGrades { get; set; }
 
+        // To track which jump to perform.
+        [XmlIgnore]
+        public int jumpIndex = 0;
+>>>>>>> origin/master
 
+        [XmlIgnore]
+        public List<Jump> jumps = new List<Jump>();
+
+        static Random rand = new Random(220);
+
+<<<<<<< HEAD
         //public Diver()
         //{
 
@@ -36,6 +47,19 @@ namespace Diver_Contest
         //{
 
         //}
+=======
+        public Diver()
+        {
+            // Generate new Authentication Code for every new Diver.
+            GenerateAuthCode();
+        }
+
+
+        public void GenerateAuthCode()
+        {
+            authCode = rand.Next(100000, 999999);
+        }
+>>>>>>> origin/master
 
         public void jump()
         {

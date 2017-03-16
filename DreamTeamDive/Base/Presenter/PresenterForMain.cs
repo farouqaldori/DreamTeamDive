@@ -63,7 +63,7 @@ namespace Diver_Contest
         {
             try
             {
-                Tuple<Jump, Diver> newJumpDiver = this._Model.GetJumps(_judgeform.judge.competition);
+                Tuple<Jump, Diver> newJumpDiver = this._Model.GetJumps(_judgeform.judge.competition, _judgeform.judge.id);
                 this._judgeform.mode = 1;
                 this._judgeform.jump_rater_backgroundworker.ReportProgress(1, newJumpDiver);
             }
@@ -73,6 +73,13 @@ namespace Diver_Contest
                 this._judgeform.mode = 0;
                 this._judgeform.jump_rater_backgroundworker.ReportProgress(1, 0);
             }
+        }
+
+        public void GetJumpTypes()
+        {
+            this._diverform.PerformJumpBox.ValueMember = "Id";
+            this._diverform.PerformJumpBox.DisplayMember = "Value";
+            this._diverform.PerformJumpBox.DataSource = new System.Windows.Forms.BindingSource(this._Model.GetJumpTypes(), null);
         }
 
         public void Login()
@@ -90,6 +97,7 @@ namespace Diver_Contest
                     Diver diver = this._Model.DiverLogin(authCode);
                     _mainform.Hide();
                     _diverform.diver = diver;
+                    GetJumpTypes();
                     _diverform.Text = "Welcome, " + diver.name;
                     _diverform.jump_updater_backgroundWorker.RunWorkerAsync();
                     _diverform.Show();
@@ -145,7 +153,10 @@ namespace Diver_Contest
                     return;
                 }
             }
-            this._Model.Jump(_diverform.diver);
+
+            int thisJumpStyle = ((System.Collections.Generic.KeyValuePair<int, string>)_diverform.PerformJumpBox.SelectedItem).Key;
+
+            this._Model.Jump(_diverform.diver, thisJumpStyle, Convert.ToInt32(_diverform.DifficultyBox.Text));
             this._diverform.JumpButton.Enabled = true;
         }
 

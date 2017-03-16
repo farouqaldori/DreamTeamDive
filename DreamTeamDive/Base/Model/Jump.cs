@@ -18,8 +18,12 @@ namespace Diver_Contest
         public int style { get; set; }
         public double form { get; set; }
 
+<<<<<<< HEAD
         public List<Tuple<Judge, double>> grade = new List<Tuple<Judge, double>>();
         // Five elements to think about when judging a compitition
+=======
+        // Five elements to think about when judging a competition
+>>>>>>> origin/master
         public double starting { get; set; }
         public double approach { get; set; }
         public double takeOff { get; set; }
@@ -31,14 +35,69 @@ namespace Diver_Contest
             Random rnd = new Random();
 
             starting = rnd.Next(0, 10);
-            approach = rnd.Next(0, 10);
-            takeOff = rnd.Next(0, 10);
-            flight = rnd.Next(0, 10);
-            entry = rnd.Next(0, 10);
+            if (starting > 6)
+            {
+                approach = rnd.Next(5, 10);
+            }
+            else if (starting < 5)
+            {
+                approach = rnd.Next(0, 5);
+            }
+            else
+            {
+                approach = rnd.Next(0, 10);
+            }
 
-            form = (starting + approach + takeOff + flight + entry) * 2;
+            if ((starting > 6) && (approach > 6))
+            {
+                takeOff = rnd.Next(5, 10);
+            }
+            else if ((starting < 5) && (approach < 5))
+            {
+                takeOff = rnd.Next(0, 5);
+            }
+            else
+            {
+                takeOff = rnd.Next(0, 10);
+            }
 
-            form = rnd.Next(0, 5) + (Math.Round(form , MidpointRounding.AwayFromZero) / 10) ;
+            if ((starting > 6) && (approach > 6) && (takeOff > 6))
+            {
+                flight = rnd.Next(5, 10);
+            }
+            else if ((starting < 5) && (approach < 5) && (takeOff < 5))
+            {
+                flight = rnd.Next(0, 5);
+            }
+            else
+            {
+                flight = rnd.Next(0, 10);
+            }
+
+            if ((starting > 6) && (approach > 6) && (takeOff > 6) && (flight > 6))
+            {
+                entry = rnd.Next(5, 10);
+            }
+            else if ((starting < 5) && (approach < 5) && (takeOff < 5) && (flight < 5))
+            {
+                entry = rnd.Next(0, 5);
+            }
+            else
+            {
+                entry = rnd.Next(0, 10);
+            }
+
+            form = (starting + approach + takeOff + flight + entry) / 5; //*2
+
+            if ((form % 1) < 0.5)
+            {
+                form = form - (form % 1);
+            }
+            else if ((form % 1) >= 0.5)
+            {
+                form = form - (form % 1);
+                form = form + 1;
+            }
         }
     }
 }

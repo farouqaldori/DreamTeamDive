@@ -47,6 +47,7 @@ namespace Diver_Contest
                 if (this.EventGetJump != null)
                 {
                     EventGetJump();
+
                     // Update every 5 seconds
                     System.Threading.Thread.Sleep(5000);
                 }

@@ -88,7 +88,25 @@ namespace Diver_Contest
             Application.Exit();
         }
 
-        void ICompetition.Jump(Diver _diver)
+        Dictionary<int, string> ICompetition.GetJumpTypes()
+        {
+            Dictionary<int, string> comboSource = new Dictionary<int, string>();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM JumpTypes", Mysql_db.connection);
+
+            using (MySqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    comboSource.Add(Convert.ToInt32(reader["id"]), reader["name"].ToString());
+                }
+                reader.Close();
+            }
+
+            return comboSource;
+        }
+
+        void ICompetition.Jump(Diver _diver, int _jumpStyle, int _difficulty)
         {
             int jumpId = 0;
             _diver.jump();
@@ -110,8 +128,8 @@ namespace Diver_Contest
             MySqlCommand command2 = new MySqlCommand("UPDATE `Jumps` SET `status`= @jumpStatus , `difficulty`= @jumpDifficulty , `style`= @jumpStyle , `form`= @jumpForm , `starting`= @jumpStarting , `approach` = @jumpApproach , `takeOff`= @jumpTakeoff , `flight`= @jumpFlight , `entry`= @jumpEntry WHERE `id` = @jumpId", Mysql_db.connection);
 
             command2.Parameters.AddWithValue("@jumpStatus", 1);
-            command2.Parameters.AddWithValue("@jumpDifficulty", _diver.jumps[_diver.jumpIndex].difficulty);
-            command2.Parameters.AddWithValue("@jumpStyle", _diver.jumps[_diver.jumpIndex].style);
+            command2.Parameters.AddWithValue("@jumpDifficulty", _difficulty);
+            command2.Parameters.AddWithValue("@jumpStyle", _jumpStyle);
             command2.Parameters.AddWithValue("@jumpForm", _diver.jumps[_diver.jumpIndex].form);
             command2.Parameters.AddWithValue("@jumpStarting", _diver.jumps[_diver.jumpIndex].starting);
             command2.Parameters.AddWithValue("@jumpApproach", _diver.jumps[_diver.jumpIndex].approach);
@@ -146,14 +164,14 @@ namespace Diver_Contest
                     newJump.id = Convert.ToInt32(bgreader["id"]);
                     newJump.difficulty = Convert.ToInt32(bgreader["difficulty"]);
                     newJump.status = Convert.ToInt32(bgreader["status"]);
-                    newJump.style = Convert.ToInt32(bgreader["style"]);
+                    //newJump.style = Convert.ToInt32(bgreader["style"]);
                     newJump.form = Convert.ToDouble(bgreader["form"]);
                     newJump.starting = Convert.ToDouble(bgreader["starting"]);
                     newJump.approach = Convert.ToDouble(bgreader["approach"]);
                     newJump.takeOff = Convert.ToDouble(bgreader["takeOff"]);
                     newJump.flight = Convert.ToDouble(bgreader["flight"]);
                     newJump.entry = Convert.ToDouble(bgreader["entry"]);
-
+                   
                     // Add the new Jump to the Jump list
                     newJumps.Add(newJump);
                 }
@@ -163,6 +181,7 @@ namespace Diver_Contest
 
         }
 
+<<<<<<< HEAD
      
 
             /// <summary>
@@ -171,11 +190,20 @@ namespace Diver_Contest
             /// <param name="_compId">Competition id</param>
             /// <returns>Jump object of the current jump to grade.</returns>
         Tuple<Jump, Diver> ICompetition.GetJumps(int _compId)
+=======
+        /// <summary>
+        /// Get the first ungraded jump from competition.
+        /// </summary>
+        /// <param name="_compId">Competition id</param>
+        /// <returns>Jump object of the current jump to grade.</returns>
+        Tuple<Jump, Diver> ICompetition.GetJumps(int _compId, int _thisJudgeId)
+>>>>>>> origin/master
         {
             // Get user id to retrieve jumps.
             int userId = 0;
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `Divers` WHERE `in_competition` = @compId AND `status` = 0 LIMIT 0,1", Mysql_db.connection2);
+            MySqlCommand command = new MySqlCommand("SELECT * FROM Divers WHERE `in_competition` = @compId AND `status` = 0 LIMIT 0,1", Mysql_db.connection2);
             command.Parameters.AddWithValue("@compId", _compId);
+
 
             // If the command does not return a value, throw exception
             if (Convert.ToInt32(command.ExecuteScalar()) == 0)
@@ -188,9 +216,8 @@ namespace Diver_Contest
             {
                 while (bgreader.Read())
                 {
-                    userId = Convert.ToInt32(bgreader["id"]);
-
                     newDiver.id = Convert.ToInt32(bgreader["id"]);
+                    userId = newDiver.id;
                     newDiver.name = bgreader["name"].ToString();
                     newDiver.country = bgreader["country"].ToString();
                     newDiver.gender = bgreader["gender"].ToString();
@@ -198,17 +225,19 @@ namespace Diver_Contest
                 bgreader.Close();
             }
 
-            // Get first ungraded jump for user
-            MySqlCommand command2 = new MySqlCommand("SELECT * FROM Jumps WHERE jumper = @jumperId AND status = 1 LIMIT 0,1", Mysql_db.connection2);
-            command2.Parameters.AddWithValue("@jumperId", userId);
 
+
+            // Get first ungraded jump for user
+            MySqlCommand command2 = new MySqlCommand("SELECT * FROM Jumps WHERE `jumper` = @jumperId AND `status` = 1 AND id NOT IN (SELECT `jump_id` FROM Grade WHERE `judge_id` = @judgeId) LIMIT 0,1", Mysql_db.connection2);
+            command2.Parameters.AddWithValue("@jumperId", userId);
+            command2.Parameters.AddWithValue("@judgeId", _thisJudgeId);
 
             // If the command does not return a value, throw exception
             if (Convert.ToInt32(command2.ExecuteScalar()) == 0)
             {
                 throw new System.ArgumentException("No jumps to judge");
             }
-
+            
             Jump newJump = new Jump();
 
             using (MySqlDataReader bgreader = command2.ExecuteReader())
@@ -237,17 +266,63 @@ namespace Diver_Contest
         {
             if (_jumpId != 0)
             {
+                int judgeAmount = 0;
                 MySqlCommand command = new MySqlCommand("INSERT INTO `Grade`(`judge_id`, `jump_id`, `grade`) VALUES (@judgeid , @jumpId , @grade)", Mysql_db.connection);
                 command.Parameters.AddWithValue("@judgeid", _judge.id);
                 command.Parameters.AddWithValue("@jumpId", _jumpId);
                 command.Parameters.AddWithValue("@grade", _grade);
                 command.ExecuteNonQuery();
 
-                MySqlCommand command2 = new MySqlCommand("UPDATE `Jumps` SET `status` = @status WHERE `id` = @jumpId", Mysql_db.connection);
-                command2.Parameters.AddWithValue("@status", 2);
-                command2.Parameters.AddWithValue("@jumpId", _jumpId);
+                // Check how many judges in competition
+                MySqlCommand countJugdesCommand = new MySqlCommand("SELECT count(id) as judge_count FROM Judge WHERE in_competition = @compId ", Mysql_db.connection);
+                countJugdesCommand.Parameters.AddWithValue("@compId", _judge.competition);
+                countJugdesCommand.ExecuteNonQuery();
+                // Get value
+                using (MySqlDataReader bgreader = countJugdesCommand.ExecuteReader())
+                {
+                    while (bgreader.Read())
+                    {
+                        judgeAmount = Convert.ToInt32(bgreader["judge_count"]);
+                    }
+                    bgreader.Close();
+                }
 
-                command2.ExecuteNonQuery();
+                // This part of code is to check if all judges have graded the jump.
+
+                int amountGraded = 0;
+                MySqlCommand command3 = new MySqlCommand("SELECT count(id) as count FROM `Grade` WHERE `jump_id` = @jumpId", Mysql_db.connection);
+                command3.Parameters.AddWithValue("@jumpId", _jumpId);
+                command3.ExecuteNonQuery();
+                // Get value
+                using (MySqlDataReader bgreader = command3.ExecuteReader())
+                {
+                    while (bgreader.Read())
+                    {
+                        amountGraded = Convert.ToInt32(bgreader["count"]);
+                    }
+                    bgreader.Close();
+                }
+
+                if (judgeAmount == 5)
+                {
+                    if (amountGraded == 5)
+                    {
+                        MySqlCommand command2 = new MySqlCommand("UPDATE `Jumps` SET `status` = @status WHERE `id` = @jumpId", Mysql_db.connection);
+                        command2.Parameters.AddWithValue("@status", 2);
+                        command2.Parameters.AddWithValue("@jumpId", _jumpId);
+                        command2.ExecuteNonQuery();
+                    }
+                }
+                else if (judgeAmount == 7)
+                {
+                    if (amountGraded == 7)
+                    {
+                        MySqlCommand command2 = new MySqlCommand("UPDATE `Jumps` SET `status` = @status WHERE `id` = @jumpId", Mysql_db.connection);
+                        command2.Parameters.AddWithValue("@status", 2);
+                        command2.Parameters.AddWithValue("@jumpId", _jumpId);
+                        command2.ExecuteNonQuery();
+                    }
+                }
             }
         }
 
