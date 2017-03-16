@@ -25,5 +25,6 @@ namespace Diver_Contest
 
         //funktions for Spectator Form
         List<Diver> GetRatingDivers();
+        List<Diver> GetEndResultDivers();
     }
 }

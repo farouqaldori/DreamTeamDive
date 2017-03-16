@@ -30,7 +30,7 @@ namespace Diver_Contest
 
         [XmlIgnore]
         public List<Jump> jumps = new List<Jump>();
-
+        public List<Diver> maleContestens = new List<Diver>();
         static Random rand = new Random(220);
 
 

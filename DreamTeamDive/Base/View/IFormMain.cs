@@ -19,6 +19,7 @@ namespace Diver_Contest
 
     //Spectator delegates
     public delegate void DelegateGetRatingDivers();
+    public delegate void DelegateGetEndResultDivers();
 
     public interface IFormMain
     {
@@ -36,5 +37,6 @@ namespace Diver_Contest
 
         //Spectator events
         event DelegateGetRatingDivers EventGetRatingDivers;
+        event DelegateGetEndResultDivers EventGetEndResultDivers;
     }
 }

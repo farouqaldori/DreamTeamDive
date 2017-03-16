@@ -19,6 +19,7 @@ namespace Diver_Contest
         public event DelegateSendRating EventSendRating = null;
         public event DelegateGetJump EventGetJump = null;
         public event DelegateGetRatingDivers EventGetRatingDivers = null;
+        public event DelegateGetEndResultDivers EventGetEndResultDivers = null;
 
         public Judge judge;
 
@@ -100,7 +101,7 @@ namespace Diver_Contest
                 {
                     // Cast conversion
                     Tuple<Jump, Diver> newJumpDiver = (Tuple<Jump, Diver>)e.UserState;
-
+                   
                     currentJumpId = newJumpDiver.Item1.id;
 
                     // Update diver information

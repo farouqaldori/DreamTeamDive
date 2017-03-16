@@ -19,6 +19,7 @@ namespace Diver_Contest
         public event DelegateSendRating EventSendRating = null;
         public event DelegateGetJump EventGetJump = null;
         public event DelegateGetRatingDivers EventGetRatingDivers = null;
+        public event DelegateGetEndResultDivers EventGetEndResultDivers = null;
 
         public main_auth_form()
         {

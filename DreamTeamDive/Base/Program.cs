@@ -29,15 +29,20 @@ namespace Diver_Contest
             judge_form JudgeForm = new judge_form();
             spectator_form SpectatorForm = new spectator_form();
 
-<<<<<<< HEAD
-            PresenterForMain Present = new PresenterForMain(JudgeForm, DiverForm, MainForm, Register,SpectatorForm );
-=======
-            PresenterForAdmin AdminPresenter = new PresenterForAdmin(admin, adminRegister);
-            PresenterForMain Present = new PresenterForMain(JudgeForm, DiverForm, MainForm, Register);
+            PresenterForMain Present = new PresenterForMain(JudgeForm, DiverForm, MainForm, Register,SpectatorForm);
 
->>>>>>> origin/master
-            Application.Run(MainForm); 
-            
+            PresenterForAdmin AdminPresenter = new PresenterForAdmin(admin, adminRegister);
+
+            // Flags för typ av build
+            int specFlag = 1;
+            int adminFlag = 0;
+            int authFlag = 0;
+
+            if (specFlag == 1)
+            {
+                Application.Run(SpectatorForm);
+            }
+
         }
     }
 }

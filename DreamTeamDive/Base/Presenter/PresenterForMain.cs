@@ -43,13 +43,20 @@ namespace Diver_Contest
             this._judgeform.EventGetJump += GetJumps;
 
             this._Spectatorform.EventGetRatingDivers += GetRatingDivers;
+            this._Spectatorform.EventGetRatingDivers += GetEndResultDivers;
         }
 
         public void GetRatingDivers()
         {
             List<Diver> diverStandings = this._Model.GetRatingDivers();
-            //backgroundworker
-            this._Spectatorform.comp_updater_backgroundWorker(1, diverStandings);
+            this._Spectatorform.diver = diverStandings;
+
+        }
+        public void GetEndResultDivers()
+        {
+            List<Diver> endResults = this._Model.GetEndResultDivers();
+            this._Spectatorform.endResult = endResults;
+
         }
 
         public void UpdateJumps()

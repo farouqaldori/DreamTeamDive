@@ -12,15 +12,17 @@ namespace Diver_Contest
 {
     public partial class spectator_form: MetroFramework.Forms.MetroForm , IFormMain
     {
-        public event DelegateLogin EventLogin;
-        public event DelegateExit EventExit;
-        public event DelegateJump EventJump;
-        public event DelegateUpdateJumps EventUpdateJumps;
-        public event DelegateSendRating EventSendRating;
-        public event DelegateGetJump EventGetJump;
-        public event DelegateGetRatingDivers EventGetRatingDivers;
+        public event DelegateLogin EventLogin = null;
+        public event DelegateExit EventExit = null;
+        public event DelegateJump EventJump = null;
+        public event DelegateUpdateJumps EventUpdateJumps = null;
+        public event DelegateSendRating EventSendRating = null;
+        public event DelegateGetJump EventGetJump = null;
+        public event DelegateGetRatingDivers EventGetRatingDivers = null;
+        public event DelegateGetEndResultDivers EventGetEndResultDivers = null;
 
-        public Diver diver; 
+        public List<Diver> diver;
+        public List<Diver> endResult;
         public spectator_form()
         {
             InitializeComponent();
@@ -28,49 +30,72 @@ namespace Diver_Contest
 
         private void spectator_form_Load(object sender, EventArgs e)
         {
-
-        }
-
-        
-
-        private void comp_updater_backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            while (true)
-            {
-                if (this.EventGetRatingDivers != null)
-                {
-                    EventGetRatingDivers();
-                    //Update compition when jump occurs
-                    System.Threading.Thread.Sleep(5000);
-                }
-            }
-        }
-
-        public int _mode;
-        public int _currentRound = 0;
-        //funktion to keep updating current compition
-        private void comp_updater_backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            if (e.UserState != null)
-            {
-                if (_mode == 0)
-                {
-                    _currentRound = 0;
-                    AwaitingLabelMale.Show();
-                    AwaitingLabelMale.Enabled = false;
-                }else
-                {
-                    List<Diver> MaleDivers = (List<Diver>)e.UserState;
-
-                    //_currentRound = MaleDivers.id;
-                    m1JumperLabel.Text = MaleDivers.
-                }
-            }
+            
+            
         }
 
         private void metroLabel9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void AwaitingLabelMale_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+        
+        private void showStats()
+        {
+            // Participant name
+            m1JumperLabel.Text = diver[0].name.ToString();
+            m2JumperLabel.Text = diver[1].name.ToString();
+            m3JumperLabel.Text = diver[2].name.ToString();
+            m4JumperLabel.Text = diver[3].name.ToString();
+            m5JumperLabel.Text = diver[4].name.ToString();
+            m6JumperLabel.Text = diver[5].name.ToString();
+
+            //Participant country
+            m1CodeLabel.Text = diver[0].country.ToString();
+            m2CodeLabel.Text = diver[1].country.ToString();
+            m3CodeLabel.Text = diver[2].country.ToString();
+            m4CodeLabel.Text = diver[3].country.ToString();
+            m5CodeLabel.Text = diver[4].country.ToString();
+            m6CodeLabel.Text = diver[5].country.ToString();
+
+            // Position in the game
+            mNameLabel1.Text = endResult[0].name.ToString();
+            mNameLabel2.Text = endResult[1].name.ToString();
+            mNameLabel3.Text = endResult[2].name.ToString();
+            mNameLabel4.Text = endResult[3].name.ToString();
+            mNameLabel5.Text = endResult[4].name.ToString();
+            mNameLabel6.Text = endResult[5].name.ToString();
+
+            // Results
+            mResultLabel1.Text = endResult[0].sumGrades.ToString();
+            mResultLabel2.Text = endResult[1].sumGrades.ToString();
+            mResultLabel3.Text = endResult[2].sumGrades.ToString();
+            mResultLabel4.Text = endResult[3].sumGrades.ToString();
+            mResultLabel5.Text = endResult[4].sumGrades.ToString();
+            mResultLabel6.Text = endResult[5].sumGrades.ToString();
+            
+        }
+
+        private void getStats_button_Click(object sender, EventArgs e)
+        {
+            if (this.EventGetRatingDivers != null)
+            {
+                EventGetRatingDivers();
+            }
+            if (this.EventGetEndResultDivers != null)
+            {
+                EventGetEndResultDivers();
+            }
+            showStats();
         }
     }
 }
