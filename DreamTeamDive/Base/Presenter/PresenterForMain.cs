@@ -94,7 +94,7 @@ namespace Diver_Contest
         {
             this._diverform.jump_updater_backgroundWorker.CancelAsync();
             this._diverform.Hide();
-            this._judgeform.Show();
+            this._Spectatorform.Show();
         }
 
         public void GetJumpTypes()
