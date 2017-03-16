@@ -20,6 +20,8 @@ namespace Diver_Contest
 
         public static MySql.Data.MySqlClient.MySqlConnection connection;
         public static MySql.Data.MySqlClient.MySqlConnection connection2;
+        public static MySql.Data.MySqlClient.MySqlConnection connection3;
+
         /// <summary>
         /// Connect to the MySql database.
         /// </summary>
@@ -43,6 +45,8 @@ namespace Diver_Contest
                 connection.Open();
                 connection2 = new MySqlConnection(connectionString);
                 connection2.Open();
+                connection3 = new MySqlConnection(connectionString);
+                connection3.Open();
                 return true;
             }
             catch (MySql.Data.MySqlClient.MySqlException e)

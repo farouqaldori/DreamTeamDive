@@ -12,6 +12,7 @@ namespace Diver_Contest
     // Diver delegates
     public delegate void DelegateJump();
     public delegate void DelegateUpdateJumps();
+    public delegate void DelegateCompDone();
 
     // Judge delegates
     public delegate void DelegateSendRating();

@@ -17,6 +17,7 @@ namespace Diver_Contest
         Diver DiverLogin(string _authcode);
         void Jump(Diver _diver, int _jumpStyle, int _difficulty);
         List<Jump> UpdateJumps(int diver_id);
+        bool CheckCompetitionDone(Diver _diver);
 
         // Functions for judge
         Judge JudgeLogin(string _authcode);

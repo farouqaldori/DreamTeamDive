@@ -33,6 +33,7 @@ namespace Diver_Contest
 
             this._diverform.EventJump += Jump;
             this._diverform.EventUpdateJumps += UpdateJumps;
+            this._diverform.EventCompDone += CompDone;
 
             this._judgeform.EventSendRating += RateJump;
             this._judgeform.EventGetJump += GetJumps;
@@ -40,6 +41,12 @@ namespace Diver_Contest
 
         public void UpdateJumps()
         {
+            if (this._Model.CheckCompetitionDone(_diverform.diver))
+            {
+                // If object is null, this competition is done.
+                this._diverform.jump_updater_backgroundWorker.ReportProgress(0, null);
+            }
+
             List <Jump> newJumps = this._Model.UpdateJumps(_diverform.diver.id);
             this._diverform.diver.jumps = newJumps;
             this._diverform.jump_updater_backgroundWorker.ReportProgress(1, newJumps);
@@ -47,6 +54,7 @@ namespace Diver_Contest
 
         public void GetJumps()
         {
+
             try
             {
                 Tuple<Jump, Diver> newJumpDiver = this._Model.GetJumps(_judgeform.judge.competition, _judgeform.judge.id);
@@ -59,6 +67,13 @@ namespace Diver_Contest
                 this._judgeform.mode = 0;
                 this._judgeform.jump_rater_backgroundworker.ReportProgress(1, 0);
             }
+        }
+
+        public void CompDone()
+        {
+            this._diverform.jump_updater_backgroundWorker.CancelAsync();
+            this._diverform.Hide();
+            this._judgeform.Show();
         }
 
         public void GetJumpTypes()
