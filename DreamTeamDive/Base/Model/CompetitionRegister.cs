@@ -135,7 +135,7 @@ namespace Diver_Contest
                     Diver endResult = new Diver();
                     endResult.name = bgreader["name"].ToString();
                  
-                    endResult.sumGrades = (Convert.ToInt32(bgreader["sum_grade"]) - Convert.ToInt32(bgreader["maxgrade"]) - Convert.ToInt32(bgreader["mingrade"])) * Convert.ToInt32(bgreader["difficulty"]);
+                    endResult.sumGrades = (Convert.ToInt32(bgreader["sum_grade"]) - Convert.ToInt32(bgreader["maxgrade"]) - Convert.ToInt32(bgreader["mingrade"]));
 
                     endResults.Add(endResult);
                 }
