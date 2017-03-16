@@ -19,6 +19,8 @@ namespace Diver_Contest
         public event DelegateCompDone EventCompDone = null;
         public event DelegateSendRating EventSendRating = null;
         public event DelegateGetJump EventGetJump = null;
+        public event DelegateGetRatingDivers EventGetRatingDivers = null;
+        public event DelegateGetEndResultDivers EventGetEndResultDivers = null;
 
         public Diver diver;
 
@@ -114,6 +116,11 @@ namespace Diver_Contest
                 // Mark as done;
                 EventCompDone();
             }
+        }
+
+        private void Jump1Label_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

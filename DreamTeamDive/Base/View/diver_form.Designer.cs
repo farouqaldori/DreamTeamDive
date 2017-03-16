@@ -236,6 +236,7 @@
             this.Jump1Label.Size = new System.Drawing.Size(68, 20);
             this.Jump1Label.TabIndex = 11;
             this.Jump1Label.Text = "loading..";
+            this.Jump1Label.Click += new System.EventHandler(this.Jump1Label_Click);
             // 
             // Jump2Label
             // 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using Base.View;
 
 namespace Diver_Contest
 {
@@ -26,12 +27,22 @@ namespace Diver_Contest
             CompetitionRegister Register = new CompetitionRegister();
             diver_form DiverForm = new diver_form();
             judge_form JudgeForm = new judge_form();
+            spectator_form SpectatorForm = new spectator_form();
+
+            PresenterForMain Present = new PresenterForMain(JudgeForm, DiverForm, MainForm, Register,SpectatorForm);
 
             PresenterForAdmin AdminPresenter = new PresenterForAdmin(admin, adminRegister);
-            PresenterForMain Present = new PresenterForMain(JudgeForm, DiverForm, MainForm, Register);
 
-            Application.Run(MainForm); 
-            
+            // Flags för typ av build
+            int specFlag = 1;
+            int adminFlag = 0;
+            int authFlag = 0;
+
+            if (specFlag == 1)
+            {
+                Application.Run(SpectatorForm);
+            }
+
         }
     }
 }

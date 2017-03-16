@@ -23,5 +23,9 @@ namespace Diver_Contest
         Judge JudgeLogin(string _authcode);
         Tuple<Jump, Diver> GetJumps(int _compId, int _thisJudgeId);
         void SendRating(Judge _judge, int _jumpId, string _grade);
+
+        //funktions for Spectator Form
+        List<Diver> GetRatingDivers();
+        List<Diver> GetEndResultDivers();
     }
 }

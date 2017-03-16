@@ -14,6 +14,12 @@ namespace Diver_Contest
         public string country { get; set; }
         public string gender { get; set; }
         public int competition { get; set; }
+
+        public double max { get; set; } = 0.0;
+        public double min { get; set; } = 10.0;
+        public double result { get; set; }  = 0.0;
+        public double Difficulty { get; set; }
+
         public int id { get; set; }
         public int authCode { get; set; }
         public double sumGrades { get; set; }
@@ -24,8 +30,19 @@ namespace Diver_Contest
 
         [XmlIgnore]
         public List<Jump> jumps = new List<Jump>();
-
+        public List<Diver> maleContestens = new List<Diver>();
         static Random rand = new Random(220);
+
+
+        //public Diver()
+        //{
+
+        //}
+
+        //public void Auth()
+        //{
+
+        //}
 
         public Diver()
         {
@@ -47,16 +64,28 @@ namespace Diver_Contest
             jumps[jumpIndex] = jump;
         }
 
-        public void calcSum()
+        public double calcSum(int diffu)
         {
-            // For every jump made, get the summary of the grades
+            // For every jump made, get the sum of the grades
             foreach (var jump in jumps)
-            {
-                foreach(var grade in jump.grade)
+           {
+                foreach (var grade in jump.grade)
                 {
                     sumGrades += grade.Item2;
+                    if (grade.Item2 < min)
+                    {
+                        min = grade.Item2;
+                    }
+                    if (grade.Item2 > max)
+                    {
+                        max = grade.Item2;
+                    }
+                   
                 }
+                result=((sumGrades-min-max)/5)*3*diffu; //efter 3, 3*difficulty;
             }
+           
+            return result; 
         }
     }
 }
