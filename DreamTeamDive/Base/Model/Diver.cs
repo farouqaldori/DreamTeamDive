@@ -15,6 +15,7 @@ namespace Diver_Contest
         public string gender { get; set; }
         public int competition { get; set; }
 
+
         public double max { get; set; } = 0.0;
         public double min { get; set; } = 10.0;
         public double result { get; set; }  = 0.0;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -34,15 +35,21 @@ namespace Diver_Contest
             PresenterForAdmin AdminPresenter = new PresenterForAdmin(admin, adminRegister);
 
             // Flags för typ av build
-            int specFlag = 1;
-            int adminFlag = 0;
-            int authFlag = 0;
+            // 0 = Admin, 1 = Spectator, 2 = Actor
+            int buildFlag = 0;
 
-            if (specFlag == 1)
+            if (buildFlag == 0)
+            {
+                Application.Run(admin);
+            }
+            else if (buildFlag == 1)
             {
                 Application.Run(SpectatorForm);
             }
-
+            else if (buildFlag == 2)
+            {
+                Application.Run(MainForm);
+            }
         }
     }
 }

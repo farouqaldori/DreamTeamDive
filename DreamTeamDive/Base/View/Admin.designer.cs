@@ -74,9 +74,10 @@
             // 
             // Reset_Button
             // 
-            this.Reset_Button.Location = new System.Drawing.Point(23, 545);
+            this.Reset_Button.Location = new System.Drawing.Point(34, 838);
+            this.Reset_Button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Reset_Button.Name = "Reset_Button";
-            this.Reset_Button.Size = new System.Drawing.Size(641, 38);
+            this.Reset_Button.Size = new System.Drawing.Size(962, 58);
             this.Reset_Button.TabIndex = 44;
             this.Reset_Button.Text = "Reset";
             this.Reset_Button.UseSelectable = true;
@@ -84,9 +85,10 @@
             // 
             // Create_Button
             // 
-            this.Create_Button.Location = new System.Drawing.Point(24, 501);
+            this.Create_Button.Location = new System.Drawing.Point(36, 771);
+            this.Create_Button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Create_Button.Name = "Create_Button";
-            this.Create_Button.Size = new System.Drawing.Size(640, 38);
+            this.Create_Button.Size = new System.Drawing.Size(960, 58);
             this.Create_Button.TabIndex = 43;
             this.Create_Button.Text = "Create";
             this.Create_Button.UseSelectable = true;
@@ -95,7 +97,8 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(9, 73);
+            this.metroLabel3.Location = new System.Drawing.Point(14, 112);
+            this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(39, 19);
             this.metroLabel3.TabIndex = 42;
@@ -103,16 +106,18 @@
             // 
             // metroDateTime1
             // 
-            this.metroDateTime1.Location = new System.Drawing.Point(63, 68);
+            this.metroDateTime1.Location = new System.Drawing.Point(94, 105);
+            this.metroDateTime1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
             this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(196, 29);
+            this.metroDateTime1.Size = new System.Drawing.Size(292, 29);
             this.metroDateTime1.TabIndex = 41;
             // 
             // Judges_Seven_Check
             // 
             this.Judges_Seven_Check.AutoSize = true;
-            this.Judges_Seven_Check.Location = new System.Drawing.Point(386, 32);
+            this.Judges_Seven_Check.Location = new System.Drawing.Point(579, 49);
+            this.Judges_Seven_Check.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Judges_Seven_Check.Name = "Judges_Seven_Check";
             this.Judges_Seven_Check.Size = new System.Drawing.Size(29, 15);
             this.Judges_Seven_Check.TabIndex = 40;
@@ -124,7 +129,8 @@
             // Judges_Five_Check
             // 
             this.Judges_Five_Check.AutoSize = true;
-            this.Judges_Five_Check.Location = new System.Drawing.Point(350, 32);
+            this.Judges_Five_Check.Location = new System.Drawing.Point(525, 49);
+            this.Judges_Five_Check.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Judges_Five_Check.Name = "Judges_Five_Check";
             this.Judges_Five_Check.Size = new System.Drawing.Size(29, 15);
             this.Judges_Five_Check.TabIndex = 39;
@@ -139,16 +145,18 @@
             // 
             // 
             this.CompetitionName_TextBox.CustomButton.Image = null;
-            this.CompetitionName_TextBox.CustomButton.Location = new System.Drawing.Point(168, 1);
+            this.CompetitionName_TextBox.CustomButton.Location = new System.Drawing.Point(375, 2);
+            this.CompetitionName_TextBox.CustomButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CompetitionName_TextBox.CustomButton.Name = "";
-            this.CompetitionName_TextBox.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.CompetitionName_TextBox.CustomButton.Size = new System.Drawing.Size(64, 66);
             this.CompetitionName_TextBox.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.CompetitionName_TextBox.CustomButton.TabIndex = 1;
             this.CompetitionName_TextBox.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.CompetitionName_TextBox.CustomButton.UseSelectable = true;
             this.CompetitionName_TextBox.CustomButton.Visible = false;
             this.CompetitionName_TextBox.Lines = new string[0];
-            this.CompetitionName_TextBox.Location = new System.Drawing.Point(63, 23);
+            this.CompetitionName_TextBox.Location = new System.Drawing.Point(94, 35);
+            this.CompetitionName_TextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CompetitionName_TextBox.MaxLength = 32767;
             this.CompetitionName_TextBox.Name = "CompetitionName_TextBox";
             this.CompetitionName_TextBox.PasswordChar = '\0';
@@ -157,7 +165,7 @@
             this.CompetitionName_TextBox.SelectionLength = 0;
             this.CompetitionName_TextBox.SelectionStart = 0;
             this.CompetitionName_TextBox.ShortcutsEnabled = true;
-            this.CompetitionName_TextBox.Size = new System.Drawing.Size(196, 29);
+            this.CompetitionName_TextBox.Size = new System.Drawing.Size(294, 45);
             this.CompetitionName_TextBox.TabIndex = 38;
             this.CompetitionName_TextBox.UseSelectable = true;
             this.CompetitionName_TextBox.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -166,7 +174,8 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(289, 28);
+            this.metroLabel2.Location = new System.Drawing.Point(434, 43);
+            this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(52, 19);
             this.metroLabel2.TabIndex = 37;
@@ -175,7 +184,8 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(9, 28);
+            this.metroLabel1.Location = new System.Drawing.Point(14, 43);
+            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(48, 19);
             this.metroLabel1.TabIndex = 36;
@@ -190,9 +200,11 @@
             this.groupBox1.Controls.Add(this.metroLabel2);
             this.groupBox1.Controls.Add(this.Judges_Five_Check);
             this.groupBox1.Controls.Add(this.Judges_Seven_Check);
-            this.groupBox1.Location = new System.Drawing.Point(24, 64);
+            this.groupBox1.Location = new System.Drawing.Point(36, 98);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(640, 114);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(960, 175);
             this.groupBox1.TabIndex = 51;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contest Information";
@@ -224,18 +236,20 @@
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.JudgeGridView.DefaultCellStyle = dataGridViewCellStyle13;
-            this.JudgeGridView.Location = new System.Drawing.Point(6, 19);
+            this.JudgeGridView.Location = new System.Drawing.Point(9, 29);
+            this.JudgeGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.JudgeGridView.Name = "JudgeGridView";
             this.JudgeGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.JudgeGridView.Size = new System.Drawing.Size(301, 221);
+            this.JudgeGridView.Size = new System.Drawing.Size(452, 340);
             this.JudgeGridView.TabIndex = 46;
             this.JudgeGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.JudgeGridView_CellClick);
             // 
             // SaveToFileJudge_button
             // 
-            this.SaveToFileJudge_button.Location = new System.Drawing.Point(6, 246);
+            this.SaveToFileJudge_button.Location = new System.Drawing.Point(9, 378);
+            this.SaveToFileJudge_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SaveToFileJudge_button.Name = "SaveToFileJudge_button";
-            this.SaveToFileJudge_button.Size = new System.Drawing.Size(95, 38);
+            this.SaveToFileJudge_button.Size = new System.Drawing.Size(142, 58);
             this.SaveToFileJudge_button.TabIndex = 51;
             this.SaveToFileJudge_button.Text = "Save to file";
             this.SaveToFileJudge_button.UseSelectable = true;
@@ -243,9 +257,10 @@
             // 
             // ReadFromFileJudge_Button
             // 
-            this.ReadFromFileJudge_Button.Location = new System.Drawing.Point(107, 246);
+            this.ReadFromFileJudge_Button.Location = new System.Drawing.Point(160, 378);
+            this.ReadFromFileJudge_Button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ReadFromFileJudge_Button.Name = "ReadFromFileJudge_Button";
-            this.ReadFromFileJudge_Button.Size = new System.Drawing.Size(95, 38);
+            this.ReadFromFileJudge_Button.Size = new System.Drawing.Size(142, 58);
             this.ReadFromFileJudge_Button.TabIndex = 52;
             this.ReadFromFileJudge_Button.Text = "Read from file";
             this.ReadFromFileJudge_Button.UseSelectable = true;
@@ -253,9 +268,10 @@
             // 
             // SaveToFileDiver_Button
             // 
-            this.SaveToFileDiver_Button.Location = new System.Drawing.Point(9, 246);
+            this.SaveToFileDiver_Button.Location = new System.Drawing.Point(14, 378);
+            this.SaveToFileDiver_Button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.SaveToFileDiver_Button.Name = "SaveToFileDiver_Button";
-            this.SaveToFileDiver_Button.Size = new System.Drawing.Size(95, 38);
+            this.SaveToFileDiver_Button.Size = new System.Drawing.Size(142, 58);
             this.SaveToFileDiver_Button.TabIndex = 56;
             this.SaveToFileDiver_Button.Text = "Save to file";
             this.SaveToFileDiver_Button.UseSelectable = true;
@@ -263,9 +279,10 @@
             // 
             // ReadFromfileDiver_Button
             // 
-            this.ReadFromfileDiver_Button.Location = new System.Drawing.Point(110, 246);
+            this.ReadFromfileDiver_Button.Location = new System.Drawing.Point(165, 378);
+            this.ReadFromfileDiver_Button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ReadFromfileDiver_Button.Name = "ReadFromfileDiver_Button";
-            this.ReadFromfileDiver_Button.Size = new System.Drawing.Size(95, 38);
+            this.ReadFromfileDiver_Button.Size = new System.Drawing.Size(142, 58);
             this.ReadFromfileDiver_Button.TabIndex = 57;
             this.ReadFromfileDiver_Button.Text = "Read from file";
             this.ReadFromfileDiver_Button.UseSelectable = true;
@@ -297,10 +314,11 @@
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DiverGridView.DefaultCellStyle = dataGridViewCellStyle15;
-            this.DiverGridView.Location = new System.Drawing.Point(9, 19);
+            this.DiverGridView.Location = new System.Drawing.Point(14, 29);
+            this.DiverGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.DiverGridView.Name = "DiverGridView";
             this.DiverGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.DiverGridView.Size = new System.Drawing.Size(302, 221);
+            this.DiverGridView.Size = new System.Drawing.Size(453, 340);
             this.DiverGridView.TabIndex = 55;
             this.DiverGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DiverGridView_CellClick);
             // 
@@ -309,9 +327,11 @@
             this.groupBox2.Controls.Add(this.DiverGridView);
             this.groupBox2.Controls.Add(this.SaveToFileDiver_Button);
             this.groupBox2.Controls.Add(this.ReadFromfileDiver_Button);
-            this.groupBox2.Location = new System.Drawing.Point(24, 185);
+            this.groupBox2.Location = new System.Drawing.Point(36, 285);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(317, 299);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(476, 460);
             this.groupBox2.TabIndex = 58;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Diver List";
@@ -321,25 +341,30 @@
             this.groupBox3.Controls.Add(this.SaveToFileJudge_button);
             this.groupBox3.Controls.Add(this.ReadFromFileJudge_Button);
             this.groupBox3.Controls.Add(this.JudgeGridView);
-            this.groupBox3.Location = new System.Drawing.Point(351, 185);
+            this.groupBox3.Location = new System.Drawing.Point(526, 285);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(313, 299);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox3.Size = new System.Drawing.Size(470, 460);
             this.groupBox3.TabIndex = 59;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Judge Box";
             // 
             // Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 598);
+            this.ClientSize = new System.Drawing.Size(1032, 920);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Reset_Button);
             this.Controls.Add(this.Create_Button);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Admin";
-            this.Text = "Welcome,";
+            this.Padding = new System.Windows.Forms.Padding(30, 92, 30, 31);
+            this.Resizable = false;
+            this.Text = "Create a new contest";
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).EndInit();
             this.groupBox1.ResumeLayout(false);

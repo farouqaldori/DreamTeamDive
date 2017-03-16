@@ -54,7 +54,12 @@ namespace Diver_Contest
             this.DiverGridView.Columns[2].Visible = false;
             this.DiverGridView.Columns[3].Visible = false;
             this.DiverGridView.Columns[4].Visible = false;
+            this.DiverGridView.Columns[5].Visible = false;
             this.DiverGridView.Columns[6].Visible = false;
+            this.DiverGridView.Columns[7].Visible = false;
+            this.DiverGridView.Columns[8].Visible = false;
+            this.DiverGridView.Columns[9].Visible = true;
+            this.DiverGridView.Columns[10].Visible = false;
 
             // Make the Authentication Code readonly.
             this.JudgeGridView.Columns[3].ReadOnly = true;
