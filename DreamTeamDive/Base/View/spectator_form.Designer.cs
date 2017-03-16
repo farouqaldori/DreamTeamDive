@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.getStats_button = new MetroFramework.Controls.MetroButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
@@ -66,19 +65,10 @@
             this.mResult = new MetroFramework.Controls.MetroLabel();
             this.mName = new MetroFramework.Controls.MetroLabel();
             this.mPos = new MetroFramework.Controls.MetroLabel();
+            this.NameForm_label = new MetroFramework.Controls.MetroLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // getStats_button
-            // 
-            this.getStats_button.Location = new System.Drawing.Point(11, 277);
-            this.getStats_button.Name = "getStats_button";
-            this.getStats_button.Size = new System.Drawing.Size(414, 23);
-            this.getStats_button.TabIndex = 7;
-            this.getStats_button.Text = "Stats";
-            this.getStats_button.UseSelectable = true;
-            this.getStats_button.Click += new System.EventHandler(this.getStats_button_Click);
             // 
             // groupBox1
             // 
@@ -472,14 +462,23 @@
             this.mPos.TabIndex = 1;
             this.mPos.Text = "Pos:";
             // 
+            // NameForm_label
+            // 
+            this.NameForm_label.AutoSize = true;
+            this.NameForm_label.Location = new System.Drawing.Point(17, 15);
+            this.NameForm_label.Name = "NameForm_label";
+            this.NameForm_label.Size = new System.Drawing.Size(53, 19);
+            this.NameForm_label.TabIndex = 21;
+            this.NameForm_label.Text = "Contest";
+            // 
             // spectator_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 323);
+            this.ClientSize = new System.Drawing.Size(441, 293);
+            this.Controls.Add(this.NameForm_label);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.getStats_button);
             this.Name = "spectator_form";
             this.Load += new System.EventHandler(this.spectator_form_Load);
             this.groupBox1.ResumeLayout(false);
@@ -487,11 +486,11 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        public MetroFramework.Controls.MetroButton getStats_button;
         private System.Windows.Forms.GroupBox groupBox1;
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroLabel metroLabel8;
@@ -529,5 +528,6 @@
         private MetroFramework.Controls.MetroLabel mResult;
         private MetroFramework.Controls.MetroLabel mName;
         private MetroFramework.Controls.MetroLabel mPos;
+        private MetroFramework.Controls.MetroLabel NameForm_label;
     }
 }

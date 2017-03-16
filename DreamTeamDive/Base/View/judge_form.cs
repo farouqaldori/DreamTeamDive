@@ -123,7 +123,6 @@ namespace Diver_Contest
                     SendRatingButton.Enabled = true;
                     RatingBox.Enabled = true;
                 }
-
             }
         }
     }

@@ -30,8 +30,15 @@ namespace Diver_Contest
 
         private void spectator_form_Load(object sender, EventArgs e)
         {
-            
-            
+            if (this.EventGetRatingDivers != null)
+            {
+                EventGetRatingDivers();
+            }
+            if (this.EventGetEndResultDivers != null)
+            {
+                EventGetEndResultDivers();
+            }
+            showStats();
         }
 
         private void metroLabel9_Click(object sender, EventArgs e)
@@ -85,17 +92,5 @@ namespace Diver_Contest
             
         }
 
-        private void getStats_button_Click(object sender, EventArgs e)
-        {
-            if (this.EventGetRatingDivers != null)
-            {
-                EventGetRatingDivers();
-            }
-            if (this.EventGetEndResultDivers != null)
-            {
-                EventGetEndResultDivers();
-            }
-            showStats();
-        }
     }
 }

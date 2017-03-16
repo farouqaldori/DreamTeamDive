@@ -80,7 +80,6 @@ namespace Diver_Contest
                     {
                         max = grade.Item2;
                     }
-                   
                 }
                 result=((sumGrades-min-max)/5)*3*diffu; //efter 3, 3*difficulty;
             }

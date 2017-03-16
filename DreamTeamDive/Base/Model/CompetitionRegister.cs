@@ -268,6 +268,7 @@ namespace Diver_Contest
                 MySqlCommand command = new MySqlCommand("INSERT INTO `Grade`(`judge_id`, `jump_id`, `grade`) VALUES (@judgeid , @jumpId , @grade)", Mysql_db.connection);
                 command.Parameters.AddWithValue("@judgeid", _judge.id);
                 command.Parameters.AddWithValue("@jumpId", _jumpId);
+
                 command.Parameters.AddWithValue("@grade", _grade);
                 command.ExecuteNonQuery();
 
